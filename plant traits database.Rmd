@@ -22,5 +22,7 @@ tallo <- read.csv(here("Tallo.csv"))
 
 #wood densities
 wood_densities <- read.csv(here("GlobalWoodDensityDatabase.csv"))
+
+
 ```
 
