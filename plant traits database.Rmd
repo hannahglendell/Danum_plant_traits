@@ -5,7 +5,9 @@ output: html_document
 
 ```{r}
 library(here)
+library(BIEN)
 ```
+note: I coudln't install BIEN because my R would not install the package RPostgreSQL. This code seemed to fix the problem: install.packages("RPostgreSQL", type = "binary")
 
 ```{r}
 #read in the list of unlogged tree species
@@ -22,7 +24,16 @@ tallo <- read.csv(here("Tallo.csv"))
 
 #wood densities
 wood_densities <- read.csv(here("GlobalWoodDensityDatabase.csv"))
+```
 
+```{r}
+#exploring the BIEN database
+#this gives a list of all the traits that this database has information on.
+#I will need to work out how to extract the traits for all the species I am interested in
+BIEN_trait_list <- BIEN_trait_list()
 
+#to look at all observations of flower color:
+flower_colour <- BIEN_trait_trait(trait = "flower color")
+#this shows that there are around 3400 species for which there is data on flower colour
 ```
 
