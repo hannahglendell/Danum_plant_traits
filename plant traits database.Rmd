@@ -1,0 +1,26 @@
+---
+title: "plant traits database"
+output: html_document
+---
+
+```{r}
+library(here)
+```
+
+```{r}
+#read in the list of unlogged tree species
+unlogged_species <- read.csv(here("Danum_spp_list_unlogged.csv"))
+```
+
+```{r}
+#read in the plant trait datasets
+#flower trait data
+flower_traits <- read.csv(here("Flower_Trait_Data.csv"))
+
+#Tallo
+tallo <- read.csv(here("Tallo.csv"))
+
+#wood densities
+wood_densities <- read.csv(here("GlobalWoodDensityDatabase.csv"))
+```
+

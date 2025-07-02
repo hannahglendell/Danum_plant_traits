@@ -1,0 +1,693 @@
+No.,Family,Genus,Species,Subspecies,Mnemonic,IDlevel,Authority,PriorNames,SpeciesID
+1,Achariaceae,Hydnocarpus,anomalus,,HYDNAN,,,,1
+2,Achariaceae,Hydnocarpus,borneensis,,HYDNBO,,,,2
+3,Achariaceae,Hydnocarpus,polypetalus,,HYDNPO,,,,3
+4,Achariaceae,Hydnocarpus,unknown mixed,,HYDNXX,,,,4
+5,Achariaceae,Pangium,edule,,PANGED,,,,5
+6,Achariaceae,Ryparosa,acuminata,,RYPAAC,,,,6
+7,Achariaceae,Ryparosa,hullettii,,RYPAHU,,,,7
+8,Achariaceae,Ryparosa,unknown mixed,,RYPAXX,,,,8
+9,Actinidiaceae,Saurauia,agamae,,SAURAG,,,,9
+10,Actinidiaceae,Saurauia,sp,,SAURS1,,,,10
+11,Actinidiaceae,Saurauia,sp,,SAURS2,,,,11
+12,Actinidiaceae,Saurauia,unknown mixed,,SAURXX,,,,12
+13,Anacardiaceae,Buchanania,arborescens,,BUCHAR,,,,14
+14,Anacardiaceae,Buchanania,sessilifolia,,BUCHSE,,,,15
+15,Anacardiaceae,Buchanania,unknown mixed,,BUCHXX,,,,16
+16,Anacardiaceae,Dracontomelon,costatum,,DRACCO,,,,17
+17,Anacardiaceae,Dracontomelon,dao,,DRACDA,,,,18
+18,Anacardiaceae,Dracontomelon,unknown mixed,,DRACXX,,,,19
+19,Anacardiaceae,Mangifera,foetida,,MANGFO,,,,26
+20,Anacardiaceae,Mangifera,indica,,MANGIN,,,,23
+21,Anacardiaceae,Mangifera,odorata,,MANGOD,,,,27
+22,Anacardiaceae,Mangifera,pajang,,MANGPA,,,,24
+23,Anacardiaceae,Mangifera,rufocostata,,MANGRU,,,,25
+24,Anacardiaceae,Mangifera,species 1,,MANGS1,,,,29
+25,Anacardiaceae,Mangifera,swintonioides,,MANGSW,,,,28
+26,Anacardiaceae,Mangifera,unknown mixed,,MANGXX,,,,30
+27,Anacardiaceae,Melanochyla,auriculata,,MELAAU,,,,31
+28,Anacardiaceae,Melanochyla,beccariana,,MELABE,,,,32
+29,Anacardiaceae,Melanochyla,unknown mixed,,MELAXX,,,,33
+30,Anacardiaceae,Semecarpus,bunburyana,,SEMEBU,,,,34
+31,Anisophylleaceae,Anisophyllea,beccariana,,ANI1BE,,,,36
+32,Anisophylleaceae,Anisophyllea,cornerii,,ANI1CO,,,,37
+33,Annonaceae,Anaxagorea,javanica,,ANAXJA,,,,40
+34,Annonaceae,Cananga,odorata,,CAN1OD,,,,41
+35,Annonaceae,Cyathocalyx,magnifructus,,CYATMA,,,,42
+36,Annonaceae,Goniothalamus,gigantifolius,,GONIGI,,,,46
+37,Annonaceae,Goniothalamus,species 1,,GONIS1,,,,49
+38,Annonaceae,Goniothalamus,species 2,,GONIS2,,,,50
+39,Annonaceae,Goniothalamus,species 3,,GONIS3,,,,51
+40,Annonaceae,Goniothalamus,uvarioides,,GONIUV,,,,47
+41,Annonaceae,Goniothalamus,woodii,,GONIWO,,,,48
+42,Annonaceae,Marsypopetalum,pallidum,,MARSPA,,,,54
+43,Annonaceae,Meiogyne,virgata,,MEIOVI,,,,55
+44,Annonaceae,Monocarpia,borneensis,,MON1BO,,,,56
+45,Annonaceae,Monoon,erianthoides,,MON2ER,,,,57
+46,Annonaceae,Monoon,grandiflorum,,MON2GR,,,,58
+47,Annonaceae,Monoon,hookerianum,,MON2HO,,,,59
+48,Annonaceae,Monoon,species 1,,MON2S1,,,,61
+49,Annonaceae,Monoon,species 2,,MON2S2,,,,62
+50,Annonaceae,Monoon,xanthopetalum,,MON2XA,,,,60
+51,Annonaceae,Neo-Uvaria,acuminatissima,,NEOUAC,,,,64
+52,Annonaceae,Neo-Uvaria,unknown mixed,,NEOUXX,,,,65
+53,Annonaceae,Orophea,corymbosa,,OROPCO,,,,66
+54,Annonaceae,Orophea,creaghii,,OROPCR,,,,822
+55,Annonaceae,Orophea,myriantha,,OROPMY,,,,67
+56,Annonaceae,Phaeanthus,ophthalmicus,,PHAEOP,,,,82
+57,Annonaceae,Phaeanthus,splendens,,PHAESP,,,,83
+58,Annonaceae,Polyalthia,borneensis,,POL1BO,,,,68
+59,Annonaceae,Polyalthia,cauliflora,,POL1CA,,,,69
+60,Annonaceae,Polyalthia,insignis,,POL1IN,,,,70
+61,Annonaceae,Polyalthia,microtus,,POL1MI,,,,71
+62,Annonaceae,Polyalthia,obliqua,,POL1OB,,,,72
+63,Annonaceae,Polyalthia,saprosma,,POL1SA,,,,73
+64,Annonaceae,Polyalthia,species 3,,POL1S3,,,,780
+65,Annonaceae,Popowia,hirtum,,POPOHI,,,,76
+66,Annonaceae,Popowia,odoardoi,,POPOOD,,,,77
+67,Annonaceae,Popowia,pisocarpa,,POPOPI,,,,78
+68,Annonaceae,Popowia,unknown mixed,,POPOXX,,,,79
+69,Annonaceae,Pseuduvaria,pamattonis,,PSEUPA,,,,80
+70,Annonaceae,Pseuduvaria,reticulata,,PSEURE,,,,81
+71,Annonaceae,Sageraea,lanceolata,,SAGELA,,,,84
+72,Annonaceae,Sageraea,sarawakensis,,SAGESA,,,,85
+73,Annonaceae,Xylopia,ferruginea,,XYLOFE,,,,87
+74,Apocynaceae,Alstonia,angustifolia,,ALSTAN,,,,101
+75,Apocynaceae,Alstonia,iwagighensis,,ALSTIW,,,,102
+76,Apocynaceae,Kopsia,pauciflora,,KOPSPA,,,,105
+77,Apocynaceae,Tabernaemontana,macrocarpa,,TABEMA,,,,108
+78,Apocynaceae,Tabernaemontana,pauciflora,,TABEPA,,,,109
+79,Apocynaceae,Tabernaemontana,unknown mixed,,TABEXX,,,,110
+80,Burseraceae,Dacryodes,laxa,,DACRLA,,,,124
+81,Burseraceae,Dacryodes,rostrata,,DACRRO,,,,125
+82,Burseraceae,Dacryodes,rugosa,,DACRRU,,,,126
+83,Burseraceae,Dacryodes,species 1,,DACRS1,,,,127
+84,Burseraceae,Santiria,laevigata,,SANTLA,,,,128
+85,Burseraceae,Santiria,species 1,,SANTS1,,,,130
+86,Burseraceae,Santiria,tomentosa,,SANTTO,,,,129
+87,Burseraceae,Triomma,malaccensis,,TRIOMA,,,,131
+88,Cannabaceae,Gironniera,nervosa,,GIRONE,,,,714
+89,Cannabaceae,Gironniera,species 1,,GIROS1,,,,715
+90,Capparaceae,Crateva,magna,,CRA1MA,,,,146
+91,Cardiopteridaceae,Gonocaryum,calleryanum,,GONOCA,,,,145
+92,Cardiopteridaceae,Gonocaryum,macrophyllum,,GONOMA,,,,144
+93,Celastraceae,Bhesa,paniculata,,BHESPA,,,,153
+94,Celastraceae,Kokoona,ochracea,,KOKOOC,,,,151
+95,Celastraceae,Lophopetalum,beccarianum,,LOPHBE,,,,147
+96,Celastraceae,Lophopetalum,javanicum,,LOPHJA,,,,149
+97,Celastraceae,Lophopetalum,unknown mixed,,LOPHXX,,,,150
+98,Chrysobalanaceae,Licania,splendens,,LICASP,,,,156
+99,Chrysobalanaceae,Maranthes,corymbosa,,MARACO,,,,157
+100,Chrysobalanaceae,Parastemon,urophyllus,,PARAUR,,,,159
+101,Chrysobalanaceae,Parinari,excelsa,,PARIEX,,,,160
+102,Chrysobalanaceae,Parinari,oblongifolia,,PARIOB,,,,161
+103,Chrysobalanaceae,Parinari,unknown mixed,,PARIXX,,,,162
+104,Clusiaceae,Calophyllum,blancoi,,CALOBL,,,,133
+105,Clusiaceae,Calophyllum,gracilipes,,CALOGR,,,,134
+106,Clusiaceae,Calophyllum,pulcherrimum,,CALOPU,,,,135
+107,Clusiaceae,Calophyllum,soulattri,,CALOSO,,,,136
+108,Clusiaceae,Calophyllum,species 1,,CALOS1,,,,138
+109,Clusiaceae,Calophyllum,species 2,,CALOS2,,,,139
+110,Clusiaceae,Calophyllum,venulosum,,CALOVE,,,,137
+111,Clusiaceae,Cratoxylum,cochinchinense,,CRA2CO,,,,320
+112,Clusiaceae,Garcinia,andersonii,,GARCAN,,,,163
+113,Clusiaceae,Garcinia,forbesii,,GARCFO,,,,164
+114,Clusiaceae,Garcinia,gaudichaudii,,GARCGA,,,,165
+115,Clusiaceae,Garcinia,parvifolia,,GARCPA,,,,167
+116,Clusiaceae,Kayea,oblongifolia,,KAYEOB,,,,140
+117,Clusiaceae,Mesua,borneensis,,MESUBO,,,,141
+118,Clusiaceae,Mesua,macrantha,,MESUMA,,,,142
+119,Clusiaceae,Mesua,unknown mixed,,MESUXX,,,,143
+120,Combretaceae,Terminalia,citrina,,TERMCI,,,,168
+121,Combretaceae,Terminalia,ivorensis,,TERMIV,,,,169
+122,Combretaceae,Terminalia,phellocarpa,,TERMPH,,,,835
+123,Combretaceae,Terminalia,species 1,,TERMS1,,,,171
+124,Combretaceae,Terminalia,species 2,,TERMS2,,,,172
+125,Convolvulaceae,Erycibe,borneensis,,ERYCBO,,,,174
+126,Cornaceae,Alangium,javanicum,,ALANJA,,,,13
+127,Crypteroniaceae,Crypteronia,griffithii,,CRY1GR,,,,177
+128,Dilleniaceae,Dillenia,borneensis,,DILLBO,,,,179
+129,Dilleniaceae,Dillenia,excelsa,,DILLEX,,,,180
+130,Dilleniaceae,Dillenia,species 1,,DILLS1,,,,181
+131,Dipterocarpaceae,Anisoptera,costata,,ANI2CO,,,,182
+132,Dipterocarpaceae,Dryobalanops,lanceolata,,DRYOLA,,,,183
+133,Dipterocarpaceae,Hopea,ferruginea,,HOPEFE,,,,184
+134,Dipterocarpaceae,Hopea,nervosa,,HOPENE,,,,185
+135,Dipterocarpaceae,Hopea,pentanervia,,HOPEPE,,,,186
+136,Dipterocarpaceae,Hopea,plagata,,HOPEPL,,,,187
+137,Dipterocarpaceae,Hopea,sangal,,HOPESA,,,,188
+138,Dipterocarpaceae,Hopea,unknown mixed,,HOPEXX,,,,189
+139,Dipterocarpaceae,Parashorea,malaanonan,,PAR2MA,,,,191
+140,Dipterocarpaceae,Parashorea,tomentella,,PAR2TO,,,,190
+141,Dipterocarpaceae,Shorea,agamii,,SHORAG,,,,192
+142,Dipterocarpaceae,Shorea,argentifolia,,SHORAR,,,,194
+143,Dipterocarpaceae,Shorea,atrinervosa,,SHORAT,,,,195
+144,Dipterocarpaceae,Shorea,faguetiana,,SHORFA,,,,196
+145,Dipterocarpaceae,Shorea,gibbosa,,SHORGI,,,,197
+146,Dipterocarpaceae,Shorea,johorensis,,SHORJO,,,,198
+147,Dipterocarpaceae,Shorea,leprosula,,SHORL1,,,,199
+148,Dipterocarpaceae,Shorea,leptoderma,,SHORL2,,,,200
+149,Dipterocarpaceae,Shorea,parvifolia,,SHORP1,,,,201
+150,Dipterocarpaceae,Shorea,pauciflora,,SHORP2,,,,202
+151,Dipterocarpaceae,Shorea,seminis,,SHORSE,,,,204
+152,Dipterocarpaceae,Shorea,superba,,SHORSU,,,,205
+153,Dipterocarpaceae,Shorea,symingtonii,,SHORSY,,,,206
+154,Dipterocarpaceae,Shorea,unknown mixed,,SHORXX,,,,207
+155,Dipterocarpaceae,Vatica,albiramis,,VATIAL,,,,208
+156,Dipterocarpaceae,Vatica,chartacea,,VATICH,,,,209
+157,Dipterocarpaceae,Vatica,oblongifolia,,VATIOB,,,,210
+158,Dipterocarpaceae,Vatica,sarawakensis,,VATISA,,,,211
+159,Dipterocarpaceae,Vatica,umbonata,,VATIUM,,,,212
+160,Ebenaceae,Diospyros,andamanica,,DIOSAN,,,,213
+161,Ebenaceae,Diospyros,borneensis,,DIOSBO,,,,214
+162,Ebenaceae,Diospyros,cauliflora,,DIOSCA,,,,215
+163,Ebenaceae,Diospyros,curranii,,DIOSCU,,,,216
+164,Ebenaceae,Diospyros,daemona,,DIOSDA,,,,217
+165,Ebenaceae,Diospyros,dictyoneura,,DIOSD1,,,,218
+166,Ebenaceae,Diospyros,diepenhorstii,,DIOSD2,,,,219
+167,Ebenaceae,Diospyros,elliptifolia,,DIOSEL,,,,220
+168,Ebenaceae,Diospyros,euphlebia,,DIOSEU,,,,221
+169,Ebenaceae,Diospyros,frutescens,,DIOSFR,,,,222
+170,Ebenaceae,Diospyros,macrophylla,,DIOSMA,,,,223
+171,Ebenaceae,Diospyros,muricata,,DIOSMU,,,,224
+172,Ebenaceae,Diospyros,pilosanthera,,DIOSPI,,,,225
+173,Ebenaceae,Diospyros,pyrrhocarpa,,DIOSPY,,,,226
+174,Ebenaceae,Diospyros,species 1,,DIOSS1,,,,231
+175,Ebenaceae,Diospyros,species 2,,DIOSS2,,,,232
+176,Ebenaceae,Diospyros,species 3,,DIOSS3,,,,233
+177,Ebenaceae,Diospyros,species 4,,DIOSS4,,,,234
+178,Ebenaceae,Diospyros,species 6,,DIOSS6,,,,236
+179,Ebenaceae,Diospyros,species 7,,DIOSS7,,,,796
+180,Ebenaceae,Diospyros,squamaefolia,,DIOSSQ,,,,227
+181,Ebenaceae,Diospyros,toposia,,DIOSTO,,,,228
+182,Ebenaceae,Diospyros,tuberculata,,DIOSTU,,,,229
+183,Ebenaceae,Diospyros,wallichii,,DIOSWA,,,,230
+184,Elaeocarpaceae,Elaeocarpus,brunnescens,,ELAEBR,,,,237
+185,Elaeocarpaceae,Elaeocarpus,stipularis,,ELAEST,,,,238
+186,Elaeocarpaceae,Elaeocarpus,unknown mixed,,ELAEXX,,,,239
+187,Elaeocarpaceae,Sloanea,javanica,,SLOAJA,,,,240
+188,Erythropalaceae,Scorodocarpus,borneensis,,SCORBO,,,,521
+189,Erythropalaceae,Strombosia,ceylanica,,STROCE,,,,522
+190,Erythroxylaceae,Erythroxylum,cuneatum,,ERYTCU,,,,241
+191,Euphorbiaceae,Blumeodendron,kurzii,,BLUMKU,,,,242
+192,Euphorbiaceae,Blumeodendron,tokbrai,,BLUMTO,,,,243
+193,Euphorbiaceae,Croton,oblongus,,CROTOB,,,,245
+194,Euphorbiaceae,Croton,unknown mixed,,CROTXX,,,,246
+195,Euphorbiaceae,Dimorphocalyx,murinus,,DIM2MU,,,,247
+196,Euphorbiaceae,Endospermum,diadenum,,ENDODI,,,,248
+197,Euphorbiaceae,Hancea,penangensis,,HANCPE,,,,258
+198,Euphorbiaceae,Koilodepas,laevigatum,,KOILLA,,,,249
+199,Euphorbiaceae,Koilodepas,longifolium,,KOILLO,,,,250
+200,Euphorbiaceae,Macaranga,hypoleuca,,MACAHY,,,,251
+201,Euphorbiaceae,Macaranga,pearsonii,,MACAPE,,,,252
+202,Euphorbiaceae,Macaranga,winkleri,,MACAWI,,,,253
+203,Euphorbiaceae,Mallotus,korthalsii,,MALLKO,,,,254
+204,Euphorbiaceae,Mallotus,lackeyi,,MALLLA,,,,255
+205,Euphorbiaceae,Mallotus,miquelianus,,MALLMI,,,,257
+206,Euphorbiaceae,Mallotus,species 1,,MALLS1,,,,260
+207,Euphorbiaceae,Mallotus,unknown mixed,,MALLXX,,,,261
+208,Euphorbiaceae,Mallotus,wrayi,,MALLWR,,,,259
+209,Euphorbiaceae,Neoscortechinia,kingii,,NEOSKI,,,,262
+210,Euphorbiaceae,Ptychopyxis,arborea,,PTYCAR,,,,264
+211,Euphorbiaceae,Spathiostemon,javensis,,SPATS1,,,,802
+212,Euphorbiaceae,Spathiostemon,javensis,,SPATJA,,,,265
+213,Euphorbiaceae,Suregada,multiflora,,SUREMU,,,,266
+214,Fabaceae,Fordia,brachybotrys,,FORDBR,,,,278
+215,Fabaceae,Fordia,gibbsiae,,FORDGI,,,,279
+216,Fabaceae,Fordia,species 1,,FORDS1,,,,281
+217,Fabaceae,Fordia,species 3,,FORDS3,,,,283
+218,Fabaceae,Fordia,splendidissima,,FORDSP,,,,280
+219,Fabaceae,Intsia,palembanica,,INTSPA,,,,294
+220,Fabaceae,Intsia,unknown mixed,,INTSXX,,,,295
+221,Fabaceae,Saraca,declinata,,SARADE,,,,289
+222,Fabaceae-caesalpinioideae,Crudia,reticulata,,CRUDRE,,,,274
+223,Fabaceae-caesalpinioideae,Crudia,tenuipes,,CRUDTE,,,,275
+224,Fabaceae-caesalpinioideae,Cynometra,elmeri,,CYNOEL,,,,272
+225,Fabaceae-caesalpinioideae,Cynometra,mirabilis,,CYNOMI,,,,273
+226,Fabaceae-caesalpinioideae,Dialium,indum,,DIALIN,,,,276
+227,Fabaceae-caesalpinioideae,Dialium,unknown mixed,,DIALXX,,,,277
+228,Fabaceae-caesalpinioideae,Koompassia,excelsa,,KOOMEX,,,,285
+229,Fabaceae-caesalpinioideae,Peltophorum,racemosum,,PELTRA,,,,288
+230,Fabaceae-caesalpinioideae,Sindora,irpicina,,SINDIR,,,,291
+231,Fabaceae-mimosoideae,Adenanthera,kostermansii,,ADENKO,,,,268
+232,Fabaceae-mimosoideae,Adenanthera,malayana,,ADENMA,,,,267
+233,Fabaceae-mimosoideae,Archidendron,microcarpum,,ARCHMI,,,,269
+234,Fabaceae-mimosoideae,Archidendron,unknown mixed,,ARCHXX,,,,271
+235,Fabaceae-mimosoideae,Parkia,speciosa,,PARKSP,,,,287
+236,Fabaceae-papilionoideae,Ormosia,bancana,,ORMOBA,,,,286
+237,Fagaceae,Castanopsis,hypophoenicea,,CASTHY,,,,300
+238,Fagaceae,Castanopsis,unknown mixed,,CASTXX,,,,301
+239,Fagaceae,Lithocarpus,ewyckii,,LITHEW,,,,302
+240,Fagaceae,Lithocarpus,gracilis,,LITHGR,,,,303
+241,Fagaceae,Lithocarpus,leptogyne,,LITHLE,,,,304
+242,Fagaceae,Lithocarpus,nieuwenhuisii,,LITHNI,,,,305
+243,Fagaceae,Lithocarpus,species 1,,LITHS1,,,,306
+244,Fagaceae,Lithocarpus,species 2,,LITHS2,,,,307
+245,Fagaceae,Lithocarpus,species 3,,LITHS3,,,,308
+246,Fagaceae,Lithocarpus,species 4,,LITHS4,,,,309
+247,Fagaceae,Lithocarpus,species 5,,LITHS5,,,,310
+248,Fagaceae,Lithocarpus,species 6,,LITHS6,,,,311
+249,Fagaceae,Lithocarpus,species 7,,LITHS7,,,,312
+250,Fagaceae,Lithocarpus,species 8,,LITHS8,,,,313
+251,Fagaceae,Lithocarpus,species 9,,LITHS9,,,,314
+252,Fagaceae,Quercus,argentata,,QUERAR,,,,316
+253,Fagaceae,Quercus,unknown mixed,,QUERXX,,,,317
+254,Gentianaceae,Fagraea,cuspidata,,FAGRCU,,,,318
+255,Gentianaceae,Fagraea,unknown mixed,,FAGRXX,,,,319
+256,Irvingiaceae,Irvingia,malayana,,IRVIMA,,,,322
+257,Juglandaceae,Engelhardia,danumensis,,ENGEDA,,,,323
+258,Lamiaceae,Callicarpa,longifolia,,CALLLO,,,,325
+259,Lamiaceae,Callicarpa,pentandra,,CALLPE,,,,324
+260,Lamiaceae,Teijsmanniodendron,bogoriense,,TEIJBO,,,,326
+261,Lamiaceae,Vitex,pinnata,,VITEPI,,,,327
+262,Lauraceae,Actinodaphne,borneensis,,ACTIBO,,,,328
+263,Lauraceae,Actinodaphne,glomerata,,ACTIGL,,,,329
+264,Lauraceae,Actinodaphne,macrophylla,,ACTIMA,,,,330
+265,Lauraceae,Actinodaphne,pruinosa,,ACTIPR,,,,331
+266,Lauraceae,Actinodaphne,species 1,,ACTIS1,,,,332
+267,Lauraceae,Actinodaphne,unknown mixed,,ACTIXX,,,,333
+268,Lauraceae,Alseodaphne,bancana,,ALSEBA,,,,334
+269,Lauraceae,Alseodaphne,unknown mixed,,ALSEXX,,,,336
+270,Lauraceae,Beilschmiedia,assamica,,BEILAS,,,,828
+271,Lauraceae,Beilschmiedia,cuadrae,,BEILCU,,,,337
+272,Lauraceae,Beilschmiedia,micrantha,,BEILMI,,,,338
+273,Lauraceae,Beilschmiedia,tawaensis,,BEILTA,,,,339
+274,Lauraceae,Beilschmiedia,Unknown species 1,,BEILS1,,,,767
+275,Lauraceae,Caryodaphnopsis,tonkinensis,,CARYTO,,,,340
+276,Lauraceae,Cinnamomum,griffithii,,CINNGR,,,,343
+277,Lauraceae,Cinnamomum,racemosum,,CINNRA,,,,344
+278,Lauraceae,Cinnamomum,unknown mixed,,CINNXX,,,,345
+279,Lauraceae,Cryptocarya,erectinervia,,CRY2ER,,,,341
+280,Lauraceae,Cryptocarya,pulchrinervia,,CRY2PU,,,,342
+281,Lauraceae,Cryptocarya,teysmanniana,,CRY2TE,,,,838
+282,Lauraceae,Dehaasia,caesia,,DEHACA,,,,347
+283,Lauraceae,Dehaasia,gigantocarpa,,DEHAGI,,,,346
+284,Lauraceae,Dehaasia,incrassata,,DEHAIN,,,,348
+285,Lauraceae,Dehaasia,unknown mixed,,DEHAXX,,,,349
+286,Lauraceae,Eusideroxylon,zwageri,,EUSIZW,,,,369
+287,Lauraceae,Litsea,accedens,,LITSAC,,,,351
+288,Lauraceae,Litsea,angulata,,LITSAN,,,,352
+289,Lauraceae,Litsea,caulocarpa,,LITSCA,,,,353
+290,Lauraceae,Litsea,cordifolia,,LITSCO,,,,354
+291,Lauraceae,Litsea,cuprea,,LITSCU,,,,355
+292,Lauraceae,Litsea,curtisii,,LITSC1,,,,819
+293,Lauraceae,Litsea,elliptica,,LITSEL,,,,356
+294,Lauraceae,Litsea,ferruginea,,LITSFE,,,,357
+295,Lauraceae,Litsea,ficoidea,,LITSFI,,,,358
+296,Lauraceae,Litsea,fulva,,LITSFU,,,,359
+297,Lauraceae,Litsea,garciae,,LITSGA,,,,360
+298,Lauraceae,Litsea,grandis,,LITSGR,,,,361
+299,Lauraceae,Litsea,longifolia,,LITSLO,,,,362
+300,Lauraceae,Litsea,machilifolia,,LITSMA,,,,363
+301,Lauraceae,Litsea,oppositifolia,,LITSOP,,,,364
+302,Lauraceae,Litsea,robusta,,LITSRO,,,,365
+303,Lauraceae,Litsea,unknown mixed,,LITSXX,,,,368
+304,Lauraceae,Nothaphoebe,canascens,,NOTHCA,,,,372
+305,Lauraceae,Nothaphoebe,heterophylla,,NOTHHE,,,,370
+306,Lauraceae,Nothaphoebe,letophylla,,NOTHLE,,,,804
+307,Lauraceae,Nothaphoebe,umbelliflora,,NOTHUM,,,,371
+308,Lauraceae,Phoebe,grandis,,PHOEGR,,,,373
+309,Lecythidaceae,Barringtonia,lanceolata,,BARRLA,,,,111
+310,Lecythidaceae,Barringtonia,macrostachya,,BARRMA,,,,112
+311,Lecythidaceae,Barringtonia,unknown mixed,,BARRXX,,,,113
+312,Lecythidaceae,Planchonia,brevistipitata,,PLANBR,,,,114
+313,Lecythidaceae,Planchonia,unknown,,PLANXX,,,,116
+314,Lecythidaceae,Planchonia,valida,,PLANVA,,,,115
+315,Lythraceae,Duabanga,moluccana,,DUABMO,,,,698
+316,Magnoliaceae,Magnolia,beccarii,,MAGNBE,,,,378
+317,Magnoliaceae,Magnolia,candolii,,MAGNCA,,,,379
+318,Magnoliaceae,Magnolia,gigantifolia,,MAGNGI,,,,380
+319,Malvaceae,Brownlowia,peltata,,BROWPE,,,,382
+320,Malvaceae,Brownlowia,stipulata,,BROWST,,,,383
+321,Malvaceae,Coelostegia,borneensis,,COELBO,,,,384
+322,Malvaceae,Durio,graveolens,,DURIGR,,,,385
+323,Malvaceae,Durio,unknown mixed,,DURIXX,,,,387
+324,Malvaceae,Heritiera,elata,,HERIEL,,,,388
+325,Malvaceae,Microcos,antidesmifolia,,MICRAN,,,,389
+326,Malvaceae,Microcos,crassifolia,,MICRCR,,,,390
+327,Malvaceae,Microcos,fibrocarpa,,MICRFI,,,,391
+328,Malvaceae,Microcos,latistipulata,,MICRLA,,,,392
+329,Malvaceae,Microcos,ossea,,MICROS,,,,393
+330,Malvaceae,Microcos,unknown mixed,,MICRXX,,,,395
+331,Malvaceae,Neesia,synandra,,NEESSY,,,,396
+332,Malvaceae,Pentace,adenophora,,PENTAD,,,,397
+333,Malvaceae,Pentace,laxiflora,,PENTLA,,,,398
+334,Malvaceae,Pterospermum,javanicum,,PTERJA,,,,399
+335,Malvaceae,Pterospermum,subpeltatum,,PTERSU,,,,400
+336,Malvaceae,Scaphium,macropodum,,SCAPMA,,,,401
+337,Malvaceae,Sterculia,coccinia,,STERC1,,,,402
+338,Malvaceae,Sterculia,cordata,,STERC2,,,,403
+339,Malvaceae,Sterculia,rubiginosa,,STERRU,,,,404
+340,Malvaceae,Sterculia,stipulata,,STERST,,,,405
+341,Malvaceae,Sterculia,unknown mixed,,STERXX,,,,406
+342,Melastomataceae,Melastoma,malabathricum,,MELAMA,,,,408
+343,Melastomataceae,Memecylon,costatum,,MEMECO,,,,458
+344,Melastomataceae,Memecylon,laevigatum,,MEMELA,,,,459
+345,Melastomataceae,Memecylon,oleifolium,,MEMEOL,,,,460
+346,Melastomataceae,Memecylon,paniculatum,,MEMEPA,,,,461
+347,Melastomataceae,Memecylon,species 1,,MEMES1,,,,462
+348,Melastomataceae,Memecylon,species 2,,MEMES2,,,,463
+349,Melastomataceae,Memecylon,species 3,,MEMES3,,,,464
+350,Melastomataceae,Pternandra,coerulescens,,PTERCO,,,,409
+351,Meliaceae,Aglaia,angustifolia,,AGLAAN,,,,410
+352,Meliaceae,Aglaia,argentea,,AGLAAR,,,,411
+353,Meliaceae,Aglaia,crassinervia,,AGLACR,,,,412
+354,Meliaceae,Aglaia,edulis,,AGLAED,,,,413
+355,Meliaceae,Aglaia,elliptica,,AGLAEL,,,,414
+356,Meliaceae,Aglaia,grandis,,AGLAGR,,,,415
+357,Meliaceae,Aglaia,luzoniensis,,AGLALU,,,,419
+358,Meliaceae,Aglaia,macrocarpa,,AGLAMA,,,,420
+359,Meliaceae,Aglaia,odoratissima,,AGLAOD,,,,421
+360,Meliaceae,Aglaia,oligophylla,,AGLAOL,,,,422
+361,Meliaceae,Aglaia,silvestris,,AGLASI,,,,425
+362,Meliaceae,Aglaia,spectabilis,,AGLASP,,,,424
+363,Meliaceae,Aglaia,tomentosa,,AGLATO,,,,427
+364,Meliaceae,Aglaia,unknown mixed,,AGLAXX,,,,428
+365,Meliaceae,Aphanamixis,borneensis,,APHABO,,,,429
+366,Meliaceae,Aphanamixis,unknown mixed,,APHAXX,,,,430
+367,Meliaceae,Azadirachta,excelsa,,AZADEX,,,,431
+368,Meliaceae,Chisocheton,ceramicus,,CHISCE,,,,432
+369,Meliaceae,Chisocheton,macranthus,,CHISMA,,,,433
+370,Meliaceae,Chisocheton,patens,,CHISPA,,,,434
+371,Meliaceae,Chisocheton,pentandrus,,CHISPE,,,,435
+372,Meliaceae,Chisocheton,polyandrus,,CHISPO,,,,436
+373,Meliaceae,Chisocheton,sarawakensis,,CHISSA,,,,437
+374,Meliaceae,Chisocheton,unknown mixed,,CHISXX,,,,438
+375,Meliaceae,Dysoxylum,alliaceum,,DYSOAL,,,,439
+376,Meliaceae,Dysoxylum,arborescens,,DYSOAR,,,,440
+377,Meliaceae,Dysoxylum,cauliflorum,,DYSOCA,,,,441
+378,Meliaceae,Dysoxylum,cyrtobotryum,,DYSOCY,,,,442
+379,Meliaceae,Dysoxylum,excelsum,,DYSOEX,,,,443
+380,Meliaceae,Dysoxylum,gaudichaudianum,,DYSOGA,,,,445
+381,Meliaceae,Dysoxylum,grande,,DYSOGR,,,,446
+382,Meliaceae,Dysoxylum,oppositifolium,,DYSOOP,,,,447
+383,Meliaceae,Dysoxylum,parasiticum,,DYSOPA,,,,448
+384,Meliaceae,Dysoxylum,rigidum,,DYSORI,,,,449
+385,Meliaceae,Dysoxylum,unknown mixed,,DYSOXX,,,,451
+386,Meliaceae,Lansium,domesticum,,LANSDO,,,,452
+387,Meliaceae,Reinwardtiodendron,humile,,REINHU,,,,453
+388,Meliaceae,Walsura,pachycaulon,,WALSPA,,,,454
+389,Meliaceae,Walsura,pinnata,,WALSPI,,,,455
+390,Meliaceae,Walsura,species 1,,WALSS1,,,,456
+391,Monimiaceae,Kibara,obtusa,,KIBAOB,,,,489
+392,Moraceae,Antiaris,toxicaria,,ANT1TO,,,,490
+393,Moraceae,Artocarpus,anisophyllus,,ARTOAN,,,,790
+394,Moraceae,Ficus,beccarii,,FICUBE,,,,491
+395,Moraceae,Ficus,lepicarpa,,FICULE,,,,492
+396,Moraceae,Ficus,mixed,,FICUXX,,,,498
+397,Moraceae,Ficus,obscura,,FICUOB,,,,493
+398,Moraceae,Ficus,sinuata,,FICUSI,,,,494
+399,Moraceae,Ficus,species 1,,FICUS1,,,,770
+400,Moraceae,Ficus,species 2,,FICUS2,,,,771
+401,Moraceae,Ficus,species 3,,FICUS3,,,,772
+402,Moraceae,Ficus,species 4,,FICUS4,,,,773
+403,Moraceae,Ficus,species 5,,FICUS5,,,,774
+404,Moraceae,Ficus,species 6,,FICUS6,,,,775
+405,Moraceae,Ficus,species 7,,FICUS7,,,,776
+406,Moraceae,Ficus,species 8,,FICUS8,,,,777
+407,Moraceae,Ficus,stolonifera,,FICUST,,,,495
+408,Moraceae,Ficus,variegata,,FICUVA,,,,497
+409,Moraceae,Prainea,limpato,,PRAILI,,,,499
+410,Moraceae,Streblus,glaber,,STREGL,,,,500
+411,Myristicaceae,Horsfieldia,irya,,HORSIR,,,,466
+412,Myristicaceae,Horsfieldia,polyspherula,,HORSPO,,,,467
+413,Myristicaceae,Horsfieldia,unknown mixed,,HORSXX,,,,468
+414,Myristicaceae,Knema,cinerea,,KNEMCI,,,,469
+415,Myristicaceae,Knema,elmeri,,KNEMEL,,,,470
+416,Myristicaceae,Knema,furfuracea,,KNEMFU,,,,471
+417,Myristicaceae,Knema,glomerata,,KNEMGL,,,,472
+418,Myristicaceae,Knema,kostermannsiana,,KNEMKO,,,,473
+419,Myristicaceae,Knema,latericia,,KNEML1,,,,474
+420,Myristicaceae,Knema,laurina,,KNEML2,,,,475
+421,Myristicaceae,Knema,oblongata,,KNEMOB,,,,476
+422,Myristicaceae,Knema,pulchra,,KNEMPU,,,,478
+423,Myristicaceae,Knema,unknown mixed,,KNEMXX,,,,479
+424,Myristicaceae,Myristica,cinnamomea,,MYRICI,,,,480
+425,Myrtaceae,Decaspermum,parviflorum,,DECAPA,,,,501
+426,Myrtaceae,Syzygium,barringtonioides,,SYZYBA,,,,502
+427,Myrtaceae,Syzygium,christmannii,,SYZYCH,,,,503
+428,Myrtaceae,Syzygium,creaghii,,SYZYCR,,,,504
+429,Myrtaceae,Syzygium,elliptilimbum,,SYZYE1,,,,505
+430,Myrtaceae,Syzygium,elopurae,,SYZYE2,,,,506
+431,Myrtaceae,Syzygium,fastigiatum,,SYZYFA,,,,507
+432,Myrtaceae,Syzygium,hirtum,,SYZYHI,,,,508
+433,Myrtaceae,Syzygium,imperiale,,SYZYIM,,,,509
+434,Myrtaceae,Syzygium,kiauese,,SYZYKI,,,,510
+435,Myrtaceae,Syzygium,kunstleri,,SYZYKU,,,,511
+436,Myrtaceae,Syzygium,leptostemon,,SYZYLE,,,,512
+437,Myrtaceae,Syzygium,panzeri,,SYZYP1,,,,513
+438,Myrtaceae,Syzygium,penibukanense,,SYZYP2,,,,514
+439,Myrtaceae,Syzygium,pustulatum,,SYZYPU,,,,515
+440,Myrtaceae,Syzygium,scortechinii,,SYZYSC,,,,516
+441,Myrtaceae,Syzygium,tawahensis,,SYZYTA,,,,517
+442,Myrtaceae,Syzygium,unknown mixed,,SYZYXX,,,,518
+443,Nyssaceae,Mastixia,trichotoma,,MASTTR,,,,175
+444,Nyssaceae,Nyssa,javanica,,NYSSJA,,,,519
+445,Olacaceae,Ochanostachys,amentacea,,OCHAAM,,,,520
+446,Oleaceae,Chionanthus,curvicarpus,,CHIOCU,,,,524
+447,Oleaceae,Chionanthus,macrocarpus,,CHIOMA,,,,525
+448,Oleaceae,Chionanthus,pluriflorus,,CHIOPL,,,,523
+449,Oleaceae,Chionanthus,unknown mixed,,CHIOXX,,,,526
+450,Pandaceae,Galearia,fulva,,GALEFU,,,,527
+451,Phyllanthaceae,Antidesma,leucopodum,,ANT2LE,,,,528
+452,Phyllanthaceae,Antidesma,neurocarpum,,ANT2NE,,,,529
+453,Phyllanthaceae,Antidesma,tomentosum,,ANT2TO,,,,530
+454,Phyllanthaceae,Antidesma,unknown mixed,,ANT2XX,,,,531
+455,Phyllanthaceae,Baccaurea,edulis,,BACCED,,,,552
+456,Phyllanthaceae,Baccaurea,lanceolata,,BACCLA,,,,553
+457,Phyllanthaceae,Baccaurea,macrocarpa,,BACCMA,,,,554
+458,Phyllanthaceae,Baccaurea,parviflora,,BACCPA,,,,555
+459,Phyllanthaceae,Baccaurea,species 1,,BACCS1,,,,834
+460,Phyllanthaceae,Baccaurea,tetrandra,,BACCTE,,,,556
+461,Phyllanthaceae,Baccaurea,unknown mixed,,BACCXX,,,,557
+462,Phyllanthaceae,Bridelia,,,BRIDXX,,,,550
+463,Phyllanthaceae,Bridelia,griffithii,,BRIDGR,,,,549
+464,Phyllanthaceae,Bridelia,penangensis,,BRIDPE,,,,548
+465,Phyllanthaceae,Cleistanthus,hirsutulus,,CLEIHI,,,,543
+466,Phyllanthaceae,Cleistanthus,podopixys,,CLEIPO,,,,544
+467,Phyllanthaceae,Cleistanthus,species 2,,CLEIS2,,,,546
+468,Phyllanthaceae,Cleistanthus,unknown mixed,,CLEIXX,,,,547
+469,Phyllanthaceae,Glochidion,borneensis,,GLOCBO,,,,558
+470,Phyllanthaceae,Glochidion,elmari,,GLOCEL,,,,559
+471,Phyllanthaceae,Glochidion,lanceisepalum,,GLOCLA,,,,560
+472,Phyllanthaceae,Glochidion,pubicapsa,,GLOCPU,,,,561
+473,Phyllanthaceae,Glochidion,rubrum,,GLOCRU,,,,562
+474,Phyllanthaceae,Glochidion,species 1,,GLOCS1,,,,564
+475,Phyllanthaceae,Glochidion,species 2,,GLOCS2,,,,565
+476,Phyllanthaceae,Glochidion,species 3,,GLOCS3,,,,566
+477,Phyllanthaceae,Glochidion,species 4,,GLOCS4,,,,567
+478,Phyllanthaceae,Glochidion,species 6,,GLOCS6,,,,569
+479,Phyllanthaceae,Glochidion,unknown mixed,,GLOCXX,,,,563
+480,Polygalaceae,Xanthophyllum,adenotus,,XANTAD,,,,572
+481,Polygalaceae,Xanthophyllum,affine,,XANTAF,,,,571
+482,Polygalaceae,Xanthophyllum,flavescens,,XANTFL,,,,573
+483,Polygalaceae,Xanthophyllum,pachycarpon,,XANTPA,,,,574
+484,Polygalaceae,Xanthophyllum,reticulatum,,XANTRE,,,,575
+485,Polygalaceae,Xanthophyllum,species 1,,XANTS1,,,,577
+486,Polygalaceae,Xanthophyllum,species 2,,XANTS2,,,,578
+487,Polygalaceae,Xanthophyllum,species 3,,XANTS3,,,,579
+488,Polygalaceae,Xanthophyllum,species 4,,XANTS4,,,,580
+489,Polygalaceae,Xanthophyllum,species 5,,XANTS5,,,,792
+490,Polygalaceae,Xanthophyllum,species 6,,XANTS6,,,,793
+491,Polygalaceae,Xanthophyllum,species 7,,XANTS7,,,,794
+492,Polygalaceae,Xanthophyllum,vitellinum,,XANTVI,,,,576
+493,Polyosmaceae,Polyosma,integrifolia,,POL2IN,,,,581
+494,Proteaceae,Helicia,excelsa,,HEL1EX,,,,582
+495,Proteaceae,Helicia,robusta,,HEL1RO,,,,832
+496,Proteaceae,Heliciopsis,artocarpoides,,HEL2AR,,,,583
+497,Putranjivaceae,Drypetes,castilloi,,DRYPCA,,,,585
+498,Putranjivaceae,Drypetes,eriocarpa,,DRYPER,,,,586
+499,Putranjivaceae,Drypetes,longifolia,,DRYPLO,,,,587
+500,Putranjivaceae,Drypetes,subcrenata,,DRYPSU,,,,588
+501,Putranjivaceae,Drypetes,unknown mixed,,DRYPXX,,,,589
+502,Putranjivaceae,Putranjiva,roxburghii,,PUTRRO,,,,590
+503,Rhamnaceae,Ziziphus,angustifolius,,ZIZIAN,,,,591
+504,Rhizophoraceae,Carallia,borneensis,,CARABO,,,,592
+505,Rhizophoraceae,Carallia,species 1,,CARAS1,,,,831
+506,Rubiaceae,Acranthera,multiflora,,ACRAMU,,,,811
+507,Rubiaceae,Acranthera,velutinervia,,ACRAVE,,,,808
+508,Rubiaceae,Cowiea,borneensis,,COWIBO,,,,595
+509,Rubiaceae,Diplospora,malaccensis,,DIPLMA,,,,596
+510,Rubiaceae,Diplospora,unknown mixed,,DIPLXX,,,,597
+511,Rubiaceae,Gardenia,carinata,,GARDCA,,,,598
+512,Rubiaceae,Ixora,blumei,,IXORBL,,,,600
+513,Rubiaceae,Ixora,brevicaudata,,IXORBR,,,,601
+514,Rubiaceae,Ixora,grandifolia,,IXORGR,,,,602
+515,Rubiaceae,Ixora,unknown mixed,,IXORXX,,,,603
+516,Rubiaceae,Lasianthus,borneensis,,LASIBO,,,,604
+517,Rubiaceae,Lasianthus,maingayi,,LASIMA,,,,605
+518,Rubiaceae,Lasianthus,species 1,,LASIS1,,,,606
+519,Rubiaceae,Lasianthus,species 2,,LASIS2,,,,607
+520,Rubiaceae,Lasianthus,species 3,,LASIS3,,,,608
+521,Rubiaceae,Lasianthus,unknown mixed,,LASIXX,,,,609
+522,Rubiaceae,Ludekia,borneensis,,LUDEBO,,,,610
+523,Rubiaceae,Myrmeconauclea,strigosa,,MYRMST,,,,613
+524,Rubiaceae,Nauclea,unknown mixed,,NAUCXX,,,,614
+525,Rubiaceae,Neolamarckia,cadamba,,NEOLCA,,,,615
+526,Rubiaceae,Pavetta,wallichiana,,PAVEWA,,,,616
+527,Rubiaceae,Pleiocarpidia,sandakanica,,PLEISA,,,,617
+528,Rubiaceae,Praravinia,suberosa,,PRARSU,,,,619
+529,Rubiaceae,Praravinia,unknown mixed,,PRARXX,,,,621
+530,Rubiaceae,Praravinia,verruculosa,,PRARVE,,,,620
+531,Rubiaceae,Prismatomeris,beccariana,,PRISBE,,,,622
+532,Rubiaceae,Prismatomeris,species 1,,PRISS1,,,,623
+533,Rubiaceae,Psychotria,species 1,,PSYCS1,,,,624
+534,Rubiaceae,Psychotria,species 2,,PSYCS2,,,,625
+535,Rubiaceae,Psydrax,dicoccus,,PSYDDI,,,,626
+536,Rubiaceae,Rennellia,borneensis,,RENNBO,,,,627
+537,Rubiaceae,Rothmannia,pseudoternisfolia,,ROTHPS,,,,628
+538,Rubiaceae,Timonius,lasianthoides,,TIMOLA,,,,806
+539,Rubiaceae,Timonius,wallichianus,,TIMOWA,,,,629
+540,Rutaceae,Clausena,excavata,,CLAUEX,,,,649
+541,Rutaceae,Clausena,unknown,,CLAUXX,,,,650
+542,Rutaceae,Glycosmis,chlorosperma,,GLYCCH,,,,651
+543,Rutaceae,Glycosmis,macrantha,,GLYCMA,,,,652
+544,Rutaceae,Glycosmis,unknown mixed,,GLYCXX,,,,653
+545,Rutaceae,Merope,angulata,,MEROAN,,,,647
+546,Rutaceae,Monanthocitrus,oblanceolata,,MONAOB,,,,648
+547,Sabiaceae,Meliosma,pinnata,,MEL2PI,,,,655
+548,Sabiaceae,Meliosma,sumatrana,,MEL2SU,,,,656
+549,Salicaceae,Casearia,grewiifolia,,CASEGR,,,,660
+550,Salicaceae,Flacourtia,rukam,,FLACRU,,,,657
+551,Salicaceae,Homalium,foetidum,,HOMAFO,,,,659
+552,Santalaceae,Scleropyrum,pentandrum,,SCLEPE,,,,658
+553,Sapindaceae,Allophylus,cobbe,,ALLOCO,,,,661
+554,Sapindaceae,Dimocarpus,dentatus,,DIM1DE,,,,662
+555,Sapindaceae,Dimocarpus,fumatus,,DIM1FU,,,,663
+556,Sapindaceae,Dimocarpus,longan,,DIM1LO,,,,664
+557,Sapindaceae,Guioa,pleuropteris,,GUIOPL,,,,668
+558,Sapindaceae,Harpullia,arborea,,HARPAR,,,,666
+559,Sapindaceae,Harpullia,species 1,,HARPS1,,,,667
+560,Sapindaceae,Lepisanthes,fruticosa,,LEPIFR,,,,670
+561,Sapindaceae,Lepisanthes,senegalensis,,LEPISE,,,,671
+562,Sapindaceae,Lepisanthes,tetraphylla,,LEPITE,,,,672
+563,Sapindaceae,Lepisanthes,unknown mixed,,LEPIXX,,,,673
+564,Sapindaceae,Mischocarpus,pentapetalus,,MISCPE,,,,674
+565,Sapindaceae,Nephelium,cuspidatum,,NEPHCU,,,,675
+566,Sapindaceae,Nephelium,maingayi,,NEPHMA,,,,677
+567,Sapindaceae,Nephelium,ramboutan-ake,,NEPHRA,,,,676
+568,Sapindaceae,Paranephelium,macrophyllum,,PAR1MA,,,,679
+569,Sapindaceae,Paranephelium,xestophyllum,,PAR1XE,,,,680
+570,Sapindaceae,Pometia,pinnata,,POMEPI,,,,681
+571,Sapotaceae,Madhuca,elmeri,,MADHEL,,,,684
+572,Sapotaceae,Madhuca,kingiana,,MADHKI,,,,685
+573,Sapotaceae,Madhuca,korthalsii,,MADHKO,,,,686
+574,Sapotaceae,Madhuca,kunstleri,,MADHKU,,,,687
+575,Sapotaceae,Madhuca,mindanaensis,,MADHMI,,,,688
+576,Sapotaceae,Madhuca,unknown mixed,,MADHXX,,,,689
+577,Sapotaceae,Palaquium,beccarianum,,PALABE,,,,690
+578,Sapotaceae,Palaquium,dasyphyllum,,PALADA,,,,691
+579,Sapotaceae,Palaquium,maingayi,,PALAMA,,,,692
+580,Sapotaceae,Palaquium,sericeum,,PALASE,,,,693
+581,Sapotaceae,Palaquium,unknown mixed,,PALAXX,,,,694
+582,Sapotaceae,Payena,acuminata,,PAYEAC,,,,695
+583,Sapotaceae,Payena,microphylla,,PAYEMI,,,,696
+584,Sapotaceae,Payena,Unknown species1,,PAYES1,,,,795
+585,Simaroubaceae,Eurycoma,longifolia,,EURYLO,,,,697
+586,Stemonuraceae,Gomphandra,quadrifida,,GOMPQU,,,,700
+587,Stemonuraceae,Stemonurus,grandifolius,,STEMGR,,,,701
+588,Stemonuraceae,Stemonurus,malaccensis,,STEMMA,,,,702
+589,Stemonuraceae,Stemonurus,scorpiodes,,STEMSC,,,,703
+590,Stemonuraceae,Stemonurus,unknown mixed,,STEMXX,,,,704
+591,Symplocaceae,Symplocos,fasciculata,,SYMPFA,,,,705
+592,Symplocaceae,Symplocos,odoratissima,,SYMPOD,,,,706
+593,Tapisciaceae,Turpinia,sphaerocarpa,,TURPSP,,,,699
+594,Tetramelaceae,Octomeles,sumatrana,,OCTOSU,,,,708
+595,Theaceae,Pyrenaria,acuminata,,PYREAC,,,,709
+596,Thymelaeaceae,Aquilaria,beccariana,,AQUIBE,,,,710
+597,Thymelaeaceae,Gonystylus,keithii,,GONYKE,,,,711
+598,Unknown,Unidentified,asperum,,CAN2AS,,,,117
+599,Unknown,Unidentified,benthamiana,,APORBE,,,,532
+600,Unknown,Unidentified,capitata,,PHALCA,,,,713
+601,Unknown,Unidentified,colorata,,ARDICO,,,,481
+602,Unknown,Unidentified,confertus,,CANTCO,,,,593
+603,Unknown,Unidentified,confusa,,APORCO,,,,533
+604,Unknown,Unidentified,corymbosus,,MASCCO,,,,612
+605,Unknown,Unidentified,decumanum,,CAN2D1,,,,118
+606,Unknown,Unidentified,denticulatum,,CAN2D2,,,,119
+607,Unknown,Unidentified,elmeri,,APOREL,,,,534
+608,Unknown,Unidentified,falcifera,,APORFA,,,,535
+609,Unknown,Unidentified,frutescens,,APORFR,,,,536
+610,Unknown,Unidentified,gitingensis,,TAULGI,,,,381
+611,Unknown,Unidentified,glabrum,,UROPGL,,,,630
+612,Unknown,Unidentified,grandistipula,,APORGR,,,,537
+613,Unknown,Unidentified,griffithianum,,UROPGR,,,,631
+614,Unknown,Unidentified,havilandii,,DREPHA,,,,43
+615,Unknown,Unidentified,illustris,,APORIL,,,,538
+616,Unknown,Unidentified,latistipulatum,,CAN2LA,,,,120
+617,Unknown,Unidentified,lunata,,APORLU,,,,539
+618,Unknown,Unidentified,lunu-ankenda,,MEL1LU,,,,645
+619,Unknown,Unidentified,macrophylla,,ARDIMA,,,,482
+620,Unknown,Unidentified,nitida,,APORNI,,,,540
+621,Unknown,Unidentified,odontophyllum,,CAN2OD,,,,121
+622,Unknown,Unidentified,pachysandra,,ARDIPA,,,,483
+623,Unknown,Unidentified,pilosum,,CAN2PI,,,,122
+624,Unknown,Unidentified,racemosa,,ATUNRA,,,,154
+625,Unknown,Unidentified,ridleyi,,DREPRI,,,,44
+626,Unknown,Unidentified,rumphii,,HUBERU,,,,52
+627,Unknown,Unidentified,species 1,,ANACS1,,,,35
+628,Unknown,Unidentified,species 1,,UNKNS1,,,,725
+629,Unknown,Unidentified,species 1,,FABAS1,,,,296
+630,Unknown,Unidentified,species 1,,BURSS1,,,,132
+631,Unknown,Unidentified,species 1,,CAN2S1,,,,123
+632,Unknown,Unidentified,species 1,,ANNOS1,,,,89
+633,Unknown,Unidentified,species 1,,PHYLS1,,,,570
+634,Unknown,Unidentified,species 1,,CHASS1,,,,594
+635,Unknown,Unidentified,species 1,,UROPS1,,,,632
+636,Unknown,Unidentified,species 1,,ARDIS1,,,,484
+637,Unknown,Unidentified,species 1,,RUBIS1,,,,633
+638,Unknown,Unidentified,species 10,,ANNO10,,,,98
+639,Unknown,Unidentified,species 10,,RUBI10,,,,642
+640,Unknown,Unidentified,species 11,,ANNO11,,,,99
+641,Unknown,Unidentified,species 13,,ANNO13,,,,781
+642,Unknown,Unidentified,species 14,,ANNO14,,,,782
+643,Unknown,Unidentified,species 15,,ANNO15,,,,783
+644,Unknown,Unidentified,species 16,,ANNO16,,,,784
+645,Unknown,Unidentified,species 17,,ANNO17,,,,785
+646,Unknown,Unidentified,species 18,,ANNO18,,,,786
+647,Unknown,Unidentified,species 19,,ANNO19,,,,787
+648,Unknown,Unidentified,species 2,,ARDIS2,,,,485
+649,Unknown,Unidentified,species 2,,RUBIS2,,,,634
+650,Unknown,Unidentified,species 2,,ANNOS2,,,,90
+651,Unknown,Unidentified,species 2,,FABAS2,,,,297
+652,Unknown,Unidentified,species 20,,ANNO20,,,,788
+653,Unknown,Unidentified,species 21,,ANNO21,,,,789
+654,Unknown,Unidentified,species 3,,FABAS3,,,,298
+655,Unknown,Unidentified,species 3,,RUBIS3,,,,635
+656,Unknown,Unidentified,species 3,,ARDIS3,,,,486
+657,Unknown,Unidentified,species 4,,ARDIS4,,,,487
+658,Unknown,Unidentified,species 4,,FABAS4,,,,299
+659,Unknown,Unidentified,species 4,,RUBIS4,,,,636
+660,Unknown,Unidentified,species 4,,ANNOS4,,,,92
+661,Unknown,Unidentified,species 5,,ARDIS5,,,,488
+662,Unknown,Unidentified,species 5,,ANNOS5,,,,93
+663,Unknown,Unidentified,species 5,,RUBIS5,,,,637
+664,Unknown,Unidentified,species 6,,ANNOS6,,,,94
+665,Unknown,Unidentified,species 6,,RUBIS6,,,,638
+666,Unknown,Unidentified,species 7,,ANNOS7,,,,95
+667,Unknown,Unidentified,species 7,,RUBIS7,,,,639
+668,Unknown,Unidentified,species 8,,RUBIS8,,,,640
+669,Unknown,Unidentified,species 8,,ANNOS8,,,,96
+670,Unknown,Unidentified,species 9,,RUBIS9,,,,641
+671,Unknown,Unidentified,species 9,,ANNOS9,,,,97
+672,Unknown,Unidentified,sumatrana,,MAASSU,,,,53
+673,Unknown,Unidentified,Unknown,,RUTAXX,,,,654
+674,Unknown,Unidentified,Unknown,,SAPIXX,,,,683
+675,Unknown,Unidentified,unknown,,MALVXX,,,,407
+676,Unknown,Unidentified,unknown,,PROTXX,,,,584
+677,Unknown,Unidentified,Unknown,,LAURXX,,,,375
+678,Unknown,Unidentified,unknown,,UNDEAD,,,,801
+679,Unknown,Unidentified,unknown,,UNIDEN,,,,769
+680,Unknown,Unidentified,unknown mixed,,MELIXX,,,,457
+681,Unknown,Unidentified,unknown mixed,,APORXX,,,,541
+682,Unknown,Unidentified,Unknown species,,LIANA,,,,768
+683,Unknown,Unidentified,wallichii,,GLUTWA,,,,20
+684,Urticaceae,Dendrocnide,elliptica,,DENDEL,,,,716
+685,Urticaceae,Dendrocnide,stimulans,,DENDST,,,,717
+686,Urticaceae,Dendrocnide,unknown mixed,,DENDXX,,,,719
+687,Urticaceae,Oreocnide,trinervis,,OREOTR,,,,720
+688,Violaceae,Rinorea,bengalensis,,RINOBE,,,,722
+689,Violaceae,Rinorea,congesta,,RINOCO,,,,723
+690,Violaceae,Rinorea,unknown,,RINOXX,,,,724
+691,Vitaceae,Leea,aculeata,,LEEAAC,,,,376
+692,Vitaceae,Leea,indica,,LEEAIN,,,,377
