@@ -81,14 +81,14 @@ wood_densities <- read.csv(here("GlobalWoodDensityDatabase.csv"))
 ```
 
 ```{r}
-#filtering out the flower_traits dataset, to only look at the ~750 species that appear in the final_species_list 
+#filtering out the flower_traits dataset, to only look at the 754 species that appear in the final_species_list 
 
 #in the flower_traits dataset, change the column name from species to binomial_name
 flower_traits <- flower_traits %>%
   rename(binomial_name = species)
 
 
-# Filter flower_traits to only include species in unlogged_species
+# Filter flower_traits to only include species in final_species_list
 filtered_flower_traits <- flower_traits %>%
   semi_join(final_species_list, by = "binomial_name")
 
