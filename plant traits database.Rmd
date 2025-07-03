@@ -4,14 +4,19 @@ output: html_document
 ---
 
 ```{r}
-library(here)
-library(BIEN)
+library(here)#for telling R where my working directory is
+library(BIEN)#contains the BIEN dataset
+library(dplyr)#for manipulating dataframes
 ```
-note: I coudln't install BIEN because my R would not install the package RPostgreSQL. This code seemed to fix the problem: install.packages("RPostgreSQL", type = "binary")
+note: I couldn't install BIEN because my R would not install the package RPostgreSQL. This code seemed to fix the problem: install.packages("RPostgreSQL", type = "binary")
 
 ```{r}
 #read in the list of unlogged tree species
 unlogged_species <- read.csv(here("Danum_spp_list_unlogged.csv"))
+
+#create a new column with the full binomial latin name of each species
+unlogged_species$binomial_name <- paste(unlogged_species$Genus, unlogged_species$Species)
+
 ```
 
 ```{r}
@@ -27,13 +32,32 @@ wood_densities <- read.csv(here("GlobalWoodDensityDatabase.csv"))
 ```
 
 ```{r}
+#filtering out the trait datasets, to only look at the ~700 species that appear in the unlogged_species dataset
+
+#in the flower_traits dataset, change the column name from species to binomial_name
+flower_traits <- flower_traits %>%
+  rename(binomial_name = species)
+
+
+# Filter flower_traits to only include species in unlogged_species
+filtered_flower_traits <- flower_traits %>%
+  semi_join(unlogged_species, by = "binomial_name")
+
+#this filtered_flower_traits dataframe includes 50 species, meaning that there are 50 species in the flower_traits dataset that also appear in the unlogged_species dataset. This, of course, does not take into account alternative names for the same plant.
+```
+
+
+```{r}
 #exploring the BIEN database
-#this gives a list of all the traits that this database has information on.
-#I will need to work out how to extract the traits for all the species I am interested in
+#use vignette("BIEN_tutorial") for instructions on how to extract data from the database
+#this gives a list of all the traits that this database has information on - 55 different traits.
 BIEN_trait_list <- BIEN_trait_list()
+#I will need to work out how to extract the traits for all the species I am interested in
 
 #to look at all observations of flower color:
-flower_colour <- BIEN_trait_trait(trait = "flower color")
+BIEN_flower_colour <- BIEN_trait_trait(trait = "flower color")
 #this shows that there are around 3400 species for which there is data on flower colour
+
+#
 ```
 
