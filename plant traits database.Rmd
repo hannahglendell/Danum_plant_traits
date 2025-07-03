@@ -3,12 +3,17 @@ title: "plant traits database"
 output: html_document
 ---
 
+**DOCUMENT SETUP**
+
 ```{r}
 library(here)#for telling R where my working directory is
 library(BIEN)#contains the BIEN dataset
 library(dplyr)#for manipulating dataframes
 ```
+
 note: I couldn't install BIEN because my R would not install the package RPostgreSQL. This code seemed to fix the problem: install.packages("RPostgreSQL", type = "binary")
+
+**CREATING THE DANUM SPECIES LIST**
 
 ```{r}
 #read in the list of unlogged tree species
@@ -17,7 +22,51 @@ unlogged_species <- read.csv(here("Danum_spp_list_unlogged.csv"))
 #create a new column with the full binomial latin name of each species
 unlogged_species$binomial_name <- paste(unlogged_species$Genus, unlogged_species$Species)
 
+#create a dataframe of just the species names of unlogged trees.
+unlogged_species_list <- unlogged_species %>% 
+  select(binomial_name) %>%
+  mutate(logging_status = "unlogged") %>%
+  distinct() #removes any duplicates from the list
+
 ```
+
+```{r}
+#read in the dataset of logged tree species
+logged_species <- read.csv(here("DanumRevised_35Plots_FullPlotData_Trees_2020_edit_4.11.csv"))
+
+#create a column with the full binomial latin name of each species
+logged_species$binomial_name <- paste(logged_species$Genus, logged_species$Species)
+
+#make a list of distinct species names from the logged trees.
+logged_species_list <- logged_species %>%
+  select(binomial_name) %>% #selects just the binomial_name column 
+  distinct() %>% #removes duplicates from the list of species
+  mutate(logging_status = "logged")
+
+```
+
+```{r}
+#now combine the logged_species_list and the unlogged_species_list together
+#bind_rows() combines the two dataframes together
+#group_by() groups according to binomial name
+#summarize() - if a species appears more than once in the list, it is assigned "both" as its logging status, otherwise, it is assigned the logging_status that it already had when the dataframes were separate
+#ungroup() ungroups the data
+
+final_species_list <- bind_rows(logged_species_list, unlogged_species_list)%>% 
+  group_by(binomial_name) %>% 
+  summarize(logging_status = if (n() > 1) "both" else first(logging_status)) %>%
+  ungroup() 
+#this results in a list of 754 species in total
+
+
+#seeing how many species there are in each logging status
+final_species_list %>%
+  count(logging_status)
+#this tells me that there are 95 logged species, 394 unlogged species, and 265 species that appear in both logged and unlogged areas.
+
+```
+
+**ADDING IN THE PLANT TRAIT DATASETS**
 
 ```{r}
 #read in the plant trait datasets
@@ -32,7 +81,7 @@ wood_densities <- read.csv(here("GlobalWoodDensityDatabase.csv"))
 ```
 
 ```{r}
-#filtering out the flower_traits dataset, to only look at the ~700 species that appear in the unlogged_species dataset
+#filtering out the flower_traits dataset, to only look at the ~750 species that appear in the final_species_list 
 
 #in the flower_traits dataset, change the column name from species to binomial_name
 flower_traits <- flower_traits %>%
@@ -41,11 +90,10 @@ flower_traits <- flower_traits %>%
 
 # Filter flower_traits to only include species in unlogged_species
 filtered_flower_traits <- flower_traits %>%
-  semi_join(unlogged_species, by = "binomial_name")
+  semi_join(final_species_list, by = "binomial_name")
 
 #this filtered_flower_traits dataframe includes 50 species, meaning that there are 50 species in the flower_traits dataset that also appear in the unlogged_species dataset. This, of course, does not take into account that there might be alternative names for the same plant.
 ```
-
 
 ```{r}
 #exploring the BIEN database
@@ -60,4 +108,3 @@ BIEN_flower_colour <- BIEN_trait_trait(trait = "flower color")
 
 #
 ```
-
