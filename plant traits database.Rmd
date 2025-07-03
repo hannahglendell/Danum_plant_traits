@@ -32,7 +32,7 @@ wood_densities <- read.csv(here("GlobalWoodDensityDatabase.csv"))
 ```
 
 ```{r}
-#filtering out the trait datasets, to only look at the ~700 species that appear in the unlogged_species dataset
+#filtering out the flower_traits dataset, to only look at the ~700 species that appear in the unlogged_species dataset
 
 #in the flower_traits dataset, change the column name from species to binomial_name
 flower_traits <- flower_traits %>%
@@ -43,7 +43,7 @@ flower_traits <- flower_traits %>%
 filtered_flower_traits <- flower_traits %>%
   semi_join(unlogged_species, by = "binomial_name")
 
-#this filtered_flower_traits dataframe includes 50 species, meaning that there are 50 species in the flower_traits dataset that also appear in the unlogged_species dataset. This, of course, does not take into account alternative names for the same plant.
+#this filtered_flower_traits dataframe includes 50 species, meaning that there are 50 species in the flower_traits dataset that also appear in the unlogged_species dataset. This, of course, does not take into account that there might be alternative names for the same plant.
 ```
 
 
