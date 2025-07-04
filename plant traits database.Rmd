@@ -9,6 +9,7 @@ output: html_document
 library(here)#for telling R where my working directory is
 library(BIEN)#contains the BIEN dataset
 library(dplyr)#for manipulating dataframes
+library(stringr)
 ```
 
 note: I couldn't install BIEN because my R would not install the package RPostgreSQL. This code seemed to fix the problem: install.packages("RPostgreSQL", type = "binary")
@@ -24,9 +25,9 @@ unlogged_species$binomial_name <- paste(unlogged_species$Genus, unlogged_species
 
 #create a dataframe of just the species names of unlogged trees.
 unlogged_species_list <- unlogged_species %>% 
-  select(binomial_name) %>%
+  select(binomial_name, Family, Genus, Species) %>%
   mutate(logging_status = "unlogged") %>%
-  distinct() #removes any duplicates from the list
+  distinct(binomial_name, .keep_all=TRUE) #removes any duplicates from the list, based only on binomial_name
 
 ```
 
@@ -39,9 +40,12 @@ logged_species$binomial_name <- paste(logged_species$Genus, logged_species$Speci
 
 #make a list of distinct species names from the logged trees.
 logged_species_list <- logged_species %>%
-  select(binomial_name) %>% #selects just the binomial_name column 
-  distinct() %>% #removes duplicates from the list of species
-  mutate(logging_status = "logged") 
+  select(binomial_name, Family, Genus, Species) %>% 
+  mutate(logging_status = "logged") %>%
+  distinct(binomial_name, .keep_all = TRUE) #removes duplicates from the list of species
+
+#make the Family listed in title case, rather than in all capital letters.  
+logged_species_list$Family <- str_to_title(str_to_lower(logged_species_list$Family))
 
 ```
 
@@ -51,12 +55,18 @@ logged_species_list <- logged_species %>%
 #group_by() groups according to binomial name
 #summarize() - if a species appears more than once in the list, it is assigned "both" as its logging status, otherwise, it is assigned the logging_status that it already had when the dataframes were separate
 #ungroup() ungroups the data
-
-final_species_list <- bind_rows(logged_species_list, unlogged_species_list)%>% 
-  group_by(binomial_name) %>% 
-  summarize(logging_status = if (n() > 1) "both" else first(logging_status)) %>%
-  ungroup() 
-#this results in a list of 754 species in total
+#
+#
+#
+final_species_list <- bind_rows(logged_species_list, unlogged_species_list) %>%
+  group_by(binomial_name) %>%
+  summarize(
+    Family = first(Family),
+    Genus = first(Genus),
+    Species = first(Species),
+    logging_status = if (n_distinct(logging_status) > 1) "both" else first(logging_status),
+    .groups = "drop"
+  )
 
 
 #seeing how many species there are in each logging status
