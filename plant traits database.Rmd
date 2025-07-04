@@ -9,7 +9,7 @@ output: html_document
 library(here)#for telling R where my working directory is
 library(BIEN)#contains the BIEN dataset
 library(dplyr)#for manipulating dataframes
-library(stringr)
+library(stringr)#for working with strings
 ```
 
 note: I couldn't install BIEN because my R would not install the package RPostgreSQL. This code seemed to fix the problem: install.packages("RPostgreSQL", type = "binary")
@@ -25,8 +25,8 @@ unlogged_species$binomial_name <- paste(unlogged_species$Genus, unlogged_species
 
 #create a dataframe of just the species names of unlogged trees.
 unlogged_species_list <- unlogged_species %>% 
-  select(binomial_name, Family, Genus, Species) %>%
-  mutate(logging_status = "unlogged") %>%
+  select(binomial_name, Family, Genus, Species) %>% #selects just the columns we want
+  mutate(logging_status = "unlogged") %>% #creates a new column called logging_status
   distinct(binomial_name, .keep_all=TRUE) #removes any duplicates from the list, based only on binomial_name
 
 ```
@@ -55,9 +55,7 @@ logged_species_list$Family <- str_to_title(str_to_lower(logged_species_list$Fami
 #group_by() groups according to binomial name
 #summarize() - if a species appears more than once in the list, it is assigned "both" as its logging status, otherwise, it is assigned the logging_status that it already had when the dataframes were separate
 #ungroup() ungroups the data
-#
-#
-#
+
 final_species_list <- bind_rows(logged_species_list, unlogged_species_list) %>%
   group_by(binomial_name) %>%
   summarize(
