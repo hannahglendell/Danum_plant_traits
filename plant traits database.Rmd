@@ -41,7 +41,7 @@ logged_species$binomial_name <- paste(logged_species$Genus, logged_species$Speci
 logged_species_list <- logged_species %>%
   select(binomial_name) %>% #selects just the binomial_name column 
   distinct() %>% #removes duplicates from the list of species
-  mutate(logging_status = "logged")
+  mutate(logging_status = "logged") 
 
 ```
 
@@ -63,6 +63,10 @@ final_species_list <- bind_rows(logged_species_list, unlogged_species_list)%>%
 final_species_list %>%
   count(logging_status)
 #this tells me that there are 95 logged species, 394 unlogged species, and 265 species that appear in both logged and unlogged areas.
+
+
+#save the final_species_list as a csv file
+write.csv(final_species_list, file = "final species list.csv", row.names = FALSE)
 
 ```
 
