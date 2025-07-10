@@ -28,6 +28,7 @@ unlogged_species$binomial_name <- paste(unlogged_species$Genus, unlogged_species
 unlogged_species_list <- unlogged_species %>% 
   select(binomial_name, Family, Genus, Species) %>% #selects just the columns we want
   mutate(logging_status = "unlogged") %>% #creates a new column called logging_status
+  mutate(species_origin = "50ha") %>%
   distinct(binomial_name, .keep_all=TRUE) #removes any duplicates from the list, based only on binomial_name
 
 ```
@@ -43,6 +44,7 @@ logged_species$binomial_name <- paste(logged_species$Genus, logged_species$Speci
 logged_species_list <- logged_species %>%
   select(binomial_name, Family, Genus, Species) %>% 
   mutate(logging_status = "logged") %>%
+  mutate(species_origin = "CP") %>%
   distinct(binomial_name, .keep_all = TRUE) #removes duplicates from the list of species
 
 #make the Family listed in title case, rather than in all capital letters.  
@@ -63,6 +65,7 @@ final_species_list <- bind_rows(logged_species_list, unlogged_species_list) %>%
     Family = first(Family),
     Genus = first(Genus),
     Species = first(Species),
+    species_origin = toString(sort(unique(species_origin))),#makes the species origin column
     logging_status = if (n_distinct(logging_status) > 1) "both" else first(logging_status),
     .groups = "drop"
   )
@@ -78,6 +81,54 @@ final_species_list %>%
 write.csv(final_species_list, file = "final species list.csv", row.names = FALSE)
 
 ```
+
+```{r}
+#adding in lists of species from actively restored or naturally regenerated areas
+#read in the data of the species found in the INFORSUS (logged) site
+INDFORSUS_data <- read.csv("mature_data_RH(in).csv")
+
+#read in the data on their restoration status
+INDFORSUS_restoration_status_data <- read.csv("2018_2019Seedling_RH(Plot_Info).csv")
+
+#now join the two datasets together
+INDFORSUS_species_list <- INDFORSUS_data %>%
+  left_join(INDFORSUS_restoration_status_data, by = "station", relationship = "many-to-many")%>% #join the two datasets together according to their station
+  select(family, genus, species, history)%>% #select only the columns that we are interested in 
+  distinct() %>% #remove rows that have the same information in every single column
+  mutate(binomial_name = paste(genus, species, sep = " ")) %>% # add in a column with the binomial_name
+  mutate(species_origin = "IF") %>%
+  mutate(logging_status = "logged")
+
+#change the names of the columns so that they are written with capital letters
+INDFORSUS_species_list <- INDFORSUS_species_list %>%
+  rename(
+    Family = family,
+    Genus = genus,
+    Species = species
+  )
+
+```
+
+```{r}
+#now I want to join the  final_species list and the INDFORSUS species lists together
+#I have a dataset called final_species_list which has the columns binomial_name, species_origin and logging_status. I have a dataset called INDFORSUS_species_list. in both datasets there is a column called binomial_name which contains the name of the species. I want to join the two datasets according to the binomial_name.
+#
+#
+all_species_list <- bind_rows(final_species_list, INDFORSUS_species_list) %>%
+  group_by(binomial_name) %>%
+  summarize(
+    Family = first(Family),
+    Genus = first(Genus),
+    Species = first(Species),
+    history,
+    species_origin = toString(sort(unique(species_origin))),#makes the species origin column
+    logging_status = if (n_distinct(logging_status) > 1) "both" else first(logging_status),
+    .groups = "drop"
+  )
+
+```
+
+####################################################################
 
 **ADDING IN THE PLANT TRAIT DATASETS**
 
