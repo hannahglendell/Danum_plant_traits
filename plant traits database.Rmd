@@ -10,6 +10,7 @@ library(here)#for telling R where my working directory is
 library(BIEN)#contains the BIEN dataset
 library(dplyr)#for manipulating dataframes
 library(stringr)#for working with strings
+######
 ```
 
 note: I couldn't install BIEN because my R would not install the package RPostgreSQL. This code seemed to fix the problem: install.packages("RPostgreSQL", type = "binary")
