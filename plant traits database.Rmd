@@ -96,8 +96,7 @@ INDFORSUS_species_list <- INDFORSUS_data %>%
   rename( #change the names of the columns so that they are written with capital letters
     Family = family,
     Genus = genus,
-    Species = species
-  )
+    Species = species)
 
 ```
 
@@ -130,18 +129,22 @@ final_species_list <- bind_rows(combined_species_list, INDFORSUS_species_list) %
 #clean up the history column
   mutate(history = str_replace_all(history, "\\bNA\\b", "")) %>%  # Replace 'NA' with empty string
   mutate(history = str_replace_all(history, "^,|,$", "")) %>%     # Remove leading/trailing commas
-  mutate(history = ifelse(history == "", NA, str_trim(history)))  # Trim spaces and set empty to NA
+  mutate(history = ifelse(history == "", NA, str_trim(history))) %>%
+  rename(history_at_INDFORSUS_site = history)# Trim spaces and set empty to NA
+
 
 #save the final_species_list as a .csv file
 write.csv(final_species_list, file = "final species list.csv", row.names = FALSE)
 
 #to view all the species with history
 species_with_history <- final_species_list %>%
-  filter(!is.na(history) & history != "") %>%
+  filter(!is.na(history_at_INDFORSUS_site) & history_at_INDFORSUS_site != "") %>%
   distinct(binomial_name)
 
 print(species_with_history)
 #this gives 23 species, which is correct because there were 23 species in the INDFORSUS_species_list
+
+
 
 
 ```
