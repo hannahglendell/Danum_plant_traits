@@ -10,7 +10,6 @@ library(here)#for telling R where my working directory is
 library(BIEN)#contains the BIEN dataset
 library(dplyr)#for manipulating dataframes
 library(stringr)#for working with strings
-######
 ```
 
 note: I couldn't install BIEN because my R would not install the package RPostgreSQL. This code seemed to fix the problem: install.packages("RPostgreSQL", type = "binary")
@@ -18,7 +17,7 @@ note: I couldn't install BIEN because my R would not install the package RPostgr
 **CREATING THE DANUM SPECIES LIST**
 
 ```{r}
-#read in the list of unlogged tree species
+#read in the list of unlogged tree species from the 50ha site
 unlogged_species <- read.csv(here("Danum_spp_list_unlogged.csv"))
 
 #create a new column with the full binomial latin name of each species
@@ -27,14 +26,14 @@ unlogged_species$binomial_name <- paste(unlogged_species$Genus, unlogged_species
 #create a dataframe of just the species names of unlogged trees.
 unlogged_species_list <- unlogged_species %>% 
   select(binomial_name, Family, Genus, Species) %>% #selects just the columns we want
-  mutate(logging_status = "unlogged") %>% #creates a new column called logging_status
-  mutate(species_origin = "50ha") %>%
+  mutate(logging_status = "unlogged") %>% #adds a new column called logging_status, and fills it with 'unlogged'
+  mutate(species_origin = "50ha") %>% #adds a column called species_origin, and fills it with '50ha'
   distinct(binomial_name, .keep_all=TRUE) #removes any duplicates from the list, based only on binomial_name
 
 ```
 
 ```{r}
-#read in the dataset of logged tree species
+#read in the dataset of logged tree species from the CP site
 logged_species <- read.csv(here("DanumRevised_35Plots_FullPlotData_Trees_2020_edit_4.11.csv"))
 
 #create a column with the full binomial latin name of each species
@@ -59,7 +58,7 @@ logged_species_list$Family <- str_to_title(str_to_lower(logged_species_list$Fami
 #summarize() - if a species appears more than once in the list, it is assigned "both" as its logging status, otherwise, it is assigned the logging_status that it already had when the dataframes were separate
 #ungroup() ungroups the data
 
-final_species_list <- bind_rows(logged_species_list, unlogged_species_list) %>%
+combined_species_list <- bind_rows(logged_species_list, unlogged_species_list) %>%
   group_by(binomial_name) %>%
   summarize(
     Family = first(Family),
@@ -70,15 +69,8 @@ final_species_list <- bind_rows(logged_species_list, unlogged_species_list) %>%
     .groups = "drop"
   )
 
-
-#seeing how many species there are in each logging status
-final_species_list %>%
-  count(logging_status)
-#this tells me that there are 95 logged species, 394 unlogged species, and 265 species that appear in both logged and unlogged areas.
-
-
-#save the final_species_list as a csv file
-write.csv(final_species_list, file = "final species list.csv", row.names = FALSE)
+#save the combined_species_list as a csv file
+write.csv(combined_species_list, file = "combined species list.csv", row.names = FALSE)
 
 ```
 
@@ -97,11 +89,8 @@ INDFORSUS_species_list <- INDFORSUS_data %>%
   distinct() %>% #remove rows that have the same information in every single column
   mutate(binomial_name = paste(genus, species, sep = " ")) %>% # add in a column with the binomial_name
   mutate(species_origin = "IF") %>%
-  mutate(logging_status = "logged")
-
-#change the names of the columns so that they are written with capital letters
-INDFORSUS_species_list <- INDFORSUS_species_list %>%
-  rename(
+  mutate(logging_status = "logged") %>%
+  rename( #change the names of the columns so that they are written with capital letters
     Family = family,
     Genus = genus,
     Species = species
@@ -110,21 +99,37 @@ INDFORSUS_species_list <- INDFORSUS_species_list %>%
 ```
 
 ```{r}
-#now I want to join the  final_species list and the INDFORSUS species lists together
-#I have a dataset called final_species_list which has the columns binomial_name, species_origin and logging_status. I have a dataset called INDFORSUS_species_list. in both datasets there is a column called binomial_name which contains the name of the species. I want to join the two datasets according to the binomial_name.
+#this code is to check how many unique species there are in the INDFORSUS_data dataset
+print(unique(INDFORSUS_data$species_code))
+#this dataset includes shorea fagetiana. hence has 22 unique species
+```
+
+```{r}
+#this code is to check how manu unique species there are in the InDFORSUS_species_list dataset
+print(unique(INDFORSUS_species_list$binomial_name))
+#this has both shorea fageutiana and shorea faguentiana, hence has 23 unique species
+```
+
+
+
+```{r}
+#now I want to join the  final_species list and the INDFORSUS species lists together. In both datasets there is a column called binomial_name which contains the name of the species. I want to join the two datasets according to the binomial_name.
 #
 #
-all_species_list <- bind_rows(final_species_list, INDFORSUS_species_list) %>%
+final_species_list <- bind_rows(combined_species_list, INDFORSUS_species_list) %>%
   group_by(binomial_name) %>%
   summarize(
     Family = first(Family),
     Genus = first(Genus),
     Species = first(Species),
-    history,
+    history = toString(unique(history)),
     species_origin = toString(sort(unique(species_origin))),#makes the species origin column
     logging_status = if (n_distinct(logging_status) > 1) "both" else first(logging_status),
-    .groups = "drop"
-  )
+    .groups = "drop")%>%
+  filter(!is.na(Family)) #removes the last row which is full of NAs. specifically, where the family is NA.
+
+#save the final_species_list as a .csv file
+write.csv(final_species_list, file = "final species list.csv", row.names = FALSE)
 
 ```
 
