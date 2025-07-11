@@ -89,7 +89,10 @@ INDFORSUS_species_list <- INDFORSUS_data %>%
   distinct() %>% #remove rows that have the same information in every single column
   mutate(binomial_name = paste(genus, species, sep = " ")) %>% # add in a column with the binomial_name
   mutate(species_origin = "IF") %>%
-  mutate(logging_status = "logged") %>%
+  mutate(logging_status = case_when(
+    history %in% c("ActiveRestoration", "NaturalRegeneration") ~ "logged",
+    history == "Unlogged" ~ "unlogged",
+    TRUE ~ NA_character_)) %>% #handels other cases; not really necessary here
   rename( #change the names of the columns so that they are written with capital letters
     Family = family,
     Genus = genus,
@@ -105,16 +108,13 @@ print(unique(INDFORSUS_data$species_code))
 ```
 
 ```{r}
-#this code is to check how manu unique species there are in the InDFORSUS_species_list dataset
+#this code is to check how manu unique species there are in the INDFORSUS_species_list dataset
 print(unique(INDFORSUS_species_list$binomial_name))
 #this has both shorea fageutiana and shorea faguentiana, hence has 23 unique species
 ```
 
-
-
 ```{r}
-#now I want to join the  final_species list and the INDFORSUS species lists together. In both datasets there is a column called binomial_name which contains the name of the species. I want to join the two datasets according to the binomial_name.
-#
+#now I want to join the  final_species list and the INDFORSUS species lists together, according to the binomial_name column.
 #
 final_species_list <- bind_rows(combined_species_list, INDFORSUS_species_list) %>%
   group_by(binomial_name) %>%
@@ -122,18 +122,31 @@ final_species_list <- bind_rows(combined_species_list, INDFORSUS_species_list) %
     Family = first(Family),
     Genus = first(Genus),
     Species = first(Species),
-    history = toString(unique(history)),
+    history = toString(unique(history)), #makes just one row per species, with all of its histories listed in one cell
     species_origin = toString(sort(unique(species_origin))),#makes the species origin column
     logging_status = if (n_distinct(logging_status) > 1) "both" else first(logging_status),
     .groups = "drop")%>%
-  filter(!is.na(Family)) #removes the last row which is full of NAs. specifically, where the family is NA.
+  filter(!is.na(Family)) %>% #removes the last row which is full of NAs. specifically, where the family is NA.
+#clean up the history column
+  mutate(history = str_replace_all(history, "\\bNA\\b", "")) %>%  # Replace 'NA' with empty string
+  mutate(history = str_replace_all(history, "^,|,$", "")) %>%     # Remove leading/trailing commas
+  mutate(history = ifelse(history == "", NA, str_trim(history)))  # Trim spaces and set empty to NA
 
 #save the final_species_list as a .csv file
 write.csv(final_species_list, file = "final species list.csv", row.names = FALSE)
 
+#to view all the species with history
+species_with_history <- final_species_list %>%
+  filter(!is.na(history) & history != "") %>%
+  distinct(binomial_name)
+
+print(species_with_history)
+#this gives 23 species, which is correct because there were 23 species in the INDFORSUS_species_list
+
+
 ```
 
-####################################################################
+#################################################################### 
 
 **ADDING IN THE PLANT TRAIT DATASETS**
 
