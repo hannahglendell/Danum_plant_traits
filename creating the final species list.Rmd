@@ -3,7 +3,10 @@ title: "plant traits database"
 output: html_document
 ---
 
-**DOCUMENT SETUP**
+**CREATING THE FINAL SPECIES LIST**
+This .Rmd file contains code that combines the list of species from three different sites at Danum: the 50ha site (unlogged), the CP site (logged) and the INDFORSUS site (both logged and unlogged). First I combined the data from the 50ha and the CP sites into one dataset called 'combined species list', and then I added in the INDFORSUS data, to create the 'final species list'.
+
+The final species list has ~ 750 different species. Each of these species was checked in the 'Plants of the world online' database from Kew (https://powo.science.kew.org/) to check for errors and synonyms. This new dataset is called 'final species list with corrected names' and can be found in the 'species list data' folder. This corrected dataset is then used in the 'accessing plant traits.Rmd', for further analysis.
 
 ```{r}
 library(here)#for telling R where my working directory is
@@ -18,7 +21,7 @@ note: I couldn't install BIEN because my R would not install the package RPostgr
 
 ```{r}
 #read in the list of unlogged tree species from the 50ha site
-unlogged_species <- read.csv(here("Danum_spp_list_unlogged.csv"))
+unlogged_species <- read.csv(here("species list data", "Danum_spp_list_unlogged.csv"))
 
 #create a new column with the full binomial latin name of each species
 unlogged_species$binomial_name <- paste(unlogged_species$Genus, unlogged_species$Species)
@@ -34,7 +37,7 @@ unlogged_species_list <- unlogged_species %>%
 
 ```{r}
 #read in the dataset of logged tree species from the CP site
-logged_species <- read.csv(here("DanumRevised_35Plots_FullPlotData_Trees_2020_edit_4.11.csv"))
+logged_species <- read.csv(here("species list data", "DanumRevised_35Plots_FullPlotData_Trees_2020_edit_4.11.csv"))
 
 #create a column with the full binomial latin name of each species
 logged_species$binomial_name <- paste(logged_species$Genus, logged_species$Species)
@@ -77,10 +80,10 @@ write.csv(combined_species_list, file = "combined species list.csv", row.names =
 ```{r}
 #adding in lists of species from actively restored or naturally regenerated areas
 #read in the data of the species found in the INFORSUS (logged) site
-INDFORSUS_data <- read.csv("mature_data_RH(in).csv")
+INDFORSUS_data <- read.csv(here("species list data", "mature_data_RH(in).csv"))
 
 #read in the data on their restoration status
-INDFORSUS_restoration_status_data <- read.csv("2018_2019Seedling_RH(Plot_Info).csv")
+INDFORSUS_restoration_status_data <- read.csv(here("species list data", "2018_2019Seedling_RH(Plot_Info).csv"))
 
 #now join the two datasets together
 INDFORSUS_species_list <- INDFORSUS_data %>%
@@ -96,7 +99,7 @@ INDFORSUS_species_list <- INDFORSUS_data %>%
   rename( #change the names of the columns so that they are written with capital letters
     Family = family,
     Genus = genus,
-    Species = species)
+    Species = species) 
 
 ```
 
@@ -143,9 +146,6 @@ species_with_history <- final_species_list %>%
 
 print(species_with_history)
 #this gives 23 species, which is correct because there were 23 species in the INDFORSUS_species_list
-
-
-
 
 ```
 
