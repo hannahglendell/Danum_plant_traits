@@ -67,12 +67,14 @@ list_sp_cleaned <- list_sp %>%
 ```{r}
 #BIEN_trait_mean estimates species mean trait values for a given trait, using Genus or Family level data where species level data is absent
 average_seed_mass = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed mass")
- average_seed_mass <- write.csv()
+
+write.csv(average_seed_mass, file = "average seed mass.csv", row.names = FALSE)
 #this assigns seed mass to all 753 species. It produces a dataframe which tells you the mean seed mass, the level used (family, genus or species) and the sample size used to produce that mean.
 
 #BIEN_trait_traitby species extracts entries that conatin the specified species and traits. So this extracts the records only for the species that match exactly. If a species does not match, then it does not produce an estimate based on Genus or Family level
 seed_mass_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed mass")
   
+write.csv(seed_mass_by_species, file = "seed mass by species.csv", row.names = FALSE)
 #there are 69 records at species level from my list of 753. But these 69 records are not necessarily 69 different species. some species appear to have more than one record. This dataset shows that the seed mas is the average seed mass of 1000 seed, and that most of the data come from SID (Seed Information Database) from kew gardens. 
 ```
 ```{r}
