@@ -10,22 +10,68 @@ library(dplyr)#for manipulating dataframes
 library(stringr)#for working with strings
 ```
 
+```{r}
+#read in the 'final species list with corrected names'
+species_list <- read.csv(here("species list data", "final species list with corrected names.csv"))
 
 
+#create a new column with corrected binomial name of each species
+species_list$binomial_name <- paste(species_list$genus, species_list$species)
+```
 
-ACCESSING THE PLANT TRAITS DATASETS
+FLOWER COLOUR AND FRUIT SIZE DATASETS - TRETHOWAN ET AL
 
 ```{r}
-#read in the plant trait datasets
-#flower trait data
-flower_traits <- read.csv(here("Flower_Trait_Data.csv"))
+#
+#flower trait data from Trethowan et al 2024
+trethowan_data <- read.csv(here("trait data", "Flower_Trait_Data.csv"))
 
+#merge the species list and the flower traits datasets together
+flower_traits <- left_join(species_list, trethowan_data, by = c("binomial_name" = "species")) %>%
+  select(original_binomial_name, binomial_name, comments, family.x, genus, species, species_origin, logging_status, corolla_colour, reference) %>% 
+  distinct()
+
+#data on fruit size from Trethowan et al 2023
+fruit_size_data <- read.csv(here("trait data", "figshare_fruit_data.csv"))
+
+#merge the species list and the fruit size datasets together
+fruit_size <- left_join(species_list, fruit_size_data, by = c("binomial_name" = "species")) %>%
+  select(original_binomial_name, binomial_name, comments, family, genus, species, species_origin, logging_status, fruit_size_mm, fruit_size_min_mm, reference)%>%
+  distinct()
+
+```
+
+
+
+THE BIEN TRAITS DATASET
+```{r}
+#exploring the BIEN database
+#use vignette("BIEN_tutorial") for instructions on how to extract data from the database
+#this gives a list of all the traits that this database has information on - 55 different traits.
+BIEN_trait_list <- BIEN_trait_list()
+#I will need to work out how to extract the traits for all the species I am interested in
+```
+
+
+```{r}
+#to look at all observations of flower color:
+BIEN_flower_colour <- BIEN_trait_trait(trait = "flower color")
+#this shows that there are around 3400 species for which there is data on flower colour
+
+#
+```
+
+
+OTHER PLANT TRAIT DATASETS
+```{r}
 #Tallo
 tallo <- read.csv(here("Tallo.csv"))
 
 #wood densities
 wood_densities <- read.csv(here("GlobalWoodDensityDatabase.csv"))
 ```
+
+
 
 ```{r}
 #filtering out the flower_traits dataset, to only look at the 754 species that appear in the final_species_list 
@@ -42,16 +88,4 @@ filtered_flower_traits <- flower_traits %>%
 #this filtered_flower_traits dataframe includes 50 species, meaning that there are 50 species in the flower_traits dataset that also appear in the unlogged_species dataset. This, of course, does not take into account that there might be alternative names for the same plant.
 ```
 
-```{r}
-#exploring the BIEN database
-#use vignette("BIEN_tutorial") for instructions on how to extract data from the database
-#this gives a list of all the traits that this database has information on - 55 different traits.
-BIEN_trait_list <- BIEN_trait_list()
-#I will need to work out how to extract the traits for all the species I am interested in
 
-#to look at all observations of flower color:
-BIEN_flower_colour <- BIEN_trait_trait(trait = "flower color")
-#this shows that there are around 3400 species for which there is data on flower colour
-
-#
-```
