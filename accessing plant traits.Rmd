@@ -108,39 +108,23 @@ length(unique(flower_colour_all$scrubbed_species_binomial))
 
 ```{r}
 #i want to check how many species from my 750 have any information in BIEN at all
-
-all_species_all_traits <- BIEN_trait_species(species = list_sp_cleaned)
+#DONT RUN THIS CODE, IT TAKES TOO LONG! THE DATASET IT CREATES IS TOO LARGE!
+#all_species_all_traits <- BIEN_trait_species(species = list_sp_cleaned)
 
 ```
-
-
-
 
 
 OTHER PLANT TRAIT DATASETS
 ```{r}
 #Tallo
-tallo <- read.csv(here("Tallo.csv"))
+tallo <- read.csv(here("trait data", "Tallo.csv"))
 
 #wood densities
-wood_densities <- read.csv(here("GlobalWoodDensityDatabase.csv"))
+wood_densities <- read.csv(here("trait data", "GlobalWoodDensityDatabase.csv"))
 ```
 
 
 
-```{r}
-#filtering out the flower_traits dataset, to only look at the 754 species that appear in the final_species_list 
 
-#in the flower_traits dataset, change the column name from species to binomial_name
-flower_traits <- flower_traits %>%
-  rename(binomial_name = species)
-
-
-# Filter flower_traits to only include species in final_species_list
-filtered_flower_traits <- flower_traits %>%
-  semi_join(final_species_list, by = "binomial_name")
-
-#this filtered_flower_traits dataframe includes 50 species, meaning that there are 50 species in the flower_traits dataset that also appear in the unlogged_species dataset. This, of course, does not take into account that there might be alternative names for the same plant.
-```
 
 
