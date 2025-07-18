@@ -8,7 +8,7 @@ library(here)#for telling R where my working directory is
 library(BIEN)#contains the BIEN dataset
 library(dplyr)#for manipulating dataframes
 library(stringr)#for working with strings
-library(tidyverse)
+library(tidyverse)#for data wrangling
 ```
 
 ```{r}
@@ -23,7 +23,6 @@ species_list$binomial_name <- paste(species_list$genus, species_list$species)
 FLOWER COLOUR AND FRUIT SIZE DATASETS - TRETHOWAN ET AL
 
 ```{r}
-#
 #flower trait data from Trethowan et al 2024
 trethowan_data <- read.csv(here("trait data", "Flower_Trait_Data.csv"))
 
@@ -31,7 +30,10 @@ trethowan_data <- read.csv(here("trait data", "Flower_Trait_Data.csv"))
 flower_traits <- left_join(species_list, trethowan_data, by = c("binomial_name" = "species")) %>%
   select(original_binomial_name, binomial_name, comments, family.x, genus, species, species_origin, logging_status, corolla_colour, reference) %>% 
   distinct()
+```
 
+
+```{r}
 #data on fruit size from Trethowan et al 2023
 fruit_size_data <- read.csv(here("trait data", "figshare_fruit_data.csv"))
 
@@ -49,7 +51,7 @@ THE BIEN TRAITS DATASET
 #exploring the BIEN database
 #use vignette("BIEN_tutorial") for instructions on how to extract data from the database
 
-#this gives a list of all the traits that this database has information on - 55 different traits.
+#this gives a list of all the traits that this database has information on - 54 different traits.
 BIEN_trait_list <- BIEN_trait_list()
 
 #make a vector of my 753 species
@@ -65,6 +67,7 @@ list_sp_cleaned <- list_sp %>%
 
 
 ```{r}
+#SEED MASS
 #BIEN_trait_mean estimates species mean trait values for a given trait, using Genus or Family level data where species level data is absent
 average_seed_mass = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed mass")
 
@@ -82,8 +85,8 @@ write.csv(seed_mass_by_species, file = "seed mass by species.csv", row.names = F
 ```
 
 
-
 ```{r}
+#SEED SIZE
 #looking at seed size size
 average_seed_length = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed length")
 
@@ -107,11 +110,12 @@ length(unique(flower_colour_all$scrubbed_species_binomial))
 ```
 
 ```{r}
-#i want to check how many species from my 750 have any information in BIEN at all
+#how about I try extracting all the trait data available for my 754 species?
 #DONT RUN THIS CODE, IT TAKES TOO LONG! THE DATASET IT CREATES IS TOO LARGE!
 #all_species_all_traits <- BIEN_trait_species(species = list_sp_cleaned)
 
 ```
+
 
 
 OTHER PLANT TRAIT DATASETS
