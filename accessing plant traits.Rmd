@@ -60,8 +60,8 @@ list_sp_cleaned <- list_sp %>%
   iconv(from = "", to = "UTF-8", sub = "byte") %>% #force encoding to UTF-8 and replace non-convertible characters
   gsub(pattern = "\u00a0", replacement = " ", .) %>% #replace non-breaking space (\u00a0)
   trimws() #trim whitespace
-
-```
+ 
+``` 
 
 
 ```{r}
