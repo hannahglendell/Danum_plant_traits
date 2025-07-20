@@ -139,6 +139,12 @@ TRY_species_codes <- read.delim(here("TryAccSpecies.txt"))
 Danum_species_codes <- left_join(species_list,TRY_species_codes, by = c("binomial_name" = "AccSpeciesName")) %>%
   select(binomial_name, AccSpeciesID)%>%
   filter(!is.na(AccSpeciesID))
+
+comma_separated <- Danum_species_codes %>%
+  pull(AccSpeciesID) %>%
+  paste(collapse = ",")
+
+cat(comma_separated)
 ```
 
 
