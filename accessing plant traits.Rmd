@@ -223,27 +223,71 @@ seed_dry_mass_TRY_clean <- seed_dry_mass_TRY %>%
 
 4) WOOD DENSITIES
 ```{r}
-#wood densities
+#wood densities from the global wood density database (WDD)
 wood_densities_raw <- read.csv(here("trait data", "GlobalWoodDensityDatabase.csv"))
 
-wood_densities <- left_join(species_list, wood_densities_raw, by = c("binomial_name" = "Binomial")) %>%
+#WDD stands for Wood Density Database
+wood_densities_WDD <- left_join(species_list, wood_densities_raw, by = c("binomial_name" = "Binomial")) %>%
   rename(wood_density_g_cm_3 = Wood.density..g.cm.3...oven.dry.mass.fresh.volume) %>%
   select(binomial_name, wood_density_g_cm_3) %>%
   group_by(binomial_name) %>%
   summarise(mean_wood_density_g_cm_3 = round(mean(wood_density_g_cm_3, na.rm = TRUE), 2)) %>%
   filter(!is.nan(mean_wood_density_g_cm_3))
 
-wood_densities_merged <- left_join(wood_densities, species_list, by = c("binomial_name" = "binomial_name")) %>%
-  select(binomial_name, mean_wood_density_g_cm_3, family, genus, species, species_origin, logging_status)
+#wood densities from TRY
+wood_density_TRY_clean <- wood_density_TRY %>%
+  select(AccSpeciesName, StdValue) %>%
+  rename(wood_density_g_cm_3 = StdValue, binomial_name = AccSpeciesName) %>%
+  group_by(binomial_name) %>%
+  summarise(mean_wood_density_g_cm_3 = round(mean(wood_density_g_cm_3, na.rm = TRUE), 2)) %>%
+  filter(!is.nan(mean_wood_density_g_cm_3))
 
-#I don't think there is much point in combining this with TRY wood densities, because almost all come from this dataset anyway. maybe this is something to come back to later.
+#join WDD and TRY datasets with the species_list
+df_list <- list(species_list, wood_densities_WDD, wood_density_TRY_clean)
+
+merged_wood_densities <- reduce(df_list, left_join, by = "binomial_name")
+
+#now, i want to join mean_wood_density_g_cm_3.x and mean_wood_density_g_cm_3.y columns together. if there is a value in both, take the mean of both columns.
+merged_wood_densities <- merged_wood_densities %>%
+  mutate(
+    mean_wood_density_g_cm_3 = case_when(
+      !is.na(mean_wood_density_g_cm_3.x) & !is.na(mean_wood_density_g_cm_3.y) ~ 
+        round((mean_wood_density_g_cm_3.x + mean_wood_density_g_cm_3.y) / 2, 2),
+      !is.na(mean_wood_density_g_cm_3.x) ~ mean_wood_density_g_cm_3.x,
+      !is.na(mean_wood_density_g_cm_3.y) ~ mean_wood_density_g_cm_3.y,
+      TRUE ~ NA_real_
+    )
+  ) %>%
+  select(binomial_name, family, genus, species, mean_wood_density_g_cm_3, species_origin, logging_status )
+
+
 ```
+
+```{r}
+merged_wood_densities <- merged_wood_densities %>%
+  mutate(
+    logged = if_else(logging_status %in% c("logged", "both"), 1, 0),
+    unlogged = if_else(logging_status %in% c("unlogged", "both"), 1, 0)
+  )
+```
+
+```{r}
+long_data <- merged_wood_densities %>%
+  pivot_longer(cols = c(logged, unlogged), names_to = "condition", values_to= "mean+wood_density_g_cm_3")
+```
+
+```{r}
+ggplot(long_data, aes(x = condition, y = mean_wood_density_g_cm_3, color = condition)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6) +
+  theme_bw()
+```
+
 
 ```{r}
 #now, can I explore the wood density data?
 #do logged forests have lower wood density? I.e because logging selectively removes the most dense trees...
 
-ggplot(wood_densities_merged, aes(x = logging_status, y = mean_wood_density_g_cm_3)) +
+ggplot(merged_wood_densities, aes(x = logging_status, y = mean_wood_density_g_cm_3)) +
   geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
   labs(
     title = "Wood Density by Logging Status",
@@ -256,7 +300,7 @@ ggplot(wood_densities_merged, aes(x = logging_status, y = mean_wood_density_g_cm
 
 
 
-TALLO - TREE HEIGHT, CROWN RADIUM, STEM DIAMETER
+5) TALLO - TREE HEIGHT, CROWN RADIUM, STEM DIAMETER
 ```{r}
 #Tallo (tree height)
 tallo <- read.csv(here("trait data", "Tallo.csv"))
