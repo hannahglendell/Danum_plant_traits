@@ -1,7 +1,7 @@
 ---
 title: "plant traits database"
 output: html_document
----
+--- 
 
 **CREATING THE FINAL SPECIES LIST**
 This .Rmd file contains code that combines the list of species from three different sites at Danum: the 50ha site (unlogged), the CP site (logged) and the INDFORSUS site (both logged and unlogged). First I combined the data from the 50ha and the CP sites into one dataset called 'combined species list', and then I added in the INDFORSUS data, to create the 'final species list'.

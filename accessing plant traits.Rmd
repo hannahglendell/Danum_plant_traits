@@ -13,7 +13,7 @@ library(tidyverse)#for data wrangling
 
 ```{r}
 #read in the 'final species list with corrected names'
-species_list <- read.csv(here("species list data", "final species list with corrected names.csv"))
+species_list <- read.csv(here("species list data", "final species list corrected and cleaned.csv"))
 
 
 #create a new column with corrected binomial name of each species
@@ -28,7 +28,7 @@ trethowan_data <- read.csv(here("trait data", "Flower_Trait_Data.csv"))
 
 #merge the species list and the flower traits datasets together
 flower_traits <- left_join(species_list, trethowan_data, by = c("binomial_name" = "species")) %>%
-  select(original_binomial_name, binomial_name, comments, family.x, genus, species, species_origin, logging_status, corolla_colour, reference) %>% 
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, calyx_length_mm, corolla_tube_mm, corolla_length_mm, reference) %>% 
   distinct()
 ```
 
@@ -39,7 +39,7 @@ fruit_size_data <- read.csv(here("trait data", "figshare_fruit_data.csv"))
 
 #merge the species list and the fruit size datasets together
 fruit_size <- left_join(species_list, fruit_size_data, by = c("binomial_name" = "species")) %>%
-  select(original_binomial_name, binomial_name, comments, family, genus, species, species_origin, logging_status, fruit_size_mm, fruit_size_min_mm, reference)%>%
+  select(binomial_name, family, genus, species, species_origin, logging_status, fruit_size_mm, fruit_size_min_mm, reference)%>%
   distinct()
 
 ```
@@ -120,14 +120,32 @@ length(unique(flower_colour_all$scrubbed_species_binomial))
 
 OTHER PLANT TRAIT DATASETS
 ```{r}
-#Tallo
+#Tallo (tree height)
 tallo <- read.csv(here("trait data", "Tallo.csv"))
 
+
 #wood densities
-wood_densities <- read.csv(here("trait data", "GlobalWoodDensityDatabase.csv"))
+wood_densities_raw <- read.csv(here("trait data", "GlobalWoodDensityDatabase.csv"))
+
+wood_densities <- left_join(species_list, wood_densities_raw, by = c("binomial_name" = "Binomial")) %>%
+  select(binomial_name, Wood.density..g.cm.3...oven.dry.mass.fresh.volume)
 ```
 
 
+```{r}
+#read in the dataset on the TRY species codes
+TRY_species_codes <- read.delim(here("TryAccSpecies.txt"))
+
+Danum_species_codes <- left_join(species_list,TRY_species_codes, by = c("binomial_name" = "AccSpeciesName")) %>%
+  select(binomial_name, AccSpeciesID)%>%
+  filter(!is.na(AccSpeciesID))
+
+comma_separated <- Danum_species_codes %>%
+  pull(AccSpeciesID) %>%
+  paste(collapse = ",")
+
+cat(comma_separated)
+```
 
 
 
