@@ -1,0 +1,497 @@
+---
+title: "sta"
+author: "Ugo Soggiu"
+date: '2024-03-15'
+---
+```{r message=FALSE, warning=FALSE}
+install.packages("BIEN")
+library(BIEN)
+library(readr)
+library(tidyverse)
+```
+
+# test bain package 
+
+```{r}
+Osuri_regen_data <- read_delim("Osuri_regen_data.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+Osuri_tree_data <- read_delim("Osuri_tree_data.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+tree_old <- read_delim("tree_olddata.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+Bahamas_species_list <- BIEN_list_country(country = "Bahamas")
+India_species_list <- BIEN_list_country(country = "India")
+trait_list = BIEN_trait_list()
+
+Osuri_species_adult_2 = tree_old[!duplicated(tree_old$species), ]
+
+Osuri_species_seedl = Osuri_regen_data[!duplicated(Osuri_regen_data$Species_name), ]
+Osuri_species_adult = Osuri_tree_data[!duplicated(Osuri_tree_data$Species_name), ]
+Osuri_species_list = as.character(Osuri_species_adult$Species_name)
+
+# Find species in species_table1 that are not in species_table2
+species_not_in_table2 <- setdiff(Osuri_species_adult$Species_name, Osuri_species_adult_2$species)
+
+# Find species in species_table2 that are not in species_table1
+species_not_in_table1 <- setdiff(Osuri_species_adult_2$species,Osuri_species_adult$Species_name)
+
+# Find species common to both tables
+common_species <- intersect(Osuri_species_adult_2$species,Osuri_species_adult$Species_name)
+
+all_species <- union(union(species_not_in_table2, species_not_in_table1), common_species)
+
+#write.csv(all_species, file = "species_list.csv", row.names = FALSE)
+
+```
+
+# Species list with seedling 
+
+```{r}
+Osuri_seedl_data <- read_delim("Osuri_anamalais_data/Osuri_regen_data.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+Osuri_species_seedl = Osuri_regen_data[!duplicated(Osuri_regen_data$Species_name), ]
+
+Regen_old <- read_delim("Osuri_anamalais_data/regen_olddata.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+Old_species_seedl = Regen_old[!duplicated(Regen_old$Species.name), ]
+
+# Find species in species_table1 that are not in species_table2
+species_1 <- setdiff(Old_species_seedl$Species.name, Osuri_species_seedl$Species_name)
+
+# Find species in species_table2 that are not in species_table1
+species_2 <- setdiff(Osuri_species_seedl$Species_name,Old_species_seedl$Species.name)
+
+# Find species common to both tables
+common_species_2 <- intersect(Old_species_seedl$Species.name,Osuri_species_seedl$Species_name)
+
+all_species_2 <- union(union(species_2, species_1), common_species_2)
+
+diff_adult_seed_1 <- setdiff(all_species,all_species_2)
+diff_adult_seed_2 <- setdiff(all_species_2,all_species)
+common_species_to <- intersect(all_species_2,all_species)
+common_species_old <- intersect(Old_species_seedl$Species.name,Osuri_species_adult_2$species)
+common_species_new <- intersect(Osuri_species_seedl$Species_name,Osuri_species_adult$Species_name)
+
+all_species_tot <- union(all_species, all_species_2)
+
+write.csv(all_species_tot, file = "species_list_tot.csv", row.names = FALSE)
+```
+
+## synonym species updated
+The species list was cross checked with World Plant Online : https://powo.science.kew.org/
+Synonyms and error was corrected and noted via excel. 
+Here we apply this correction to the presence-absence table 
+
+```{r}
+Osuri_regen_data <- read_delim("Osuri_regen_data.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+list_species = read_delim("species_list_tot.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+for(i in 1 : 1632){
+  for(j in 1 : 207){
+    
+  if (!is.na(list_species[j, 3])){
+    if (Osuri_regen_data[i,4] == list_species[j,3]){
+    Osuri_regen_data[i,4] <- list_species[j,1]
+  } 
+  }
+  if (!is.na(list_species[j, 4])){
+    if(Osuri_regen_data[i,4] == list_species[j,4]){
+    Osuri_regen_data[i,4] <- list_species[j,1]
+  }
+  }
+  }
+}
+Osuri_tree_data <- read_delim("Osuri_tree_data.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+for(i in 1 : 2195){
+  for(j in 1 : 207){
+    
+  if (!is.na(list_species[j, 3])){
+    if (Osuri_tree_data[i,4] == list_species[j,3]){
+    Osuri_tree_data[i,4] <- list_species[j,1]
+  } 
+  }
+  if (!is.na(list_species[j, 4])){
+    if(Osuri_tree_data[i,4] == list_species[j,4]){
+    Osuri_tree_data[i,4] <- list_species[j,1]
+  }
+  }
+  }
+}
+tree_old <- read_delim("tree_olddata.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+for(i in 1 : 3430){
+  for(j in 1 : 207){
+    
+  if (!is.na(list_species[j, 3])){
+    if (tree_old[i,10] == list_species[j,3]){
+    tree_old[i,10] <- list_species[j,1]
+  } 
+  }
+  if (!is.na(list_species[j, 4])){
+    if(tree_old[i,10] == list_species[j,4]){
+    tree_old[i,10] <- list_species[j,1]
+  }
+  }
+  }
+}
+old_regen <- read_delim("old_regen.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+for(i in 1 : 600){
+  for(j in 1 : 207){
+    
+  if (!is.na(list_species[j, 3])){
+    if (old_regen[i,8] == list_species[j,3]){
+    old_regen[i,8] <- list_species[j,1]
+  } 
+  }
+  if (!is.na(list_species[j, 4])){
+    if(old_regen[i,8] == list_species[j,4]){
+    old_regen[i,8] <- list_species[j,1]
+  }
+  }
+  }
+}
+#write.csv(tree_old, file = "old_tree_cor.csv", row.names = FALSE)
+#write.csv(Osuri_tree_data, file = "OS_tree_cor.csv", row.names = FALSE)
+#write.csv(Osuri_regen_data, file ="OS_regen_cor.csv", row.names = FALSE)
+#write.csv(old_regen, file ="old_regen_cor.csv", row.names = FALSE)
+```
+
+#Trait available_Osuri 
+One leaf trait dataset from Osuri study of 2024 was shared with us. 
+This dataset was crossed with the species lists of study site to create a table of trait. 
+The first operation was to check for which species trait data are available ->
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
+Tree_trait <- read_delim("IN_TRAITS.MASTER.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+Species_ID <- read_delim("species.master.tplfixed.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+list_species = read_delim("species_list_tot.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+#remove all the duplica
+Species_trait = Tree_trait[!duplicated(Tree_trait$species), ]
+
+# Utilisez match() pour obtenir les indices des noms complets des espèces correspondant aux codes d'espèces dans Tree_trait$species
+matching_indices <- match(Species_trait$species, Species_ID$spcode)
+
+# Utilisez les indices pour obtenir les noms complets des espèces correspondant aux codes d'espèces dans Tree_trait$species
+full_species_names <- Species_ID$species[matching_indices]
+
+# Ajoutez la nouvelle colonne contenant les noms complets des espèces à Tree_trait
+Species_trait$full_species_name <- full_species_names
+
+## we do the same with our own species list
+# Utilisez match() pour obtenir les indices des noms complets des espèces correspondant aux codes d'espèces dans Tree_trait$species
+matching_indices <- match(Species_trait$species, list_species$sp_code)
+
+# Utilisez les indices pour obtenir les noms complets des espèces correspondant aux codes d'espèces dans Tree_trait$species
+full_species_names <- list_species$species[matching_indices]
+
+# Ajoutez la nouvelle colonne contenant les noms complets des espèces à Tree_trait
+Species_trait$plot_species_name <- full_species_names
+
+# Reorganise col. 
+colonne_a_deplacer = Species_trait[,c(32,33)]
+Species_trait <- Species_trait[, -c(32,33)] #remove extra col
+Species_trait <- cbind(Species_trait[, 1:8], colonne_a_deplacer, Species_trait[, 9:ncol(Species_trait)]) #Insert col in the right place
+
+Trait_available = na.omit(Species_trait$plot_species_name)
+Missing_species = list_species[!(list_species$species %in% Trait_available), ]
+#write.csv(Missing_species, file = "Missing_species.csv", row.names = FALSE)
+
+```
+
+#Fruit table (finish all trait good ! )
+Another datasets with the fruit and dispersal trait. 
+Same operation. 
+
+```{r}
+Fruit_data <- read_delim("Anamalais_trait_data_2024.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+
+Fruit_table = as.data.frame(list_species[,c(1,2)])
+
+matching_indices <- match(list_species$species,Fruit_data$Accept_name_WFO)
+full_species_names <- Fruit_data[matching_indices, 5:16]
+Fruit_table[,3:14] <- full_species_names[,1:12]
+Fruit_table[c(41,44,90,206),3:14] <- Fruit_data[c(49,53,118,261),5:16]
+#write.csv(Fruit_table, file = "Fruit_table.csv", row.names = FALSE)
+```
+
+## Seed Bien 
+```{r}
+Dispers_data <- read_delim("Fruit_table.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+List_sp = Dispers_data$species
+#list of availible trait in BIEN 
+trait_list = BIEN_trait_list()
+
+Seed_mass_BIEN = BIEN_trait_mean(species = List_sp, trait = "seed mass")
+Seed_length_BIEN = BIEN_trait_mean(species = List_sp, trait = "seed length")
+#write.csv(Seed_mass_BIEN, file = "Seed_mass_Bien.csv", row.names = FALSE)
+```
+
+#Creation of the final trait table
+First, calculate the median trait value per species. 
+Then, cross with the species list from our plot. 
+
+```{r}
+
+Tree_trait = Tree_trait[,-c(1:8,28:31)]
+Species_Osu = Tree_trait[!duplicated(Tree_trait$species), ]
+
+#calculation of the mean trait value (Osuri data)
+
+Mean_trait <- as.data.frame(matrix(NA, nrow = 245, ncol = 19)) #creation of empty matrix to welcome the mean trait value (per species)
+colnames(Mean_trait) = colnames(Tree_trait)
+Mean_trait[,1] = Species_Osu$species
+sample = list()
+i = 1
+j =2
+for(i in 1:245){                    #loop which calculate the mean trait value for each trait per species
+  y = as.character(Mean_trait[i,1])
+  Species = as.data.frame(subset(Tree_trait, species == y))
+  sample[i] = nrow(Species)              # number of samples per species 
+  for(j in 2:19){
+   x = mean(Species[,j], na.rm = TRUE) #why mean and not median ? 
+   Mean_trait[i,j] <- x                
+  }
+}
+Mean_trait$sample = sample
+
+#alternative without loop 
+
+# Calculate the mean of each col per species
+#Mean_Species <- Tree_trait_trans %>%
+ # group_by(plot_species_name) %>%
+  #summarise_all(~ mean(., na.rm = TRUE)) %>%
+  #rename_with(~ paste0("mean_", .), -plot_species_name)
+
+# Link "Mean_Species" with "Mean_trait"
+#Mean_trait <- left_join(Mean_trait, Mean_Species, by = c("species" = "plot_species_name"))
+
+
+# Final table creation
+Leaf_table = as.data.frame(list_species[,c(1,2)])
+
+matching_indices <- match(list_species$sp_code,Mean_trait$species) 
+full_species_names <- Mean_trait[matching_indices, 2:20]
+Leaf_table[,3:21] <- full_species_names[,1:19]
+Leaf_table_Na <- na.omit(Leaf_table[,c(1:3)])   #Just a test to see the number of species with available trait data 
+# Sélectionner les colonnes avec au moins une valeur NA
+Leaf_missng <- anti_join(Leaf_table, Leaf_table_Na)
+Leaf_table$sample <- sapply(Leaf_table$sample, function(x) ifelse(length(x) == 1, x, NA))
+
+#write.csv(Leaf_table, file = "Leaf_table_OS.csv", row.names = FALSE)
+```
+
+# Bien trait filling the gaps 
+To fill the data gaps, we have used the Database BIEN from the package BIEN. 
+Here, the different datasets are selected from the package. 
+
+```{r}
+Leaf_Genus <- read_delim("Leaf_table_genus.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+Leaf_Genus_Na <- na.omit(Leaf_Genus[,c(1:3)])   #Just a test to see the number of species with available trait data 
+# Sélectionner les colonnes avec au moins une valeur NA
+Genus_missng <- anti_join(Leaf_Genus, Leaf_Genus_Na)
+
+List_missing = as.character(as.list(Leaf_missng[,1]))
+
+#list of availible trait in BIEN 
+trait_list = BIEN_trait_list()
+
+#LDMC datasets
+LDMC_BIEN = BIEN_trait_mean(species = List_missing, trait = "leaf dry mass per leaf fresh mass")
+#SLA datasets 
+SLA_BIEN = BIEN_trait_mean(species = List_missing, trait = "leaf area per leaf dry mass")
+# LeafN (nitrogen)
+LeafN_BIEN = BIEN_trait_mean(species = List_missing, trait = "leaf nitrogen content per leaf dry mass")
+# LeafP (phosphorus)
+LeafP_BIEN = BIEN_trait_mean(species = List_missing, trait = "leaf phosphorus content per leaf dry mass")
+# Seed Size
+Seed_size_BIEN = BIEN_trait_mean(species = List_missing, trait = "seed length")
+# Height
+#Height_BIEN = BIEN_trait_mean(species = List_missing, trait = "whole plant height")
+
+occurrences <- BIEN_occurrence_species(species = List_missing)
+
+#write.csv(LDMC_BIEN, file = "LDMC_BIEN.csv", row.names = FALSE)
+#write.csv(SLA_BIEN, file = "SLA_BIEN.csv", row.names = FALSE)
+#write.csv(LeafN_BIEN, file = "LeafN_BIEN.csv", row.names = FALSE)
+#write.csv(Seed_size_BIEN, file = "Seed_size_BIEN.csv", row.names = FALSE)
+#write.csv(LeafP_BIEN, file = "LeafP_BIEN.csv", row.names = FALSE)
+```
+
+# Final crossing value
+Crossing between BIEN and Osuri Data
+```{r}
+Leaf_Genus <- read_delim("Leaf_table_genus.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+Leaf_table <- read_delim("Leaf_table_OS.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+#remove unnecessary col
+Trait_genus = Leaf_Genus[,-c(6:11,18:21)]
+Trait_table = Leaf_table[,-c(5:10,17:20)]
+Trait_table$Level = Leaf_Genus$Level
+#add sources 
+Trait_table$Source <- ifelse(is.na(Trait_table$Level), "BIEN", "OS")
+#add genus level 
+Trait_table[,c(3:11)] = Trait_genus[,c(4:12)]
+
+## BIEN DATA 
+SLA_BIEN <- read_delim("SLA_BIEN.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+LDMC_BIEN <- read_delim("LDMC_BIEN.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+SLA_genus = SLA_BIEN[which(SLA_BIEN$level_used != "Family"),]
+
+#put SLA BIEN value 
+Trait <- Trait_table %>%
+  left_join(SLA_genus[,c(1,5,6)], by = "species") %>%
+  mutate(sla_cm2.g = ifelse(is.na(sla_cm2.g), `cm²/g`, sla_cm2.g)) %>%
+  select(-c(`cm²/g`))
+#LDMC
+## unit not correct for the OSURI DATA, transform in mg/g
+LDMC_genus = LDMC_BIEN[which(LDMC_BIEN$level_used != "Family"),]
+Trait <- Trait %>% 
+  mutate(LDMC= LDMC * 1000) %>% #mg/g
+  left_join(LDMC_genus[,c(1,5,2)], by = "species") %>% #same thing that for SLA 
+  mutate(LDMC = ifelse(is.na(LDMC), mean_value, LDMC)) %>%
+  select(-c(mean_value))
+#Nitrogen 
+N_BIEN <- read_delim("LeafN_BIEN.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+N_genus = N_BIEN[which(N_BIEN$level_used != "Family"),]
+Trait <- Trait %>% 
+  mutate(leafN = leafN * 10) %>% #mg/g
+  left_join(N_genus[,c(1,5,2)], by = "species") %>% #same thing that for SLA 
+  mutate(leafN = ifelse(is.na(leafN), mean_value, leafN)) %>%
+  select(-c(mean_value))
+#Phosphorus 
+P_BIEN <- read_delim("LeafP_BIEN.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+P_genus = P_BIEN[which(P_BIEN$level_used != "Family"),]
+Trait <- Trait %>% 
+  mutate(leafP = leafP * 10) %>% #mg/g
+  left_join(P_genus[,c(1,5,2)], by = "species") %>% #same thing that for SLA 
+  mutate(leafP = ifelse(is.na(leafP), mean_value, leafP)) %>%
+  select(-c(mean_value))
+#write.csv(Trait, file = "Trait.csv", row.names = FALSE)
+```
+
+## add Family 
+The data was add in three step : the genus level from Osuri - genus from BEIN - Family from BIEN 
+The Family from Osuri was to short. Here, it's the final step. 
+```{r}
+## BIEN DATA 
+SLA_BIEN <- read_delim("SLA_BIEN.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+LDMC_BIEN <- read_delim("LDMC_BIEN.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+N_BIEN <- read_delim("LeafN_BIEN.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+P_BIEN <- read_delim("LeafP_BIEN.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+Trait <- read_delim("Trait.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+#SLA
+count_SLA <- sum(is.na(Trait$sla_cm2.g))
+##SLA BIEN value 
+Trait <- Trait %>%
+  left_join(SLA_BIEN[,c(1,5,6)], by = "species") %>%
+  mutate(sla_cm2.g = ifelse(is.na(sla_cm2.g), `cm²/g`, sla_cm2.g)) %>%
+  select(-c(`cm²/g`))
+#LDMC 
+count_LDMC <- sum(is.na(Trait[,7]))
+#add
+Trait <- Trait %>% 
+  left_join(LDMC_BIEN[,c(1,5,2)], by = "species") %>% #same thing that for SLA 
+  mutate(LDMC = ifelse(is.na(LDMC), mean_value, LDMC)) %>%
+  select(-c(mean_value))
+#N
+count_N <- sum(is.na(Trait[,9]))
+#add
+Trait <- Trait %>% 
+  left_join(N_BIEN[,c(1,5,2)], by = "species") %>% #same thing that for SLA 
+  mutate(leafN = ifelse(is.na(leafN), mean_value, leafN)) %>%
+  select(-c(mean_value))
+#P
+count_P <- sum(is.na(Trait[,10]))
+#add
+Trait <- Trait %>% 
+  left_join(P_BIEN[,c(1,5,2)], by = "species") %>% #same thing that for SLA 
+  mutate(leafP = ifelse(is.na(leafP), mean_value, leafP)) %>%
+  select(-c(mean_value))
+#write.csv(Trait, file = "Trait_final.csv", row.names = FALSE)
+```
+
+
+##WD and height
+For Wood density (WD) and height, the presence dataset of tree and seedling contain WD and height value. 
+So theses values are collected in the final table. 
+```{r}
+Osuri_regen_data <- read_delim("OS_regen_cor.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+Osuri_tree_data <- read_delim("OS_tree_cor.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+tree_old <- read_delim("old_tree_cor.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+Trait <- read_delim("Trait_final.csv", delim = ",", escape_double = FALSE, trim_ws = TRUE)
+
+WD_Species = Osuri_tree_data[,-c(1:3,6:18,29:31)]
+
+#Mean of each species 
+sp = Osuri_tree_data[!duplicated(Osuri_tree_data$Species_name),-c(1:3,6:18,29:31) ]
+Mean_trait <- as.data.frame(matrix(NA, nrow = 130, ncol = 12)) #creation of empty matrix to welcome the mean trait value (per species)
+colnames(Mean_trait) = colnames(WD_Species)
+Mean_trait[,c(1,3:6,9:11)] = sp[,c(1,3:6,9:11)]
+sample = list()
+ine = c(2,7,8,12)
+for(i in 1:133){                    #loop which calculate the mean trait value for each trait per species
+  y = as.character(Mean_trait[i,1])
+  Species = as.data.frame(subset(WD_Species, Species_name == y))
+  sample[i] = nrow(Species)              # number of samples per species 
+  for(j in ine){
+   x = mean(Species[,j], na.rm = TRUE) #why mean and not median ? 
+   Mean_trait[i,j] <- x                
+  }
+}
+Mean_trait$sample = sample
+WD_Species = Mean_trait
+colnames(WD_Species)[colnames(WD_Species) == "Species_name"] <- "species"
+WD_Species = as.data.frame(WD_Species)
+
+# Left join on 'species'
+Trait_t <- Trait[,-c(14:23)] %>%
+  left_join(WD_Species[, c("species", "Wden_final")], by = "species")
+
+# Update 'wd_g.cm3' with 'Wden_final' for common species
+Trait_t <- Trait_t %>%
+  mutate(wd_g.cm3 = ifelse(!is.na(Wden_final), Wden_final, wd_g.cm3)) %>%
+  select(-Wden_final)  # Remove 'Wden_final' after updating
+
+#Same for ad_ht
+Trait_t <- Trait_t %>%
+  left_join(WD_Species[,c(1,2)], by = "species") %>%
+  mutate(ht_m = ifelse(is.na(ht_m), Height, ht_m)) %>%
+  select(-c(Height))
+
+            ## Same operation with seedling ##
+WD_Species = Osuri_regen_data[,c(4,11,15)]
+
+#Mean of each species 
+sp = Osuri_regen_data[!duplicated(Osuri_regen_data$Species_name),c(4,11,15) ]
+Mean_trait <- as.data.frame(matrix(NA, nrow = 150, ncol = 3)) #creation of empty matrix to welcome the mean trait value (per species)
+Mean_trait[,1] = sp[,1]
+colnames(Mean_trait) = colnames(WD_Species)
+sample = list()
+i =1
+for(i in 1:150){                    #loop which calculate the mean trait value for each trait per species
+  y = as.character(sp[i,1])
+  Species = as.data.frame(subset(WD_Species, Species_name == y))
+  sample[i] = nrow(Species)              # number of samples per species 
+  for(j in 2:3){
+   x = mean(Species[,j], na.rm = TRUE) #why mean and not median ? 
+   Mean_trait[i,j] <- x                
+  }
+}
+Mean_trait$sample = sample
+WD_Species = Mean_trait
+colnames(WD_Species)[colnames(WD_Species) == "Species_name"] <- "species"
+WD_Species = as.data.frame(WD_Species)
+
+# Left join on 'species'
+Trait_t <- Trait_t %>%
+  left_join(WD_Species[,c(1,2)], by = "species") %>%
+  mutate(wd_g.cm3 = ifelse(is.na(wd_g.cm3), Wden_final, wd_g.cm3)) %>%
+  select(-c(Wden_final))
+
+#Same for ad_ht
+Trait_t <- Trait_t %>%
+  left_join(WD_Species[,c(1,3)], by = "species") %>%
+  mutate(ht_m = ifelse(is.na(ht_m), ad_ht, ht_m)) %>%
+  select(-c(ad_ht))
+
+Trait_t[Trait_t == "NaN"] <- NA
+
+#write.csv(Trait_t, file = "Trait_final.csv", row.names = FALSE)
+```
+
+
+
+

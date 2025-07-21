@@ -1,0 +1,78 @@
+---
+title: "accessing TRY data"
+output: html_document
+---
+
+```{r}
+library(here)#for telling R where my working directory is
+library(rtry)
+library(dplyr)#for manipulating dataframes
+library(stringr)#for working with strings
+library(tidyverse)#for data wrangling
+```
+
+```{r}
+#to get the list of TRY codes for my species
+#read in the dataset on the TRY species codes
+TRY_species_codes <- read.delim(here("TryAccSpecies.txt"))
+
+Danum_species_codes <- left_join(species_list,TRY_species_codes, by = c("binomial_name" = "AccSpeciesName")) %>%
+  select(binomial_name, AccSpeciesID)%>%
+  filter(!is.na(AccSpeciesID))
+
+comma_separated <- Danum_species_codes %>%
+  pull(AccSpeciesID) %>%
+  paste(collapse = ",")
+
+cat(comma_separated)
+```
+
+
+```{r}
+#read in the raw TRY data
+TRY_data_raw <- read.delim(here("TRY data.txt"))
+```
+
+```{r}
+#I want to create a separate dataset for each trait, so that the data is easier to handle
+# List of TraitIDs you want to filter
+trait_ids <- c(207, 28, 26, 239, 919, 917, 4, 3684, 335)
+
+# Create a list to store each subset as a separate data frame
+separated_datasets <- list()
+
+# Loop through each TraitID and filter the dataset
+for (trait_id in trait_ids) {
+  dataset_name <- paste0("TraitID_", trait_id)
+  separated_datasets[[dataset_name]] <- TRY_data_raw %>%
+    filter(TraitID == trait_id)
+}
+
+flower_colour <- separated_datasets$TraitID_207
+#14 records on flower colour, worth working with 
+
+seed_dispersal_syndrome <- separated_datasets$TraitID_28
+#321 entries, worth working with 
+
+seed_dry_mass <- separated_datasets$TraitID_26
+#656 records, worth working with 
+
+seed_width <- separated_datasets$TraitID_239
+#1 records - discard
+
+fruit_dry_mass <- separated_datasets$TraitID_919
+#only 4 different species - not really worth it
+
+fruit_width <- separated_datasets$TraitID_917
+#1 record - discard
+
+wood_density <- separated_datasets$TraitID_4
+#1581 records, worth working with 
+
+crown_elevation <- separated_datasets$TraitID_3684
+#0 records, discard
+
+reproductive_phenology <- separated_datasets$TraitID_335
+#only 5 different species
+```
+
