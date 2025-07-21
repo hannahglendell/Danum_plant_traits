@@ -20,18 +20,32 @@ species_list <- read.csv(here("species list data", "final species list corrected
 species_list$binomial_name <- paste(species_list$genus, species_list$species)
 ```
 
-FLOWER COLOUR AND FRUIT SIZE DATASETS - TRETHOWAN ET AL
+FLOWER COLOUR 
 
 ```{r}
 #flower trait data from Trethowan et al 2024
 trethowan_data <- read.csv(here("trait data", "Flower_Trait_Data.csv"))
 
 #merge the species list and the flower traits datasets together
-flower_traits <- left_join(species_list, trethowan_data, by = c("binomial_name" = "species")) %>%
-  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, calyx_length_mm, corolla_tube_mm, corolla_length_mm, reference) %>% 
+flower_colour_trethowan <- left_join(species_list, trethowan_data, by = c("binomial_name" = "species")) %>%
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, reference) %>% 
   distinct()
+
+#Merge flower_traits from Trethowan with flower_colour from TRY
+flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by = c("binomial_name" = "AccSpeciesName")) %>%
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, reference, OrigValueStr, Reference)
+
+#now I want to combine corolla_colour and OrigValueStr into one column called flower_colour, and combined reference and Reference into one column called reference
+flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by = c("binomial_name" = "AccSpeciesName")) %>%
+  mutate(
+    flower_colour = coalesce(corolla_colour, OrigValueStr),
+    reference = coalesce(reference, Reference)
+  ) %>%
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, flower_colour, reference)
+
 ```
 
+FRUIT SIZE
 
 ```{r}
 #data on fruit size from Trethowan et al 2023
@@ -132,7 +146,9 @@ wood_densities <- left_join(species_list, wood_densities_raw, by = c("binomial_n
 ```
 
 
+TRY DATABASE
 ```{r}
+#to get the list of TRY codes for my species
 #read in the dataset on the TRY species codes
 TRY_species_codes <- read.delim(here("TryAccSpecies.txt"))
 
@@ -145,6 +161,56 @@ comma_separated <- Danum_species_codes %>%
   paste(collapse = ",")
 
 cat(comma_separated)
+```
+
+
+```{r}
+#read in the raw TRY data
+TRY_data_raw <- read.delim(here("TRY data.txt"))
+```
+
+```{r}
+#I want to create a separate dataset for each trait, so that the data is easier to handle
+# List of TraitIDs you want to filter
+trait_ids <- c(207, 28, 26, 239, 919, 917, 4, 3684, 335)
+
+# Create a list to store each subset as a separate data frame
+separated_datasets <- list()
+
+# Loop through each TraitID and filter the dataset
+for (trait_id in trait_ids) {
+  dataset_name <- paste0("TraitID_", trait_id)
+  separated_datasets[[dataset_name]] <- TRY_data_raw %>%
+    filter(TraitID == trait_id)
+}
+
+
+flower_colour_TRY <- separated_datasets$TraitID_207
+#14 records on flower colour, worth working with 
+
+seed_dispersal_syndrome <- separated_datasets$TraitID_28
+#321 entries, worth working with 
+
+seed_dry_mass <- separated_datasets$TraitID_26
+#656 records, worth working with 
+
+seed_width <- separated_datasets$TraitID_239
+#1 records - discard
+
+fruit_dry_mass <- separated_datasets$TraitID_919
+#only 4 different species - not really worth it
+
+fruit_width <- separated_datasets$TraitID_917
+#1 record - discard
+
+wood_density <- separated_datasets$TraitID_4
+#1581 records, worth working with 
+
+crown_elevation <- separated_datasets$TraitID_3684
+#0 records, discard
+
+reproductive_phenology <- separated_datasets$TraitID_335
+#only 5 different species
 ```
 
 

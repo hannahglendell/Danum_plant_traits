@@ -12,6 +12,23 @@ library(tidyverse)#for data wrangling
 ```
 
 ```{r}
+#to get the list of TRY codes for my species
+#read in the dataset on the TRY species codes
+TRY_species_codes <- read.delim(here("TryAccSpecies.txt"))
+
+Danum_species_codes <- left_join(species_list,TRY_species_codes, by = c("binomial_name" = "AccSpeciesName")) %>%
+  select(binomial_name, AccSpeciesID)%>%
+  filter(!is.na(AccSpeciesID))
+
+comma_separated <- Danum_species_codes %>%
+  pull(AccSpeciesID) %>%
+  paste(collapse = ",")
+
+cat(comma_separated)
+```
+
+
+```{r}
 #read in the raw TRY data
 TRY_data_raw <- read.delim(here("TRY data.txt"))
 ```
