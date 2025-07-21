@@ -9,8 +9,10 @@ library(BIEN)#contains the BIEN dataset
 library(dplyr)#for manipulating dataframes
 library(stringr)#for working with strings
 library(tidyverse)#for data wrangling
+library(ggplot2)
 ```
 
+LIST OF SPECIES IN DANUM
 ```{r}
 #read in the 'final species list with corrected names'
 species_list <- read.csv(here("species list data", "final species list corrected and cleaned.csv"))
@@ -20,44 +22,73 @@ species_list <- read.csv(here("species list data", "final species list corrected
 species_list$binomial_name <- paste(species_list$genus, species_list$species)
 ```
 
-FLOWER COLOUR 
 
+TRY DATABASE
 ```{r}
-#flower trait data from Trethowan et al 2024
-trethowan_data <- read.csv(here("trait data", "Flower_Trait_Data.csv"))
-
-#merge the species list and the flower traits datasets together
-flower_colour_trethowan <- left_join(species_list, trethowan_data, by = c("binomial_name" = "species")) %>%
-  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, reference) %>% 
-  distinct()
-
-#Merge flower_traits from Trethowan with flower_colour from TRY
-flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by = c("binomial_name" = "AccSpeciesName")) %>%
-  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, reference, OrigValueStr, Reference)
-
-#now I want to combine corolla_colour and OrigValueStr into one column called flower_colour, and combined reference and Reference into one column called reference
-flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by = c("binomial_name" = "AccSpeciesName")) %>%
-  mutate(
-    flower_colour = coalesce(corolla_colour, OrigValueStr),
-    reference = coalesce(reference, Reference)
-  ) %>%
-  select(binomial_name, family.x, genus, species, species_origin, logging_status, flower_colour, reference)
-
+#read in the raw TRY data
+TRY_data_raw <- read.delim(here("TRY data.txt"))
 ```
 
-FRUIT SIZE
-
 ```{r}
-#data on fruit size from Trethowan et al 2023
-fruit_size_data <- read.csv(here("trait data", "figshare_fruit_data.csv"))
+#to get the list of TRY codes for my species
+#read in the dataset on the TRY species codes
+TRY_species_codes <- read.delim(here("TryAccSpecies.txt"))
 
-#merge the species list and the fruit size datasets together
-fruit_size <- left_join(species_list, fruit_size_data, by = c("binomial_name" = "species")) %>%
-  select(binomial_name, family, genus, species, species_origin, logging_status, fruit_size_mm, fruit_size_min_mm, reference)%>%
-  distinct()
+Danum_species_codes <- left_join(species_list,TRY_species_codes, by = c("binomial_name" = "AccSpeciesName")) %>%
+  select(binomial_name, AccSpeciesID)%>%
+  filter(!is.na(AccSpeciesID))
 
+comma_separated <- Danum_species_codes %>%
+  pull(AccSpeciesID) %>%
+  paste(collapse = ",")
+
+cat(comma_separated)
 ```
 
+```{r}
+#I want to create a separate dataset for each trait, so that the data is easier to handle
+# List of TraitIDs you want to filter
+trait_ids <- c(207, 28, 26, 239, 919, 917, 4, 3684, 335)
+
+# Create a list to store each subset as a separate data frame
+separated_datasets <- list()
+
+# Loop through each TraitID and filter the dataset
+for (trait_id in trait_ids) {
+  dataset_name <- paste0("TraitID_", trait_id)
+  separated_datasets[[dataset_name]] <- TRY_data_raw %>%
+    filter(TraitID == trait_id)
+}
+
+#create an object for each trait dataset
+
+flower_colour_TRY <- separated_datasets$TraitID_207
+#14 records on flower colour, worth working with 
+
+seed_dispersal_syndrome_TRY <- separated_datasets$TraitID_28
+#321 entries, worth working with 
+
+seed_dry_mass_TRY <- separated_datasets$TraitID_26
+#656 records, worth working with 
+
+seed_width_TRY <- separated_datasets$TraitID_239
+#1 records - discard
+
+fruit_dry_mass_TRY <- separated_datasets$TraitID_919
+#only 4 different species - not really worth it
+
+fruit_width_TRY <- separated_datasets$TraitID_917
+#1 record - discard
+
+wood_density_TRY <- separated_datasets$TraitID_4
+#1581 records, worth working with 
+
+crown_elevation_TRY <- separated_datasets$TraitID_3684
+#0 records, discard
+
+reproductive_phenology_TRY <- separated_datasets$TraitID_335
+#only 5 different species
+```
 
 
 THE BIEN TRAITS DATASET
@@ -83,9 +114,9 @@ list_sp_cleaned <- list_sp %>%
 ```{r}
 #SEED MASS
 #BIEN_trait_mean estimates species mean trait values for a given trait, using Genus or Family level data where species level data is absent
-average_seed_mass = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed mass")
+average_seed_mass_BIEN = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed mass")
 
-write.csv(average_seed_mass, file = "average seed mass.csv", row.names = FALSE)
+write.csv(average_seed_mass_BIEN, file = "average seed mass.csv", row.names = FALSE)
 #this assigns seed mass to all 753 species. It produces a dataframe which tells you the mean seed mass, the level used (family, genus or species) and the sample size used to produce that mean.
 
 #BIEN_trait_traitby species extracts entries that conatin the specified species and traits. So this extracts the records only for the species that match exactly. If a species does not match, then it does not produce an estimate based on Genus or Family level
@@ -123,95 +154,171 @@ length(unique(flower_colour_all$scrubbed_species_binomial))
 
 ```
 
+SORTING DATA BY TRAIT
+
+1) FLOWER COLOUR 
+
 ```{r}
-#how about I try extracting all the trait data available for my 754 species?
-#DONT RUN THIS CODE, IT TAKES TOO LONG! THE DATASET IT CREATES IS TOO LARGE!
-#all_species_all_traits <- BIEN_trait_species(species = list_sp_cleaned)
+#flower trait data from Trethowan et al 2024
+trethowan_data <- read.csv(here("trait data", "Flower_Trait_Data.csv"))
+
+#merge the species list and the trethowan datasets together
+flower_colour_trethowan <- left_join(species_list, trethowan_data, by = c("binomial_name" = "species")) %>%
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, reference) %>% 
+  distinct()
+
+#Merge flower_traits from Trethowan with flower_colour from TRY
+flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by = c("binomial_name" = "AccSpeciesName")) %>%
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, reference, OrigValueStr, Reference)
+
+#now I want to combine corolla_colour and OrigValueStr into one column called flower_colour, and combined reference and Reference into one column called reference
+flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by = c("binomial_name" = "AccSpeciesName")) %>%
+  mutate(
+    flower_colour = coalesce(corolla_colour, OrigValueStr),
+    reference = coalesce(reference, Reference)
+  ) %>%
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, flower_colour, reference)
+
+
+#there is no point adding in flower colour form BIEN, because this only had flower colour for three species, all of which are now covered by either Trethowan or TRY.
+#so far, this is the final dataset on flower colour - to get more I think I will have to manually look by species in books.
+#
+#some species have more than one record of flower colour - e.g one record that says 'yellow', another says 'green'. 
+```
+
+2) FRUIT SIZE
+
+```{r}
+#data on fruit size from Trethowan et al 2023
+fruit_size_data <- read.csv(here("trait data", "figshare_fruit_data.csv"))
+
+#merge the species list and the fruit size datasets together
+fruit_size <- left_join(species_list, fruit_size_data, by = c("binomial_name" = "species")) %>%
+  select(binomial_name, family, genus, species, species_origin, logging_status, fruit_size_mm, fruit_size_min_mm, reference)%>%
+  distinct()
 
 ```
 
 
+3) SEED MASS
+```{r}
+#Take seed_dry_mass_TRY and tidy it up:
+#select just the columns I want
+#rename some columns
+#take the mean of each seed mass for each species
+#remember this is 1000 seed mass
+seed_dry_mass_TRY_clean <- seed_dry_mass_TRY %>%
+  select(AccSpeciesName, TraitName, StdValue, UnitName, Reference) %>%
+  rename(dry_seed_mass = StdValue, binomial_name = AccSpeciesName) %>%
+  group_by(binomial_name) %>%
+  summarise(mean_dry_seed_mass = round(mean(dry_seed_mass, na.rm = TRUE), 2))
 
-OTHER PLANT TRAIT DATASETS
+#PROBLEM: some of the same species occur in BIEN and in TRY, the problem is that they appear to have wildly different values, e.g
+#Artocarpus elasticus has a seed mass of 150mg in TRY but 2682mg in BIEN
+#maybe this is because the estimate in BIEN is based on genus or family level approximation
+#so I dont think genus or family level approximations are necessarily very accurate at all
+#
+#
+```
+
+4) WOOD DENSITIES
+```{r}
+#wood densities
+wood_densities_raw <- read.csv(here("trait data", "GlobalWoodDensityDatabase.csv"))
+
+wood_densities <- left_join(species_list, wood_densities_raw, by = c("binomial_name" = "Binomial")) %>%
+  rename(wood_density_g_cm_3 = Wood.density..g.cm.3...oven.dry.mass.fresh.volume) %>%
+  select(binomial_name, wood_density_g_cm_3) %>%
+  group_by(binomial_name) %>%
+  summarise(mean_wood_density_g_cm_3 = round(mean(wood_density_g_cm_3, na.rm = TRUE), 2)) %>%
+  filter(!is.nan(mean_wood_density_g_cm_3))
+
+wood_densities_merged <- left_join(wood_densities, species_list, by = c("binomial_name" = "binomial_name")) %>%
+  select(binomial_name, mean_wood_density_g_cm_3, family, genus, species, species_origin, logging_status)
+
+#I don't think there is much point in combining this with TRY wood densities, because almost all come from this dataset anyway. maybe this is something to come back to later.
+```
+
+```{r}
+#now, can I explore the wood density data?
+#do logged forests have lower wood density? I.e because logging selectively removes the most dense trees...
+
+ggplot(wood_densities_merged, aes(x = logging_status, y = mean_wood_density_g_cm_3)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "Wood Density by Logging Status",
+    x = "Logging Status",
+    y = "Mean Wood Density (g/cm³)"
+  ) +
+  theme_minimal()
+#too few species unique to logged areas for this to be a very good comparison
+```
+
+
+
+TALLO - TREE HEIGHT, CROWN RADIUM, STEM DIAMETER
 ```{r}
 #Tallo (tree height)
 tallo <- read.csv(here("trait data", "Tallo.csv"))
 
 
-#wood densities
-wood_densities_raw <- read.csv(here("trait data", "GlobalWoodDensityDatabase.csv"))
-
-wood_densities <- left_join(species_list, wood_densities_raw, by = c("binomial_name" = "Binomial")) %>%
-  select(binomial_name, Wood.density..g.cm.3...oven.dry.mass.fresh.volume)
-```
-
-
-TRY DATABASE
-```{r}
-#to get the list of TRY codes for my species
-#read in the dataset on the TRY species codes
-TRY_species_codes <- read.delim(here("TryAccSpecies.txt"))
-
-Danum_species_codes <- left_join(species_list,TRY_species_codes, by = c("binomial_name" = "AccSpeciesName")) %>%
-  select(binomial_name, AccSpeciesID)%>%
-  filter(!is.na(AccSpeciesID))
-
-comma_separated <- Danum_species_codes %>%
-  pull(AccSpeciesID) %>%
-  paste(collapse = ",")
-
-cat(comma_separated)
-```
-
-
-```{r}
-#read in the raw TRY data
-TRY_data_raw <- read.delim(here("TRY data.txt"))
+tree_height <- left_join(species_list, tallo, by = c("binomial_name" = "species")) %>%
+  select(binomial_name, family.x, genus.x, species, stem_diameter_cm, height_m, crown_radius_m, species_origin, logging_status) %>%
+  group_by(binomial_name) %>%
+  summarise(
+    mean_stem_diameter_cm = round(mean(stem_diameter_cm, na.rm = TRUE), 2),
+    mean_height_m = round(mean(height_m, na.rm = TRUE), 2),
+    mean_crown_radius_m = round(mean(crown_radius_m, na.rm = TRUE), 2),
+    family = first(family.x),
+    genus = first(genus.x),
+    species = first(species),
+    species_origin = first(species_origin),
+    logging_status = first(logging_status),
+    .groups = "drop"  # optional: drops the grouping afterwards
+  ) %>%
+  filter(!is.nan(mean_stem_diameter_cm))           
+          
 ```
 
 ```{r}
-#I want to create a separate dataset for each trait, so that the data is easier to handle
-# List of TraitIDs you want to filter
-trait_ids <- c(207, 28, 26, 239, 919, 917, 4, 3684, 335)
+#now I can plot the data
+#are the species in the logged areas shorter?
 
-# Create a list to store each subset as a separate data frame
-separated_datasets <- list()
+ggplot(tree_height, aes(x = logging_status, y = mean_height_m)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "tree height (m)",
+    x = "Logging Status",
+    y = "Mean tree height"
+  ) +
+  theme_minimal()
 
-# Loop through each TraitID and filter the dataset
-for (trait_id in trait_ids) {
-  dataset_name <- paste0("TraitID_", trait_id)
-  separated_datasets[[dataset_name]] <- TRY_data_raw %>%
-    filter(TraitID == trait_id)
-}
-
-
-flower_colour_TRY <- separated_datasets$TraitID_207
-#14 records on flower colour, worth working with 
-
-seed_dispersal_syndrome <- separated_datasets$TraitID_28
-#321 entries, worth working with 
-
-seed_dry_mass <- separated_datasets$TraitID_26
-#656 records, worth working with 
-
-seed_width <- separated_datasets$TraitID_239
-#1 records - discard
-
-fruit_dry_mass <- separated_datasets$TraitID_919
-#only 4 different species - not really worth it
-
-fruit_width <- separated_datasets$TraitID_917
-#1 record - discard
-
-wood_density <- separated_datasets$TraitID_4
-#1581 records, worth working with 
-
-crown_elevation <- separated_datasets$TraitID_3684
-#0 records, discard
-
-reproductive_phenology <- separated_datasets$TraitID_335
-#only 5 different species
+#again, the issue is that there are too few species that are unique to logged sites
 ```
+
+```{r}
+ggplot(tree_height, aes(x = logging_status, y = mean_stem_diameter_cm)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "stem diameter",
+    x = "Logging Status",
+    y = "stem diameter cm"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+ggplot(tree_height, aes(x = logging_status, y = mean_crown_radius_m)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "mean crown radius (m)",
+    x = "Logging Status",
+    y = "Mean crown radius"
+  ) +
+  theme_minimal()
+
+```
+
 
 
 
