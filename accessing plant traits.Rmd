@@ -250,7 +250,41 @@ ggplot(final_seed_mass, aes(x = logging_status, y = mean_dry_seed_mass)) +
   theme_minimal()
 ```
 
+```{r}
+ggplot(
+  data = final_seed_mass %>% dplyr::filter(level_used != "Family"),
+  aes(x = logging_status, y = mean_dry_seed_mass)
+) +
+  geom_jitter(width = 0.2, height = 0, color = "blue") +
+  labs(
+    title = "Mean Dry Seed Mass (Excluding Family-Level Estimates)",
+    x = "Species",
+    y = "Mean Dry Seed Mass (g)"
+  ) +
+  theme_minimal()
+```
 
+```{r}
+final_seed_mass <- final_seed_mass %>%
+  mutate(
+    logged = if_else(logging_status %in% c("logged", "both"), 1, 0),
+    unlogged = if_else(logging_status %in% c("unlogged", "both"), 1, 0)
+  )
+
+
+long_data_seed_mass <- final_seed_mass %>%
+  pivot_longer(cols = c(logged, unlogged), names_to = "condition", values_to = "mean dry seed mass")
+```
+
+```{r}
+
+ggplot(
+  data = long_data_seed_mass %>% filter(level_used != "Family"),
+  aes(x = condition, y = mean_dry_seed_mass, color = condition)
+) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6) +
+  theme_bw()
+```
 
 
 4) SEED SIZE
