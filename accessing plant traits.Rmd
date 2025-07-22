@@ -110,6 +110,12 @@ list_sp_cleaned <- list_sp %>%
 ``` 
 
 
+
+
+SORTING DATA BY TRAIT
+
+1) FLOWER COLOUR 
+
 ```{r}
 #looking at flower colour
 # I can't use in BIEN_trait_mean because flower colour is not a numerical variable - it is categorical.
@@ -122,10 +128,6 @@ length(unique(flower_colour_all$scrubbed_species_binomial))
 #2624 species contain information on flower colour. But clearly, only 3 of these are in my Danum dataset.
 
 ```
-
-SORTING DATA BY TRAIT
-
-1) FLOWER COLOUR 
 
 ```{r}
 #flower trait data from Trethowan et al 2024
@@ -167,6 +169,18 @@ fruit_size <- left_join(species_list, fruit_size_data, by = c("binomial_name" = 
   distinct()
 
 ```
+
+```{r}
+ggplot(fruit_size, aes(x = logging_status, y = fruit_size_mm)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "Fruit Size",
+    x = "Logging Status",
+    y = "Fruit Size (mm)"
+  ) +
+  theme_minimal()
+```
+
 
 
 3) SEED MASS
@@ -244,10 +258,30 @@ ggplot(final_seed_mass, aes(x = logging_status, y = mean_dry_seed_mass)) +
 #looking at seed size size
 average_seed_length = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed length")
 
-
 seed_length_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed length")
 #shows that data comes from datadryad database
+
+#merge BIEN data with species list
+merged_seed_length <- left_join(species_list, average_seed_length, by = c("binomial_name" = "species")) %>%
+  select(binomial_name, family, genus, species, history_at_INDFORSUS_site, species_origin, logging_status, mean_value) %>%
+  rename(seed_length_mm_BIEN = mean_value) %>%
+  mutate(seed_length_mm_BIEN = as.numeric(seed_length_mm_BIEN))
+
 ```
+
+```{r}
+#now plot the data
+ggplot(merged_seed_length, aes(x = logging_status, y = seed_length_mm_BIEN)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "seed length",
+    x = "logging status",
+    y = "seed length mm"
+  ) +
+  theme_minimal()
+```
+
+
 
 5) WOOD DENSITIES
 ```{r}
@@ -359,9 +393,9 @@ tree_height <- left_join(species_list, tallo, by = c("binomial_name" = "species"
 ggplot(tree_height, aes(x = logging_status, y = mean_height_m)) +
   geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
   labs(
-    title = "tree height (m)",
+    title = "tree height",
     x = "Logging Status",
-    y = "Mean tree height"
+    y = "Mean tree height (m)"
   ) +
   theme_minimal()
 
@@ -391,6 +425,10 @@ ggplot(tree_height, aes(x = logging_status, y = mean_crown_radius_m)) +
 
 ```
 
+6) DISPERSAL SYNDROME
+```{r}
+unique(seed_dispersal_syndrome_TRY$AccSpeciesName)
+```
 
 
 
