@@ -22,7 +22,6 @@ species_list <- read.csv(here("species list data", "final species list corrected
 species_list$binomial_name <- paste(species_list$genus, species_list$species)
 ```
 
-
 TRY DATABASE
 ```{r}
 #read in the raw TRY data
@@ -112,36 +111,6 @@ list_sp_cleaned <- list_sp %>%
 
 
 ```{r}
-#SEED MASS
-#BIEN_trait_mean estimates species mean trait values for a given trait, using Genus or Family level data where species level data is absent
-average_seed_mass_BIEN = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed mass")
-
-write.csv(average_seed_mass_BIEN, file = "average seed mass.csv", row.names = FALSE)
-#this assigns seed mass to all 753 species. It produces a dataframe which tells you the mean seed mass, the level used (family, genus or species) and the sample size used to produce that mean.
-
-#BIEN_trait_traitby species extracts entries that conatin the specified species and traits. So this extracts the records only for the species that match exactly. If a species does not match, then it does not produce an estimate based on Genus or Family level
-seed_mass_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed mass")
-
-unique(seed_mass_by_species$scrubbed_species_binomial)
-#there is species level data for 31 different species
-  
-write.csv(seed_mass_by_species, file = "seed mass by species.csv", row.names = FALSE)
-#there are 69 records at species level from my list of 753. But these 69 records are not necessarily 69 different species. some species appear to have more than one record. This dataset shows that the seed mas is the average seed mass of 1000 seed, and that most of the data come from SID (Seed Information Database) from kew gardens. 
-```
-
-
-```{r}
-#SEED SIZE
-#looking at seed size size
-average_seed_length = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed length")
-
-
-seed_length_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed length")
-#shows that data comes from datadryad database
-```
-
-
-```{r}
 #looking at flower colour
 # I can't use in BIEN_trait_mean because flower colour is not a numerical variable - it is categorical.
 flower_colour_BIEN <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "flower color")
@@ -211,17 +180,76 @@ seed_dry_mass_TRY_clean <- seed_dry_mass_TRY %>%
   select(AccSpeciesName, TraitName, StdValue, UnitName, Reference) %>%
   rename(dry_seed_mass = StdValue, binomial_name = AccSpeciesName) %>%
   group_by(binomial_name) %>%
-  summarise(mean_dry_seed_mass = round(mean(dry_seed_mass, na.rm = TRUE), 2))
+  summarise(mean_dry_seed_mass_TRY = round(mean(dry_seed_mass, na.rm = TRUE), 2))
+```
 
+```{r}
+#SEED MASS from BIEN
+#BIEN_trait_mean estimates species mean trait values for a given trait, using Genus or Family level data where species level data is absent
+average_seed_mass_BIEN = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed mass") %>%
+  rename(mean_dry_seed_mass_BIEN = mean_value)
+
+write.csv(average_seed_mass_BIEN, file = "average seed mass.csv", row.names = FALSE)
+#this assigns seed mass to all 753 species. It produces a dataframe which tells you the mean seed mass, the level used (family, genus or species) and the sample size used to produce that mean.
+
+#BIEN_trait_traitby species extracts entries that conatin the specified species and traits. So this extracts the records only for the species that match exactly. If a species does not match, then it does not produce an estimate based on Genus or Family level
+seed_mass_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed mass")
+
+unique(seed_mass_by_species$scrubbed_species_binomial)
+#there is species level data for 31 different species
+  
+write.csv(seed_mass_by_species, file = "seed mass by species.csv", row.names = FALSE)
+#there are 69 records at species level from my list of 753. But these 69 records are not necessarily 69 different species. some species appear to have more than one record. This dataset shows that the seed mas is the average seed mass of 1000 seed, and that most of the data come from SID (Seed Information Database) from kew gardens. 
+```
+
+```{r}
+#merge species_list and seed_dry_mass_TRY_clean
+merged_seed_mass <- left_join(species_list, seed_dry_mass_TRY_clean, by = c("binomial_name" = "binomial_name"))%>%
+  select(binomial_name, family, genus, species, history_at_INDFORSUS_site, species_origin, logging_status, mean_dry_seed_mass_TRY)
+
+#now I want to add in the seed mass data from BIEN
 #PROBLEM: some of the same species occur in BIEN and in TRY, the problem is that they appear to have wildly different values, e.g
 #Artocarpus elasticus has a seed mass of 150mg in TRY but 2682mg in BIEN
 #maybe this is because the estimate in BIEN is based on genus or family level approximation
 #so I dont think genus or family level approximations are necessarily very accurate at all
 #
+#I want to add in the BIEN data, but in a way that if there is already existing data in merged_seed_mass_TRY, i keep that data and I do not replace it.
 #
+final_seed_mass <- merged_seed_mass %>%
+  left_join(average_seed_mass_BIEN, by = c("binomial_name" = "species"))  %>%
+  mutate(mean_dry_seed_mass = ifelse(
+      is.na(mean_dry_seed_mass_TRY), mean_dry_seed_mass_BIEN, mean_dry_seed_mass_TRY)) %>%
+  mutate(mean_dry_seed_mass = as.numeric(mean_dry_seed_mass),
+    mean_dry_seed_mass_BIEN = as.numeric(mean_dry_seed_mass_BIEN)) %>%
+  select( binomial_name, family, genus, species, history_at_INDFORSUS_site, species_origin, logging_status, mean_dry_seed_mass, mean_dry_seed_mass_TRY, mean_dry_seed_mass_BIEN, unit, level_used, sample_size)
 ```
 
-4) WOOD DENSITIES
+```{r}
+#try plotting the data
+ggplot(final_seed_mass, aes(x = logging_status, y = mean_dry_seed_mass)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "seed mass",
+    x = "logging status",
+    y = "1000 dry seed mass (mg)"
+  ) +
+  theme_minimal()
+```
+
+
+
+
+4) SEED SIZE
+```{r}
+#looking at seed size size
+average_seed_length = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed length")
+
+
+seed_length_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed length")
+#shows that data comes from datadryad database
+```
+
+5) WOOD DENSITIES
 ```{r}
 #wood densities from the global wood density database (WDD)
 wood_densities_raw <- read.csv(here("trait data", "GlobalWoodDensityDatabase.csv"))
@@ -300,7 +328,7 @@ ggplot(merged_wood_densities, aes(x = logging_status, y = mean_wood_density_g_cm
 
 
 
-5) TALLO - TREE HEIGHT, CROWN RADIUM, STEM DIAMETER
+6) TALLO - TREE HEIGHT, CROWN RADIUM, STEM DIAMETER
 ```{r}
 #Tallo (tree height)
 tallo <- read.csv(here("trait data", "Tallo.csv"))

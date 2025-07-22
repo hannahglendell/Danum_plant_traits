@@ -1,0 +1,26 @@
+---
+title: "list for botanic gardens"
+output: html_document
+---
+
+```{r}
+#read in final species list
+RBGE_list <- read.csv(here("List for botanic gardens(Sheet1).csv"))
+
+#create binomial name column
+RBGE_list$binomial_name <- paste(RBGE_list$genus, RBGE_list$species)
+
+#read in estelle's barcodes
+Estelle_barcodes <- read.csv(here("Danum spp list_accessed 2024_Estelle herbarium checks.csv"))
+
+#create binomial name column
+Estelle_barcodes$binomial_name <- paste(Estelle_barcodes$genus, Estelle_barcodes$species)
+
+#join the two datasets together
+botanic_gardens_list <- left_join(RBGE_list, Estelle_barcodes, by = c("binomial_name" = "binomial_name")) %>%
+  select(binomial_name, family.x, genus.x, species.x, history_at_INDFORSUS_site, species_origin, logging_status, comment)
+  
+write.csv(botanic_gardens_list, file = "botanic gardens list.csv")
+
+```
+
