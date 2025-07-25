@@ -10,6 +10,9 @@ library(dplyr)#for manipulating dataframes
 library(stringr)#for working with strings
 library(tidyverse)#for data wrangling
 library(ggplot2)
+library(viridisLite)
+library(viridis)
+
 ```
 
 LIST OF SPECIES IN DANUM
@@ -20,7 +23,136 @@ species_list <- read.csv(here("species list data", "final species list corrected
 
 #create a new column with corrected binomial name of each species
 species_list$binomial_name <- paste(species_list$genus, species_list$species)
+
+final_species_list <- read.csv(here("final species list.csv"))
 ```
+
+```{r}
+#now to correct the error from creating the final species list, I need to merge species_list and final_species_list 
+corrected_species_list <- left_join(species_list, final_species_list, by = c("original_binomial_name" = "binomial_name")) %>%
+  select(binomial_name, family, genus, species, history_at_INDFORSUS_site.y, species_origin.y, logging_status.y) %>%
+  rename(history_at_INDFORSUS_site = history_at_INDFORSUS_site.y, species_origin = species_origin.y, logging_status = logging_status.y)
+
+species_list <- corrected_species_list
+```
+
+```{r}
+# I want to visualise the species composition at each site
+
+#fix the strings of characters, and unnest() the species_origin so that each species has a separate row each time it occurs in a new site
+species_long <- species_list %>%
+  mutate(species_origin = str_split(species_origin, ",\\s*")) %>%  #split by comma + optional space
+  unnest(species_origin) %>%
+  mutate(species_origin = str_trim(species_origin))  #remove any leading/trailing whitespace
+
+#count number of species in each family
+species_counts <- species_long %>%
+  group_by(species_origin, family) %>%
+  summarise(n_species = n_distinct(binomial_name), .groups = "drop")
+
+
+# Step 1: Find top 10 families by total species count across all sites
+top_families <- species_counts %>%
+  group_by(family) %>%
+  summarise(total_species = sum(n_species)) %>%
+  slice_max(total_species, n = 10) %>%
+  pull(family)
+
+# Step 2: Collapse less-common families into "Other"
+species_counts_filtered <- species_counts %>%
+  mutate(family = ifelse(family %in% top_families, family, "Other"))
+
+ggplot(species_counts_filtered, aes(x = species_origin, y = n_species, fill = family)) +
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_d(option = "turbo") +
+  theme_minimal()+
+  labs(
+    title = "Number of distinct species belonging to the 10 most common families",
+    x = "",
+    y = "Number of distinct Species",
+    fill = "Family"
+  )
+```
+
+
+```{r}
+
+# Step 1: Reorder 'family' from smallest to largest within each 'species_origin'
+species_counts_ordered <- species_counts_filtered %>%
+  group_by(species_origin, family) %>%
+  summarise(n_species = sum(n_species), .groups = "drop") %>%
+  arrange(species_origin, n_species) %>%  # <-- Note: ascending order
+  group_by(species_origin) %>%
+  mutate(family = factor(family, levels = unique(family)))  # Factor in desired order
+
+# Step 2: Plot
+ggplot(species_counts_ordered, aes(x = species_origin, y = n_species, fill = family)) +
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_d(option = "turbo") +
+  theme_minimal() +
+  labs(
+    title = "Number of distinct species belonging to the 10 most common families",
+    x = "",
+    y = "Number of distinct Species",
+    fill = "Family"
+  )
+
+```
+
+```{r}
+
+
+# Step 1: Ensure 'species_origin' is a factor
+species_counts_filtered <- species_counts_filtered %>%
+  mutate(species_origin = factor(species_origin))
+
+# Step 2: Split 'Other' and non-'Other'
+other_data <- species_counts_filtered %>%
+  filter(family == "Other") %>%
+  group_by(species_origin) %>%
+  arrange(species_origin)  # no need to sort; it's on the bottom
+
+non_other_data <- species_counts_filtered %>%
+  filter(family != "Other") %>%
+  group_by(species_origin) %>%
+  arrange(species_origin, desc(n_species))  # largest to smallest
+
+# Step 3: Bind 'Other' on top, then compute stacking positions
+stacked_data <- bind_rows(other_data, non_other_data) %>%
+  group_by(species_origin) %>%
+  mutate(
+    ymin = cumsum(lag(n_species, default = 0)),
+    ymax = ymin + n_species,
+    x = as.numeric(species_origin),
+    label = as.character(species_origin)
+  ) %>%
+  ungroup() %>%
+  mutate(family = factor(family, levels = unique(family)))  # optional for color order
+
+# Step 4: Plot
+ggplot(stacked_data, aes(fill = family)) +
+  geom_rect(aes(
+    xmin = x - 0.4, xmax = x + 0.4,
+    ymin = ymin, ymax = ymax
+  )) +
+  scale_x_continuous(
+    breaks = unique(stacked_data$x),
+    labels = unique(stacked_data$label)
+  ) +
+  scale_fill_viridis_d(option = "turbo") +
+  guides(fill = guide_legend(reverse = TRUE)) +  # <- reverses legend
+  theme_minimal() +
+  labs(
+    title = "'Other' on bottom, remaining families stacked largest to smallest",
+    x = "",
+    y = "Number of distinct Species",
+    fill = "Family"
+  )
+
+```
+
+
+
 
 TRY DATABASE
 ```{r}
@@ -394,9 +526,9 @@ ggplot(merged_wood_densities, aes(x = logging_status, y = mean_wood_density_g_cm
 #too few species unique to logged areas for this to be a very good comparison
 ```
 
+ 
 
-
-6) TALLO - TREE HEIGHT, CROWN RADIUM, STEM DIAMETER
+6) TALLO - TREE HEIGHT, CROWN RADIUS, STEM DIAMETER
 ```{r}
 #Tallo (tree height)
 tallo <- read.csv(here("trait data", "Tallo.csv"))

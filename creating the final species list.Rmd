@@ -42,6 +42,7 @@ logged_species <- read.csv(here("species list data", "DanumRevised_35Plots_FullP
 logged_species$binomial_name <- paste(logged_species$Genus, logged_species$Species)
 
 #make a list of distinct species names from the logged trees.
+#this dataset also has info on DBH and height, do I maybe want to keep this info?
 logged_species_list <- logged_species %>%
   select(binomial_name, Family, Genus, Species) %>% 
   mutate(logging_status = "logged") %>%
@@ -84,13 +85,38 @@ INDFORSUS_data <- read.csv(here("species list data", "mature_data_RH(in).csv"))
 #read in the data on their restoration status
 INDFORSUS_restoration_status_data <- read.csv(here("species list data", "2018_2019Seedling_RH(Plot_Info).csv"))
 
-#now join the two datasets together
+#now join the two datasets together while keeping information on dbh, height, and wood density
+#INDFORSUS_species_list <- INDFORSUS_data %>%
+  #left_join(INDFORSUS_restoration_status_data, by = "station", relationship = "many-to-many") %>% # join the two datasets together according to their station
+  #select(history, diameter_mm, height_m, wooddensity, family, genus, species) %>% # select only the columns that we are interested in
+  #distinct() %>% # remove rows that have the same information in every single column
+  #mutate(binomial_name = paste(genus, species, sep = " ")) %>% # add in a column with the binomial_name
+  #mutate(species_origin = case_when(
+    #grepl("ActiveRestoration|NaturalRegeneration", history) ~ "IF",
+    #grepl("Unlogged", history) ~ "50ha",
+    #TRUE ~ NA_character_ # default if none of the conditions match
+#)) %>%
+  #mutate(logging_status = case_when(
+    #history %in% c("ActiveRestoration", "NaturalRegeneration") ~ "logged",
+    #history == "Unlogged" ~ "unlogged",
+    #TRUE ~ NA_character_)) %>% #handels other cases; not really necessary here
+  #rename( #change the names of the columns so that they are written with capital letters
+    #Family = family,
+    #Genus = genus,
+    #Species = species)
+
+
+#now join the two datasets together keeping only the list of species.
 INDFORSUS_species_list <- INDFORSUS_data %>%
-  left_join(INDFORSUS_restoration_status_data, by = "station", relationship = "many-to-many")%>% #join the two datasets together according to their station
-  select(family, genus, species, history)%>% #select only the columns that we are interested in 
-  distinct() %>% #remove rows that have the same information in every single column
+  left_join(INDFORSUS_restoration_status_data, by = "station", relationship = "many-to-many") %>% # join the two datasets together according to their station
+  select(history, family, genus, species) %>% # select only the columns that we are interested in
+  distinct() %>% # remove rows that have the same information in every single column
   mutate(binomial_name = paste(genus, species, sep = " ")) %>% # add in a column with the binomial_name
-  mutate(species_origin = "IF") %>%
+  mutate(species_origin = case_when(
+    grepl("ActiveRestoration|NaturalRegeneration", history) ~ "IF",
+    grepl("Unlogged", history) ~ "50ha",
+    TRUE ~ NA_character_ # default if none of the conditions match
+  )) %>%
   mutate(logging_status = case_when(
     history %in% c("ActiveRestoration", "NaturalRegeneration") ~ "logged",
     history == "Unlogged" ~ "unlogged",
@@ -98,7 +124,27 @@ INDFORSUS_species_list <- INDFORSUS_data %>%
   rename( #change the names of the columns so that they are written with capital letters
     Family = family,
     Genus = genus,
-    Species = species) 
+    Species = species)
+#
+#remove all rows where species_ogin = 50ha, so that I am not duplicating information
+INDFORSUS_species_list <- INDFORSUS_species_list %>%
+  filter(species_origin != "50ha")
+#
+#
+#INDFORSUS_species_list <- INDFORSUS_data %>%
+  #left_join(INDFORSUS_restoration_status_data, by = "station", relationship = "many-to-many")%>% #join the two datasets together according to their station
+  #select(family, genus, species, history)%>% #select only the columns that we are interested in 
+  #distinct() %>% #remove rows that have the same information in every single column
+  #mutate(binomial_name = paste(genus, species, sep = " ")) %>% # add in a column with the binomial_name
+  #mutate(species_origin = "IF") %>%
+  #mutate(logging_status = case_when(
+    #history %in% c("ActiveRestoration", "NaturalRegeneration") ~ "logged",
+    #history == "Unlogged" ~ "unlogged",
+    #TRUE ~ NA_character_)) %>% #handels other cases; not really necessary here
+  #rename( #change the names of the columns so that they are written with capital letters
+    #Family = family,
+    #Genus = genus,
+    #Species = species) 
 
 ```
 
