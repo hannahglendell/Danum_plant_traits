@@ -73,7 +73,8 @@ logged_AR <-  logged_AR %>%
 sum(logged_AR$relative_abundance_percent)
 #yes they do!
 
-
+#save as a .csv file so I can use it in other markdown documents
+write.csv(logged_AR, file = here("species list data", "CP plots actively restored.csv"), row.names = FALSE)
 
 
 #now do everything exactly the same for the logged_NR areas
@@ -96,7 +97,8 @@ logged_NR <-  logged_NR %>%
 sum(logged_NR$relative_abundance_percent)
 #yes they do!
 
-
+#save as a .csv file so I can use it in other markdown documents
+write.csv(logged_NR, file = here("species list data", "CP plots naturally regenerated.csv"), row.names = FALSE)
 
 ###############################
 #make a list of distinct species names from the CP plot.
