@@ -114,13 +114,6 @@ logged_species_list$Family <- str_to_title(str_to_lower(logged_species_list$Fami
 
 ```
 
-```{r}
-#i want to calculate the relative abundance of each species in the CP plot
-#
-```
-
-
-
 
 ```{r}
 
