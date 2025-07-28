@@ -18,6 +18,7 @@ note: I couldn't install BIEN because my R would not install the package RPostgr
 
 **CREATING THE DANUM SPECIES LIST**
 
+THE 50ha SITE
 ```{r}
 #read in the list of unlogged tree species from the 50ha site
 unlogged_species <- read.csv(here("species list data", "Danum_spp_list_unlogged.csv"))
@@ -34,14 +35,71 @@ unlogged_species_list <- unlogged_species %>%
 
 ```
 
+
+THE LOGGED SITE (CP PLOTS)
 ```{r}
 #read in the dataset of logged tree species from the CP site
 logged_species <- read.csv(here("species list data", "DanumRevised_35Plots_FullPlotData_Trees_2020_edit_4.11.csv"))
 
+#now I need to read in the data on the restoration status of the CP sites
+logged_restoration_status <- read.csv(here("species list data", "LoggedForest_PlotList_UpdatedMar2024.csv"))
+
+
 #create a column with the full binomial latin name of each species
 logged_species$binomial_name <- paste(logged_species$Genus, logged_species$Species)
 
-#make a list of distinct species names from the logged trees.
+#join logged_species with the restoration status of each species, and the select the columns I am interested in 
+logged_species <- left_join(logged_species, logged_restoration_status, by = "PlotNo") %>%
+  select(PlotNo, restoration, binomial_name, Family, Genus, Species, DBH.mm, Height_m) %>%
+  filter(binomial_name != "NA NA")
+
+#now, I want to split the data into two datasets - actively regenerated and naturally restored.
+#Then i want to count the number of times each species occurs in the dataset, and put this info into a column called 'count'. If a species appears more than once, I want to take the mean of its DBH.mm and its mean Height_m.
+logged_AR <- logged_species %>% filter(restoration == "AR") %>%
+  group_by(binomial_name, Family, Genus, Species, restoration) %>%
+  summarise(
+    count = n(),
+    mean_DBH = mean(DBH.mm, na.rm = TRUE),
+    mean_Height = mean(Height_m, na.rm = TRUE)
+  )
+#count up total number of trees in logged_AR area
+total_count_AR <- sum(logged_AR$count)
+
+#calculate the relative abundance of each species
+logged_AR <-  logged_AR %>%
+  mutate(relative_abundance_percent = (count / total_count_AR) * 100 )
+#check the relative abundances add up to 100
+
+sum(logged_AR$relative_abundance_percent)
+#yes they do!
+
+
+
+
+#now do everything exactly the same for the logged_NR areas
+logged_NR <- logged_species %>% filter(restoration == "NR") %>%
+  group_by(binomial_name, Family, Genus, Species, restoration) %>%
+  summarise(
+    count = n(),
+    mean_DBH = mean(DBH.mm, na.rm = TRUE),
+    mean_Height = mean(Height_m, na.rm = TRUE)
+  )
+
+#add up number of trees in logged_NR
+total_count_NR <- sum(logged_NR$count)
+
+#calculate the relative abundance of each species
+logged_NR <-  logged_NR %>%
+  mutate(relative_abundance_percent = (count / total_count_NR) * 100 )
+
+#check that the relative abundances add up to 100
+sum(logged_NR$relative_abundance_percent)
+#yes they do!
+
+
+
+###############################
+#make a list of distinct species names from the CP plot.
 #this dataset also has info on DBH and height, do I maybe want to keep this info?
 logged_species_list <- logged_species %>%
   select(binomial_name, Family, Genus, Species) %>% 
@@ -53,6 +111,20 @@ logged_species_list <- logged_species %>%
 logged_species_list$Family <- str_to_title(str_to_lower(logged_species_list$Family))
 
 ```
+
+```{r}
+#i want to calculate the relative abundance of each species in the CP plot
+#
+```
+
+
+
+
+```{r}
+
+```
+
+
 
 ```{r}
 #now combine the logged_species_list and the unlogged_species_list together
@@ -77,6 +149,8 @@ write.csv(combined_species_list, file = "combined species list.csv", row.names =
 
 ```
 
+
+ THE INDFORSUS SITE
 ```{r}
 #adding in lists of species from actively restored or naturally regenerated areas
 #read in the data of the species found in the INFORSUS (logged) site
