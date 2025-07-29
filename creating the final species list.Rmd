@@ -52,7 +52,9 @@ logged_species$binomial_name <- paste(logged_species$Genus, logged_species$Speci
 logged_species <- left_join(logged_species, logged_restoration_status, by = "PlotNo") %>%
   select(PlotNo, restoration, binomial_name, Family, Genus, Species, DBH.mm, Height_m) %>%
   filter(binomial_name != "NA NA")
+```
 
+```{r}
 #now, I want to split the data into two datasets - actively regenerated and naturally restored.
 #Then i want to count the number of times each species occurs in the dataset, and put this info into a column called 'count'. If a species appears more than once, I want to take the mean of its DBH.mm and its mean Height_m.
 logged_AR <- logged_species %>% filter(restoration == "AR") %>%
@@ -75,7 +77,10 @@ sum(logged_AR$relative_abundance_percent)
 
 #save as a .csv file so I can use it in other markdown documents
 write.csv(logged_AR, file = here("species list data", "CP plots actively restored.csv"), row.names = FALSE)
+```
 
+
+```{r}
 
 #now do everything exactly the same for the logged_NR areas
 logged_NR <- logged_species %>% filter(restoration == "NR") %>%
@@ -99,8 +104,16 @@ sum(logged_NR$relative_abundance_percent)
 
 #save as a .csv file so I can use it in other markdown documents
 write.csv(logged_NR, file = here("species list data", "CP plots naturally regenerated.csv"), row.names = FALSE)
+```
+```{r}
+#I want to stack the two datasets on top of eachother
+CP_plots <- rbind(logged_AR, logged_NR)
 
-###############################
+write.csv(CP_plots, file = here("species list data", "CP plots.csv"), row.names = FALSE)
+```
+
+
+```{r}
 #make a list of distinct species names from the CP plot.
 #this dataset also has info on DBH and height, do I maybe want to keep this info?
 logged_species_list <- logged_species %>%

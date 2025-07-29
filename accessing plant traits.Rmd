@@ -17,13 +17,14 @@ library(viridis)
 
 LIST OF SPECIES IN DANUM
 ```{r}
-#read in the 'final species list with corrected names'
+#read in the 'final species list corrected and cleaned'
 species_list <- read.csv(here("species list data", "final species list corrected and cleaned.csv"))
 
 
 #create a new column with corrected binomial name of each species
 species_list$binomial_name <- paste(species_list$genus, species_list$species)
 
+#final species list of distinct species in each site, as created in the 'creating the final species list' .Rmd
 final_species_list <- read.csv(here("final species list.csv"))
 ```
 
@@ -339,12 +340,12 @@ write.csv(average_seed_mass_BIEN, file = "average seed mass.csv", row.names = FA
 #this assigns seed mass to all 753 species. It produces a dataframe which tells you the mean seed mass, the level used (family, genus or species) and the sample size used to produce that mean.
 
 #BIEN_trait_traitby species extracts entries that conatin the specified species and traits. So this extracts the records only for the species that match exactly. If a species does not match, then it does not produce an estimate based on Genus or Family level
-seed_mass_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed mass")
+#seed_mass_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed mass")
 
-unique(seed_mass_by_species$scrubbed_species_binomial)
+#unique(seed_mass_by_species$scrubbed_species_binomial)
 #there is species level data for 31 different species
   
-write.csv(seed_mass_by_species, file = "seed mass by species.csv", row.names = FALSE)
+#write.csv(seed_mass_by_species, file = "seed mass by species.csv", row.names = FALSE)
 #there are 69 records at species level from my list of 753. But these 69 records are not necessarily 69 different species. some species appear to have more than one record. This dataset shows that the seed mas is the average seed mass of 1000 seed, and that most of the data come from SID (Seed Information Database) from kew gardens. 
 ```
 

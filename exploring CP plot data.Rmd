@@ -1,0 +1,201 @@
+---
+title: "exploring CP plot data"
+output: html_document
+---
+
+```{r}
+CP_plots <- read.csv(here("species list data", "CP plots.csv"))
+
+sum(CP_plots$relative_abundance_percent)
+```
+
+```{r}
+#now I need to correct the names of this dataset
+#read in the 'final species list corrected and cleaned'
+species_list <- read.csv(here("species list data", "final species list corrected and cleaned.csv"))
+
+#create a new column with corrected binomial name of each species
+species_list$binomial_name <- paste(species_list$genus, species_list$species)
+
+species_list <- species_list %>%
+  select(original_binomial_name, binomial_name, family, genus, species)
+
+#now to correct the error from creating the final species list, I need to merge species_list and final_species_list 
+CP_plots_clean <- full_join(species_list, CP_plots, by = c("original_binomial_name" = "binomial_name")) %>%
+  select(binomial_name, family, genus, species, restoration, count, relative_abundance_percent, mean_DBH, mean_Height) %>%
+  filter(!is.na(relative_abundance_percent))
+
+#check that all of the relative abundances add up to 200
+sum(CP_plots_clean$relative_abundance_percent, na.rm = TRUE)
+#yes they do - all good!
+```
+```{r}
+# Step 1: Get top 10 families by total species count (across AR + NR)
+top_families <- CP_plots_clean %>%
+  group_by(family) %>%
+  summarise(total_count = sum(count, na.rm = TRUE)) %>%
+  arrange(desc(total_count)) %>%
+  slice_head(n = 10) %>%
+  pull(family)
+
+#collapse other families into 'other'
+CP_plots_top_families <- CP_plots_clean %>%
+  mutate(family_grouped = ifelse(family %in% top_families, family, "Other"))
+
+#summarise relative abundance per family_grouped and restoration type
+summary_data <- CP_plots_top_families %>%
+  group_by(restoration, family_grouped) %>%
+  summarise(total_abundance = sum(relative_abundance_percent, na.rm = TRUE), .groups = "drop")
+
+#plot the data
+ggplot(summary_data, aes(x = restoration, y = total_abundance, fill = family_grouped)) +
+  geom_bar(stat = "identity", position = "stack") +
+  scale_fill_viridis_d(option = "turbo") +
+  labs(
+    x = "Restoration Type",
+    y = "Relative Abundance (%)",
+    fill = "Family",
+    title = ""
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+```
+
+
+
+
+
+```{r}
+#now I want to plot the actual number of species in the two sites, from the top 10 families
+summary_data_counts <- CP_plots_top_families %>%
+  group_by(restoration, family_grouped) %>%
+  summarise(total_species_count = sum(count, na.rm = TRUE), .groups = "drop")
+
+ggplot(summary_data_counts, aes(x = restoration, y = total_species_count, fill = family_grouped)) +
+  geom_bar(stat = "identity", position = "stack") +
+  scale_fill_viridis_d(option = "turbo") +
+  labs(
+    x = "Restoration Type",
+    y = "Number of species",
+    fill = "Family",
+    title = ""
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+
+```
+```{r}
+#read in the raw TRY data
+TRY_data_raw <- read.delim(here("TRY data.txt"))
+```
+
+```{r}
+#I want to create a separate dataset for each trait, so that the data is easier to handle
+# List of TraitIDs you want to filter
+trait_ids <- c(207, 28, 26, 239, 919, 917, 4, 3684, 335)
+
+# Create a list to store each subset as a separate data frame
+separated_datasets <- list()
+
+# Loop through each TraitID and filter the dataset
+for (trait_id in trait_ids) {
+  dataset_name <- paste0("TraitID_", trait_id)
+  separated_datasets[[dataset_name]] <- TRY_data_raw %>%
+    filter(TraitID == trait_id)
+}
+
+#create an object for each trait dataset
+
+flower_colour_TRY <- separated_datasets$TraitID_207
+#14 records on flower colour, worth working with 
+
+seed_dispersal_syndrome_TRY <- separated_datasets$TraitID_28
+#321 entries, worth working with 
+
+seed_dry_mass_TRY <- separated_datasets$TraitID_26
+#656 records, worth working with 
+
+seed_width_TRY <- separated_datasets$TraitID_239
+#1 records - discard
+
+fruit_dry_mass_TRY <- separated_datasets$TraitID_919
+#only 4 different species - not really worth it
+
+fruit_width_TRY <- separated_datasets$TraitID_917
+#1 record - discard
+
+wood_density_TRY <- separated_datasets$TraitID_4
+#1581 records, worth working with 
+
+crown_elevation_TRY <- separated_datasets$TraitID_3684
+#0 records, discard
+
+reproductive_phenology_TRY <- separated_datasets$TraitID_335
+#only 5 different species
+```
+
+```{r}
+#Take seed_dry_mass_TRY and tidy it up:
+#select just the columns I want
+#rename some columns
+#take the mean of each seed mass for each species
+#remember this is 1000 seed mass
+seed_dry_mass_TRY_clean <- seed_dry_mass_TRY %>%
+  select(AccSpeciesName, TraitName, StdValue, UnitName, Reference) %>%
+  rename(dry_seed_mass = StdValue, binomial_name = AccSpeciesName) %>%
+  group_by(binomial_name) %>%
+  summarise(mean_dry_seed_mass_TRY = round(mean(dry_seed_mass, na.rm = TRUE), 2))
+```
+
+
+
+```{r}
+#explore average seed mass
+CP_species_list <- CP_plots_clean$binomial_name
+
+CP_species_list <- CP_species_list %>%
+  unique()
+
+average_seed_mass_BIEN = BIEN_trait_mean(species = CP_species_list, trait = "seed mass")
+
+
+
+```
+
+```{r}
+#THIS NEEDS A LOT OF THINKING ABOUT...
+#merge species_list and seed_dry_mass_TRY_clean
+merged_seed_mass <- left_join(CP_plots_clean, seed_dry_mass_TRY_clean, by = c("binomial_name" = "binomial_name"))%>%
+  select(binomial_name, family, genus, species, restoration, count, relative_abundance_percent, mean_DBH, mean_Height, mean_dry_seed_mass_TRY)
+
+#add in BIEN traits
+final_seed_mass <- merged_seed_mass %>%
+  left_join(average_seed_mass_BIEN, by = c("binomial_name" = "species"))  %>%
+  mutate(mean_dry_seed_mass = ifelse(
+      is.na(mean_dry_seed_mass_TRY), mean_dry_seed_mass_BIEN, mean_dry_seed_mass_TRY)) %>%
+  mutate(mean_dry_seed_mass = as.numeric(mean_dry_seed_mass),
+    mean_dry_seed_mass_BIEN = as.numeric(mean_dry_seed_mass_BIEN)) %>%
+  select(binomial_name, family, genus, species, restoration, count, relative_abundance_percent, mean_DBH, mean_Height, mean_dry_seed_mass, level_used) %>%
+  group_by(binomial_name, restoration) %>%
+  summarise(
+    seed_mass_CWM = weighted.mean(mean_dry_seed_mass, count), #should I use count or relative abundance to weight the mean?? idk...
+    mean_height_CWM = weighted.mean(mean_Height, count),
+    mean_DBH_CWM = weighted.mean(mean_DBH, count)
+  )
+  #mutate(CWM_seed_mass = mean_dry_seed_mass * relative_abundance_percent)
+
+ggplot(final_seed_mass, aes(x = restoration, y = seed_mass_CWM)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = " CWM seed mass",
+    x = "restoration status",
+    y = " CWM 1000 dry seed mass") +
+  theme_minimal()
+
+```
+
+
+
+
+
+
