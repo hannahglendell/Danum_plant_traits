@@ -68,7 +68,24 @@ size_at_rep_maturity %>%
 
 #two species have two records of size at flowering - I want to take the smallest size
 #I will need to manually change these
+#these speciesare Pometia pinnata, which flowers at size class III and IV
+#and dryobanalops lanceolata which flowers at size class III and V
+#so I want to manually assign them flowering_at_size_class III
 
-sum(!is.na(size_at_rep_maturity$flowering_at_size_class))
+size_at_rep_maturity <- size_at_rep_maturity %>%
+  mutate(flowering_at_size_class = ifelse(
+    binomial_name %in% c("Pometia pinnata", "Dryobalanops lanceolata"),
+    "III",
+    flowering_at_size_class)) %>%
+  distinct() %>%
+  mutate(reference = "Lambir dataset")
+
+size_at_rep_maturity %>%
+  filter(!is.na(flowering_at_size_class))
+#this now shows 16 species for which we have flowering at size class - great, I have removed the duplicates!
+#
+#
+write.csv(size_at_rep_maturity, file = here("size at reproductive maturity.csv"), row.names = FALSE)
+
 ```
 

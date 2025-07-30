@@ -25,14 +25,16 @@ species_list <- read.csv(here("species list data", "final species list corrected
 species_list$binomial_name <- paste(species_list$genus, species_list$species)
 
 #final species list of distinct species in each site, as created in the 'creating the final species list' .Rmd
-final_species_list <- read.csv(here("final species list.csv"))
+final_species_list <- read.csv(here("species list data", "final species list.csv"))
 ```
 
+
 ```{r}
+#THIS WILL NEED FIXING
 #now to correct the error from creating the final species list, I need to merge species_list and final_species_list 
 corrected_species_list <- left_join(species_list, final_species_list, by = c("original_binomial_name" = "binomial_name")) %>%
-  select(binomial_name, family, genus, species, history_at_INDFORSUS_site.y, species_origin.y, logging_status.y) %>%
-  rename(history_at_INDFORSUS_site = history_at_INDFORSUS_site.y, species_origin = species_origin.y, logging_status = logging_status.y)
+  select(binomial_name, family, genus, species, history_at_IF_site, history_at_CP_site, species_origin.y, logging_status.y) %>%
+  rename(species_origin = species_origin.y, logging_status = logging_status.y)
 
 species_list <- corrected_species_list
 ```
