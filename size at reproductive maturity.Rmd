@@ -1,0 +1,74 @@
+---
+title: "size at reproductive maturity"
+output: html_document
+---
+
+```{r}
+Lambir_FFR_plantlist <- read.csv(here("size at reproductive maturity", "Lambir_FFR_plantlist.csv"))
+
+Lambir_FFR_phenology <- read.csv(here("size at reproductive maturity", "Lambir_FFR_phenology.csv"))
+
+Lambir_FFR_species <- read.csv(here("size at reproductive maturity", "Lambir_FFR_species.csv"))
+
+```
+
+```{r}
+Lambir_merged <- left_join(Lambir_FFR_species, Lambir_FFR_plantlist, by = "spc") %>%
+  select(family, genus, species, idno, size)
+
+lambir_final <- left_join(Lambir_merged, Lambir_FFR_phenology, by = "idno") %>%
+  select(family, genus, species, idno, size, flw) %>%
+  rename( flowers = flw)%>%
+  filter(
+    !is.na(flowers), #remove rows where not flowering
+    !grepl("^\\s*$", flowers), #remove rows wher not flowering
+    flowers != "P0", #remove rows where proportion of flowers is 0
+    !is.na(size)) %>% #remove rows where no record of size
+  mutate(flowers = "flowering") %>% #mark all records as flowering
+  distinct() # remove duplicate rows
+  
+#now remove the idno column because I'm not actually interested in which specific tree was measured
+#i just want to know whether a tree was flowering at a certain size
+
+lambir_final_clean <- lambir_final %>%
+  select(family, genus, species, size, flowers) %>%
+  distinct() %>% #remove duplicate rows
+  rename(flowering_at_size_class = size) %>% 
+  mutate(binomial_name = paste(genus, species, sep = " ")) %>%
+  select (-flowers, -genus, -species) 
+```
+explanation of size, measures as height in meters
+
+II = 2.5 - 12.5m
+III = 12.5 - 27.5m
+IV = 27.5 - 42.5m
+V > 42.5m
+
+
+p0 = absent
+Pp = less than 25%
+P2 = around 50%
+P3 = around 75%
+P4 = nearly 100%
+
+
+```{r}
+#now see how many of these 189 species are any of the ones that we are interested in
+ 
+species_list <- read.csv(here("species list data", "final species list corrected and cleaned.csv"))
+
+#create a new column with corrected binomial name of each species
+species_list$binomial_name <- paste(species_list$genus, species_list$species)
+
+size_at_rep_maturity <- left_join(species_list, lambir_final_clean, by = "binomial_name") %>%   select(binomial_name, family.x, genus, species, history_at_INDFORSUS_site, species_origin, logging_status, flowering_at_size_class) 
+
+
+size_at_rep_maturity %>%
+  filter(!is.na(flowering_at_size_class))
+
+#two species have two records of size at flowering - I want to take the smallest size
+#I will need to manually change these
+
+sum(!is.na(size_at_rep_maturity$flowering_at_size_class))
+```
+

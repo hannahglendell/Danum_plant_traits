@@ -129,12 +129,6 @@ logged_species_list$Family <- str_to_title(str_to_lower(logged_species_list$Fami
 
 
 ```{r}
-
-```
-
-
-
-```{r}
 #now combine the logged_species_list and the unlogged_species_list together
 #bind_rows() combines the two dataframes together
 #group_by() groups according to binomial name
