@@ -4,6 +4,7 @@ output: html_document
 ---
 
 ```{r}
+#relative abundance for logged speices, from CP plot
 logged_species <- read.csv(here("species list data", "CP plots logged species.csv"))
 ```
 

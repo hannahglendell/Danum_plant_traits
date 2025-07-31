@@ -60,7 +60,8 @@ species_list <- read.csv(here("species list data", "final species list corrected
 #create a new column with corrected binomial name of each species
 species_list$binomial_name <- paste(species_list$genus, species_list$species)
 
-size_at_rep_maturity <- left_join(species_list, lambir_final_clean, by = "binomial_name") %>%   select(binomial_name, family.x, genus, species, history_at_INDFORSUS_site, species_origin, logging_status, flowering_at_size_class) 
+size_at_rep_maturity <- left_join(species_list, lambir_final_clean, by = "binomial_name") %>%   select(binomial_name, family.x, genus, species, history_at_INDFORSUS_site, species_origin, logging_status, flowering_at_size_class) %>%
+  rename(family = family.x)
 
 
 size_at_rep_maturity %>%
@@ -84,8 +85,8 @@ size_at_rep_maturity %>%
   filter(!is.na(flowering_at_size_class))
 #this now shows 16 species for which we have flowering at size class - great, I have removed the duplicates!
 #
-#
-write.csv(size_at_rep_maturity, file = here("size at reproductive maturity.csv"), row.names = FALSE)
+#I NEED TO SAVE THIS CSV IN THE PROCESSED TRAITS FOLDER
+write.csv(size_at_rep_maturity, file = here("processed trait data", "size at reproductive maturity.csv"), row.names = FALSE)
 
 ```
 

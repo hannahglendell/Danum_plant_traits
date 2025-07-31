@@ -30,153 +30,22 @@ final_species_list <- read.csv(here("species list data", "final species list.csv
 
 
 ```{r}
-#THIS WILL NEED FIXING
 #now to correct the error from creating the final species list, I need to merge species_list and final_species_list 
 corrected_species_list <- left_join(species_list, final_species_list, by = c("original_binomial_name" = "binomial_name")) %>%
   select(binomial_name, family, genus, species, history_at_IF_site, history_at_CP_site, species_origin.y, logging_status.y) %>%
   rename(species_origin = species_origin.y, logging_status = logging_status.y)
 
 species_list <- corrected_species_list
-```
 
-```{r}
-# I want to visualise the species composition at each site
-
-#fix the strings of characters, and unnest() the species_origin so that each species has a separate row each time it occurs in a new site
-species_long <- species_list %>%
-  mutate(species_origin = str_split(species_origin, ",\\s*")) %>%  #split by comma + optional space
-  unnest(species_origin) %>%
-  mutate(species_origin = str_trim(species_origin))  #remove any leading/trailing whitespace
-
-#count number of species in each family
-species_counts <- species_long %>%
-  group_by(species_origin, family) %>%
-  summarise(n_species = n_distinct(binomial_name), .groups = "drop")
-
-
-# Step 1: Find top 10 families by total species count across all sites
-top_families <- species_counts %>%
-  group_by(family) %>%
-  summarise(total_species = sum(n_species)) %>%
-  slice_max(total_species, n = 10) %>%
-  pull(family)
-
-# Step 2: Collapse less-common families into "Other"
-species_counts_filtered <- species_counts %>%
-  mutate(family = ifelse(family %in% top_families, family, "Other"))
-
-ggplot(species_counts_filtered, aes(x = species_origin, y = n_species, fill = family)) +
-  geom_bar(stat = "identity") +
-  scale_fill_viridis_d(option = "turbo") +
-  theme_minimal()+
-  labs(
-    title = "Number of distinct species belonging to the 10 most common families",
-    x = "",
-    y = "Number of distinct Species",
-    fill = "Family"
-  )
-```
-
-
-```{r}
-
-# Step 1: Reorder 'family' from smallest to largest within each 'species_origin'
-species_counts_ordered <- species_counts_filtered %>%
-  group_by(species_origin, family) %>%
-  summarise(n_species = sum(n_species), .groups = "drop") %>%
-  arrange(species_origin, n_species) %>%  # <-- Note: ascending order
-  group_by(species_origin) %>%
-  mutate(family = factor(family, levels = unique(family)))  # Factor in desired order
-
-# Step 2: Plot
-ggplot(species_counts_ordered, aes(x = species_origin, y = n_species, fill = family)) +
-  geom_bar(stat = "identity") +
-  scale_fill_viridis_d(option = "turbo") +
-  theme_minimal() +
-  labs(
-    title = "Number of distinct species belonging to the 10 most common families",
-    x = "",
-    y = "Number of distinct Species",
-    fill = "Family"
-  )
+write.csv(species_list, file = here("species list data", "species list.csv"), row.names = FALSE)
 
 ```
-
-```{r}
-
-
-# Step 1: Ensure 'species_origin' is a factor
-species_counts_filtered <- species_counts_filtered %>%
-  mutate(species_origin = factor(species_origin))
-
-# Step 2: Split 'Other' and non-'Other'
-other_data <- species_counts_filtered %>%
-  filter(family == "Other") %>%
-  group_by(species_origin) %>%
-  arrange(species_origin)  # no need to sort; it's on the bottom
-
-non_other_data <- species_counts_filtered %>%
-  filter(family != "Other") %>%
-  group_by(species_origin) %>%
-  arrange(species_origin, desc(n_species))  # largest to smallest
-
-# Step 3: Bind 'Other' on top, then compute stacking positions
-stacked_data <- bind_rows(other_data, non_other_data) %>%
-  group_by(species_origin) %>%
-  mutate(
-    ymin = cumsum(lag(n_species, default = 0)),
-    ymax = ymin + n_species,
-    x = as.numeric(species_origin),
-    label = as.character(species_origin)
-  ) %>%
-  ungroup() %>%
-  mutate(family = factor(family, levels = unique(family)))  # optional for color order
-
-# Step 4: Plot
-ggplot(stacked_data, aes(fill = family)) +
-  geom_rect(aes(
-    xmin = x - 0.4, xmax = x + 0.4,
-    ymin = ymin, ymax = ymax
-  )) +
-  scale_x_continuous(
-    breaks = unique(stacked_data$x),
-    labels = unique(stacked_data$label)
-  ) +
-  scale_fill_viridis_d(option = "turbo") +
-  guides(fill = guide_legend(reverse = TRUE)) +  # <- reverses legend
-  theme_minimal() +
-  labs(
-    title = "'Other' on bottom, remaining families stacked largest to smallest",
-    x = "",
-    y = "Number of distinct Species",
-    fill = "Family"
-  )
-
-```
-
-
 
 
 TRY DATABASE
 ```{r}
 #read in the raw TRY data
-TRY_data_raw <- read.delim(here("TRY data.txt"))
-```
-
-```{r}
-#to get the list of TRY codes for my species
-#read in the dataset on the TRY species codes
-TRY_species_codes <- read.delim(here("TryAccSpecies.txt"))
-
-Danum_species_codes <- left_join(species_list,TRY_species_codes, by = c("binomial_name" = "AccSpeciesName")) %>%
-  select(binomial_name, AccSpeciesID)%>%
-  filter(!is.na(AccSpeciesID))
-
-comma_separated <- Danum_species_codes %>%
-  pull(AccSpeciesID) %>%
-  paste(collapse = ",")
-
-cat(comma_separated)
+TRY_data_raw <- read.delim(here("raw trait data", "TRY", "TRY data.txt"))
 ```
 
 ```{r}
@@ -236,16 +105,13 @@ BIEN_trait_list <- BIEN_trait_list()
 #make a vector of my 753 species
 list_sp <- species_list$binomial_name 
   
-#now do some cleanup of the species list  
+#now do some cleanup of the species list, necessary to use the list in BIEN
 list_sp_cleaned <- list_sp %>%
   iconv(from = "", to = "UTF-8", sub = "byte") %>% #force encoding to UTF-8 and replace non-convertible characters
   gsub(pattern = "\u00a0", replacement = " ", .) %>% #replace non-breaking space (\u00a0)
   trimws() #trim whitespace
  
 ``` 
-
-
-
 
 SORTING DATA BY TRAIT
 
@@ -256,17 +122,11 @@ SORTING DATA BY TRAIT
 # I can't use in BIEN_trait_mean because flower colour is not a numerical variable - it is categorical.
 flower_colour_BIEN <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "flower color")
 #out of my 753 species, only 3 have flower colour data in BIEN
-
-# see how many species have flower colour data in BIEN
-flower_colour_all <- BIEN_trait_trait("flower color")
-length(unique(flower_colour_all$scrubbed_species_binomial))  
-#2624 species contain information on flower colour. But clearly, only 3 of these are in my Danum dataset.
-
 ```
 
 ```{r}
 #flower trait data from Trethowan et al 2024
-trethowan_data <- read.csv(here("trait data", "Flower_Trait_Data.csv"))
+trethowan_data <- read.csv(here("raw trait data", "Flower_Trait_Data.csv"))
 
 #merge the species list and the trethowan datasets together
 flower_colour_trethowan <- left_join(species_list, trethowan_data, by = c("binomial_name" = "species")) %>%
@@ -283,37 +143,41 @@ flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by
     flower_colour = coalesce(corolla_colour, OrigValueStr),
     reference = coalesce(reference, Reference)
   ) %>%
-  select(binomial_name, family.x, genus, species, species_origin, logging_status, flower_colour, reference)
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, flower_colour, reference) %>%
+  rename(family = family.x)
 
+#If there is more than one flower colour listed for a single species, I want to list them
+flower_colour_final <- flower_colour_merged %>%
+  group_by(binomial_name, family, genus, species, species_origin, logging_status) %>%
+  summarise(
+    flower_colour = str_c(unique(flower_colour[!is.na(flower_colour)]), collapse = ", "),
+    reference = str_c(unique(reference[!is.na(reference)]), collapse = ", "),
+    .groups = "drop")%>%
+  mutate(reference = if_else(flower_colour == "", NA_character_, reference)) %>%
+  rename(flower_colour_reference = reference)
 
 #there is no point adding in flower colour form BIEN, because this only had flower colour for three species, all of which are now covered by either Trethowan or TRY.
 #so far, this is the final dataset on flower colour - to get more I think I will have to manually look by species in books.
-#
-#some species have more than one record of flower colour - e.g one record that says 'yellow', another says 'green'. 
+
+#save this dataset as a csv
+write.csv(flower_colour_final, file = here("processed trait data", "flower colour.csv"), row.names = FALSE)
+
 ```
 
 2) FRUIT SIZE
 
 ```{r}
 #data on fruit size from Trethowan et al 2023
-fruit_size_data <- read.csv(here("trait data", "figshare_fruit_data.csv"))
+fruit_size_data <- read.csv(here("raw trait data", "figshare_fruit_data.csv"))
 
 #merge the species list and the fruit size datasets together
 fruit_size <- left_join(species_list, fruit_size_data, by = c("binomial_name" = "species")) %>%
-  select(binomial_name, family, genus, species, species_origin, logging_status, fruit_size_mm, fruit_size_min_mm, reference)%>%
-  distinct()
+  select(binomial_name, family, genus, species, species_origin, logging_status, fruit_size_mm, fruit_size_min_mm, reference) %>%
+  distinct() %>%
+  rename(fruit_size_reference = reference)
 
-```
+write.csv(fruit_size, file = here("processed trait data", "fruit size.csv"), row.names = FALSE)
 
-```{r}
-ggplot(fruit_size, aes(x = logging_status, y = fruit_size_mm)) +
-  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
-  labs(
-    title = "Fruit Size",
-    x = "Logging Status",
-    y = "Fruit Size (mm)"
-  ) +
-  theme_minimal()
 ```
 
 
@@ -327,9 +191,26 @@ ggplot(fruit_size, aes(x = logging_status, y = fruit_size_mm)) +
 #remember this is 1000 seed mass
 seed_dry_mass_TRY_clean <- seed_dry_mass_TRY %>%
   select(AccSpeciesName, TraitName, StdValue, UnitName, Reference) %>%
-  rename(dry_seed_mass = StdValue, binomial_name = AccSpeciesName) %>%
+  rename(dry_seed_mass_mg = StdValue, binomial_name = AccSpeciesName, reference = Reference) %>%
   group_by(binomial_name) %>%
-  summarise(mean_dry_seed_mass_TRY = round(mean(dry_seed_mass, na.rm = TRUE), 2))
+  summarise(mean_dry_seed_mass_mg_TRY = round(mean(dry_seed_mass_mg, na.rm = TRUE), 2))
+  
+#add back in the references - idk why but I couldn't do this within the pipe
+seed_dry_mass_TRY_clean <- left_join(seed_dry_mass_TRY_clean, seed_dry_mass_TRY, by = c("binomial_name" = "AccSpeciesName"))
+
+#select just the columns I want
+seed_dry_mass_TRY_clean <-  seed_dry_mass_TRY_clean %>%
+  select(binomial_name, mean_dry_seed_mass_mg_TRY, Reference) %>%
+  distinct() %>%
+  group_by(binomial_name, mean_dry_seed_mass_mg_TRY) %>%
+  summarise(Reference = str_c(unique(Reference[!is.na(Reference)]), collapse = ", "),
+    .groups = "drop")
+    
+#merge species_list and seed_dry_mass_TRY_clean
+merged_seed_mass <- left_join(species_list, seed_dry_mass_TRY_clean, by = c("binomial_name" = "binomial_name")) %>%
+  select(binomial_name, family, genus, species, history_at_IF_site, history_at_CP_site, species_origin, logging_status, mean_dry_seed_mass_mg_TRY, Reference) %>%
+  distinct()
+
 ```
 
 ```{r}
@@ -338,90 +219,48 @@ seed_dry_mass_TRY_clean <- seed_dry_mass_TRY %>%
 average_seed_mass_BIEN = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed mass") 
 
 average_seed_mass_BIEN <- average_seed_mass_BIEN %>%
-  rename(mean_dry_seed_mass_BIEN = mean_value)
+  rename(mean_dry_seed_mass_BIEN = mean_value, binomial_name = species) %>%
+  mutate(reference = "BIEN") %>%
+  select(binomial_name, mean_dry_seed_mass_BIEN, level_used, reference)
 
-#write.csv(average_seed_mass_BIEN, file = "average seed mass.csv", row.names = FALSE)
 #this assigns seed mass to all 753 species. It produces a dataframe which tells you the mean seed mass, the level used (family, genus or species) and the sample size used to produce that mean.
 
 #BIEN_trait_traitby species extracts entries that conatin the specified species and traits. So this extracts the records only for the species that match exactly. If a species does not match, then it does not produce an estimate based on Genus or Family level
 #seed_mass_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed mass")
-
-#unique(seed_mass_by_species$scrubbed_species_binomial)
-#there is species level data for 31 different species
   
-#write.csv(seed_mass_by_species, file = "seed mass by species.csv", row.names = FALSE)
-#there are 69 records at species level from my list of 753. But these 69 records are not necessarily 69 different species. some species appear to have more than one record. This dataset shows that the seed mas is the average seed mass of 1000 seed, and that most of the data come from SID (Seed Information Database) from kew gardens. 
 ```
 
 ```{r}
-#merge species_list and seed_dry_mass_TRY_clean
-merged_seed_mass <- left_join(species_list, seed_dry_mass_TRY_clean, by = c("binomial_name" = "binomial_name"))%>%
-  select(binomial_name, family, genus, species, history_at_INDFORSUS_site, species_origin, logging_status, mean_dry_seed_mass_TRY)
 
-#now I want to add in the seed mass data from BIEN
+#now I want to merge the seed mass from BIEN and from TRY
 #PROBLEM: some of the same species occur in BIEN and in TRY, the problem is that they appear to have wildly different values, e.g
 #Artocarpus elasticus has a seed mass of 150mg in TRY but 2682mg in BIEN
 #maybe this is because the estimate in BIEN is based on genus or family level approximation
 #so I dont think genus or family level approximations are necessarily very accurate at all
 #
 #I want to add in the BIEN data, but in a way that if there is already existing data in merged_seed_mass_TRY, i keep that data and I do not replace it.
-#
+
 final_seed_mass <- merged_seed_mass %>%
-  left_join(average_seed_mass_BIEN, by = c("binomial_name" = "species"))  %>%
-  mutate(mean_dry_seed_mass = ifelse(
-      is.na(mean_dry_seed_mass_TRY), mean_dry_seed_mass_BIEN, mean_dry_seed_mass_TRY)) %>%
-  mutate(mean_dry_seed_mass = as.numeric(mean_dry_seed_mass),
-    mean_dry_seed_mass_BIEN = as.numeric(mean_dry_seed_mass_BIEN)) %>%
-  select( binomial_name, family, genus, species, history_at_INDFORSUS_site, species_origin, logging_status, mean_dry_seed_mass, mean_dry_seed_mass_TRY, mean_dry_seed_mass_BIEN, unit, level_used, sample_size)
-```
-
-```{r}
-#try plotting the data
-ggplot(final_seed_mass, aes(x = logging_status, y = mean_dry_seed_mass)) +
-  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
-  labs(
-    title = "seed mass",
-    x = "logging status",
-    y = "1000 dry seed mass (mg)"
-  ) +
-  theme_minimal()
-```
-
-```{r}
-ggplot(
-  data = final_seed_mass %>% dplyr::filter(level_used != "Family"),
-  aes(x = logging_status, y = mean_dry_seed_mass)
-) +
-  geom_jitter(width = 0.2, height = 0, color = "blue") +
-  labs(
-    title = "Mean Dry Seed Mass (Excluding Family-Level Estimates)",
-    x = "Species",
-    y = "Mean Dry Seed Mass (g)"
-  ) +
-  theme_minimal()
-```
-
-```{r}
-final_seed_mass <- final_seed_mass %>%
+  left_join(average_seed_mass_BIEN, by = c("binomial_name")) %>%
+  group_by(binomial_name, family, genus, species, species_origin, logging_status, history_at_IF_site, history_at_CP_site, level_used, reference, Reference) %>%
+  summarise(
+    mean_dry_seed_mass_mg = coalesce(mean_dry_seed_mass_mg_TRY, as.numeric(mean_dry_seed_mass_BIEN)),
+    .groups = "drop"
+  ) %>%
   mutate(
-    logged = if_else(logging_status %in% c("logged", "both"), 1, 0),
-    unlogged = if_else(logging_status %in% c("unlogged", "both"), 1, 0)
-  )
+    reference = coalesce(Reference, reference)
+  ) %>%
+  rename(reference_seed_mass = reference) %>%
+  select(-Reference)
 
 
-long_data_seed_mass <- final_seed_mass %>%
-  pivot_longer(cols = c(logged, unlogged), names_to = "condition", values_to = "mean dry seed mass")
+#save as a csv file
+write.csv(final_seed_mass, file = here("processed trait data", "seed mass.csv"), row.names = FALSE)
+
+
 ```
 
-```{r}
 
-ggplot(
-  data = long_data_seed_mass %>% filter(level_used != "Family"),
-  aes(x = condition, y = mean_dry_seed_mass, color = condition)
-) +
-  geom_jitter(width = 0.2, height = 0, alpha = 0.6) +
-  theme_bw()
-```
 
 
 4) SEED SIZE
@@ -429,35 +268,27 @@ ggplot(
 #looking at seed size size
 average_seed_length = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed length")
 
-seed_length_by_species <- BIEN_trait_traitbyspecies(species = list_sp_cleaned, trait = "seed length")
-#shows that data comes from datadryad database
 
 #merge BIEN data with species list
 merged_seed_length <- left_join(species_list, average_seed_length, by = c("binomial_name" = "species")) %>%
-  select(binomial_name, family, genus, species, history_at_INDFORSUS_site, species_origin, logging_status, mean_value) %>%
-  rename(seed_length_mm_BIEN = mean_value) %>%
-  mutate(seed_length_mm_BIEN = as.numeric(seed_length_mm_BIEN))
+  select(binomial_name, family, genus, species, history_at_IF_site, history_at_CP_site, species_origin, logging_status, mean_value) %>%
+  rename(seed_length_mm = mean_value) %>%
+  mutate(seed_length_mm = as.numeric(seed_length_mm),
+         reference = "BIEN")
+
+#save as a csv file
+write.csv(merged_seed_length, file = here("processed trait data", "seed length.csv"), row.names = FALSE)
 
 ```
 
-```{r}
-#now plot the data
-ggplot(merged_seed_length, aes(x = logging_status, y = seed_length_mm_BIEN)) +
-  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
-  labs(
-    title = "seed length",
-    x = "logging status",
-    y = "seed length mm"
-  ) +
-  theme_minimal()
-```
+
 
 
 
 5) WOOD DENSITIES
 ```{r}
 #wood densities from the global wood density database (WDD)
-wood_densities_raw <- read.csv(here("trait data", "GlobalWoodDensityDatabase.csv"))
+wood_densities_raw <- read.csv(here("raw trait data", "GlobalWoodDensityDatabase.csv"))
 
 #WDD stands for Wood Density Database
 wood_densities_WDD <- left_join(species_list, wood_densities_raw, by = c("binomial_name" = "Binomial")) %>%
@@ -465,7 +296,8 @@ wood_densities_WDD <- left_join(species_list, wood_densities_raw, by = c("binomi
   select(binomial_name, wood_density_g_cm_3) %>%
   group_by(binomial_name) %>%
   summarise(mean_wood_density_g_cm_3 = round(mean(wood_density_g_cm_3, na.rm = TRUE), 2)) %>%
-  filter(!is.nan(mean_wood_density_g_cm_3))
+  filter(!is.nan(mean_wood_density_g_cm_3)) %>%
+  mutate(reference = "WDD")
 
 #wood densities from TRY
 wood_density_TRY_clean <- wood_density_TRY %>%
@@ -473,26 +305,38 @@ wood_density_TRY_clean <- wood_density_TRY %>%
   rename(wood_density_g_cm_3 = StdValue, binomial_name = AccSpeciesName) %>%
   group_by(binomial_name) %>%
   summarise(mean_wood_density_g_cm_3 = round(mean(wood_density_g_cm_3, na.rm = TRUE), 2)) %>%
-  filter(!is.nan(mean_wood_density_g_cm_3))
+  filter(!is.nan(mean_wood_density_g_cm_3)) %>%
+  mutate(reference = "TRY")
 
 #join WDD and TRY datasets with the species_list
 df_list <- list(species_list, wood_densities_WDD, wood_density_TRY_clean)
 
-merged_wood_densities <- reduce(df_list, left_join, by = "binomial_name")
+merged_wood_densities <- reduce(df_list, left_join, by = "binomial_name") %>%
+  rename(mean_wood_density_g_cm_3_WDD = mean_wood_density_g_cm_3.x,
+         mean_wood_density_g_cm_3_TRY = mean_wood_density_g_cm_3.y,
+         reference_WDD = reference.x,
+         reference_TRY = reference.y)
 
-#now, i want to join mean_wood_density_g_cm_3.x and mean_wood_density_g_cm_3.y columns together. if there is a value in both, take the mean of both columns.
+#now, i want to join mean_wood_density_g_cm_3_WDD and mean_wood_density_g_cm_3_TRY columns together. if there is a value in both, take the mean of both columns.
 merged_wood_densities <- merged_wood_densities %>%
   mutate(
     mean_wood_density_g_cm_3 = case_when(
-      !is.na(mean_wood_density_g_cm_3.x) & !is.na(mean_wood_density_g_cm_3.y) ~ 
-        round((mean_wood_density_g_cm_3.x + mean_wood_density_g_cm_3.y) / 2, 2),
-      !is.na(mean_wood_density_g_cm_3.x) ~ mean_wood_density_g_cm_3.x,
-      !is.na(mean_wood_density_g_cm_3.y) ~ mean_wood_density_g_cm_3.y,
+      !is.na(mean_wood_density_g_cm_3_WDD) & !is.na(mean_wood_density_g_cm_3_TRY) ~ 
+        round((mean_wood_density_g_cm_3_WDD + mean_wood_density_g_cm_3_TRY) / 2, 2),
+      !is.na(mean_wood_density_g_cm_3_WDD) ~ mean_wood_density_g_cm_3_WDD,
+      !is.na(mean_wood_density_g_cm_3_TRY) ~ mean_wood_density_g_cm_3_TRY,
       TRUE ~ NA_real_
     )
   ) %>%
-  select(binomial_name, family, genus, species, mean_wood_density_g_cm_3, species_origin, logging_status )
+  group_by(binomial_name, family, genus, species, mean_wood_density_g_cm_3, species_origin, logging_status, history_at_IF_site, history_at_CP_site) %>%
+  summarise(
+    reference_wood_density = str_c(na.omit(c(unique(reference_WDD), unique(reference_TRY))), collapse = ", "),
+    .groups = "drop"
+  )
 
+#now save as a csv file
+#save as a csv file
+write.csv(merged_wood_densities, file = here("processed trait data", "wood density.csv"), row.names = FALSE)
 
 ```
 
@@ -504,34 +348,8 @@ merged_wood_densities <- merged_wood_densities %>%
   )
 ```
 
-```{r}
-long_data <- merged_wood_densities %>%
-  pivot_longer(cols = c(logged, unlogged), names_to = "condition", values_to= "mean+wood_density_g_cm_3")
-```
-
-```{r}
-ggplot(long_data, aes(x = condition, y = mean_wood_density_g_cm_3, color = condition)) +
-  geom_jitter(width = 0.2, height = 0, alpha = 0.6) +
-  theme_bw()
-```
 
 
-```{r}
-#now, can I explore the wood density data?
-#do logged forests have lower wood density? I.e because logging selectively removes the most dense trees...
-
-ggplot(merged_wood_densities, aes(x = logging_status, y = mean_wood_density_g_cm_3)) +
-  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
-  labs(
-    title = "Wood Density by Logging Status",
-    x = "Logging Status",
-    y = "Mean Wood Density (g/cm³)"
-  ) +
-  theme_minimal()
-#too few species unique to logged areas for this to be a very good comparison
-```
-
- 
 
 6) TALLO - TREE HEIGHT, CROWN RADIUS, STEM DIAMETER
 ```{r}

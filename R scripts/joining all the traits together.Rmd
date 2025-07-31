@@ -1,0 +1,38 @@
+---
+title: "joining all the traits together"
+output: html_document
+---
+
+```{r}
+#read in all the trait data
+
+flower_colour <- read.csv(here("processed trait data", "flower colour.csv"))
+
+fruit_size <- read.csv(here("processed trait data", "fruit size.csv"))
+
+seed_length <- read.csv(here("processed trait data", "seed length.csv"))
+
+seed_mass <- read.csv(here("processed trait data", "seed mass.csv"))
+
+size_at_rep_maturity <- read.csv(here("processed trait data", "size at reproductive maturity.csv"))
+
+wood_density <- read.csv(here("processed trait data", "wood density.csv"))
+
+```
+
+```{r}
+merged_traits <- flower_colour %>%
+  full_join(fruit_size,           by = c("binomial_name", "family", "genus", "species")) %>%
+  full_join(seed_length,          by = c("binomial_name", "family", "genus", "species")) %>%
+  full_join(seed_mass,            by = c("binomial_name", "family", "genus", "species")) %>%
+  full_join(size_at_rep_maturity, by = c("binomial_name", "family", "genus", "species")) %>%
+  full_join(wood_density,         by = c("binomial_name", "family", "genus", "species")) %>%
+  select (binomial_name, family, genus, species, species_origin.x, logging_status.x, history_at_IF_site.x, history_at_CP_site.x, flower_colour, fruit_size_mm, fruit_size_min_mm, seed_length_mm, mean_dry_seed_mass_mg, mean_wood_density_g_cm_3, flowering_at_size_class ) %>%
+  distinct()
+```
+
+```{r}
+write.csv(merged_traits, file = here("processed trait data", "all traits database.csv"), row.names = FALSE)
+```
+
+

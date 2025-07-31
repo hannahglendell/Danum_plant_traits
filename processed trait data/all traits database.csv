@@ -1,0 +1,699 @@
+"binomial_name","family","genus","species","species_origin.x","logging_status.x","history_at_IF_site.x","history_at_CP_site.x","flower_colour","fruit_size_mm","fruit_size_min_mm","seed_length_mm","mean_dry_seed_mass_mg","mean_wood_density_g_cm_3","flowering_at_size_class"
+"Acranthera frutescens","Rubiaceae","Acranthera","frutescens","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Acranthera velutinervia","Rubiaceae","Acranthera","velutinervia","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Actinodaphne borneensis","Lauraceae","Actinodaphne","borneensis","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,0.5,NA
+"Actinodaphne glomerata","Lauraceae","Actinodaphne","glomerata","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,0.41,NA
+"Actinodaphne macrophylla","Lauraceae","Actinodaphne","macrophylla","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,NA,NA
+"Actinodaphne pruinosa","Lauraceae","Actinodaphne","pruinosa","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,NA,NA
+"Actinodaphne species 1","Lauraceae","Actinodaphne","species 1","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,NA,NA
+"Actinodaphne unknown mixed","Lauraceae","Actinodaphne","unknown mixed","CP, 50ha","both",NA,"no seedling data, AR, NR","",NA,NA,NA,NA,NA,NA
+"Adenanthera kostermansii","Fabaceae","Adenanthera","kostermansii","CP, 50ha","both",NA,"AR, NR","yellow_white",NA,NA,25.9101628865979,137.12,NA,NA
+"Adenanthera malayana","Fabaceae","Adenanthera","malayana","CP, 50ha","both",NA,"AR","yellow_white",NA,NA,25.9101628865979,137.12,NA,NA
+"Adinandra unknown mixed","Theaceae","Adinandra","unknown mixed","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Aglaia angustifolia","Meliaceae","Aglaia","angustifolia","CP, 50ha","both",NA,"AR","",NA,NA,9.17797857142857,924.6375,NA,NA
+"Aglaia argentea","Meliaceae","Aglaia","argentea","CP, 50ha","both",NA,"AR, NR","",NA,NA,9.17797857142857,924.6375,0.63,NA
+"Aglaia crassinervia","Meliaceae","Aglaia","crassinervia","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,924.6375,NA,NA
+"Aglaia edulis","Meliaceae","Aglaia","edulis","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,924.6375,0.71,NA
+"Aglaia elliptica","Meliaceae","Aglaia","elliptica","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,924.6375,0.66,NA
+"Aglaia grandis","Meliaceae","Aglaia","grandis","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,924.6375,0.68,NA
+"Aglaia luzoniensis","Meliaceae","Aglaia","luzoniensis","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,924.6375,0.67,NA
+"Aglaia macrocarpa","Meliaceae","Aglaia","macrocarpa","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,924.6375,0.56,NA
+"Aglaia odoratissima","Meliaceae","Aglaia","odoratissima","CP, 50ha","both",NA,"AR, NR","",NA,NA,9.17797857142857,924.6375,0.71,NA
+"Aglaia oligophylla","Meliaceae","Aglaia","oligophylla","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,924.6375,NA,NA
+"Aglaia silvestris","Meliaceae","Aglaia","silvestris","CP, 50ha","both",NA,"AR, NR","",NA,NA,9.17797857142857,924.6375,0.67,NA
+"Aglaia spectabilis","Meliaceae","Aglaia","spectabilis","CP, 50ha","both",NA,"AR, NR","",NA,NA,9.17797857142857,924.6375,0.58,NA
+"Aglaia tomentosa","Meliaceae","Aglaia","tomentosa","CP, 50ha","both",NA,"AR, NR","",NA,NA,9.17797857142857,298,0.7,NA
+"Aglaia unknown mixed","Meliaceae","Aglaia","unknown mixed","CP, 50ha","both",NA,"AR, NR, no seedling data","",NA,NA,NA,NA,NA,NA
+"Alangium javanicum","Cornaceae","Alangium","javanicum","CP, 50ha","both",NA,"AR, NR","",NA,NA,7.8,75,0.75,NA
+"Allophylus cobbe","Sapindaceae","Allophylus","cobbe","50ha","unlogged",NA,NA,"",NA,NA,8.360909,40.96,0.45,NA
+"Alseodaphne bancana","Lauraceae","Alseodaphne","bancana","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,0.59,NA
+"Alseodaphne unknown mixed","Lauraceae","Alseodaphne","unknown mixed","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Alstonia angustifolia","Apocynaceae","Alstonia","angustifolia","CP, 50ha","both",NA,"NR, AR","",NA,NA,10.4306363636364,6.28333333333333,0.61,NA
+"Alstonia iwahigensis","Apocynaceae","Alstonia","iwahigensis","50ha","unlogged",NA,NA,"",NA,NA,10.4306363636364,6.28333333333333,NA,NA
+"Anaxagorea javanica","Annonaceae","Anaxagorea","javanica","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,61.56,NA,NA
+"Angelesia splendens","Chrysobalanaceae","Angelesia","splendens","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Anisophyllea beccariana","Anisophylleaceae","Anisophyllea","beccariana","50ha","unlogged",NA,NA,"",NA,NA,18.891,NA,0.67,NA
+"Anisophyllea corneri","Anisophylleaceae","Anisophyllea","corneri","CP, 50ha","both",NA,"NR, AR","",NA,NA,18.891,NA,NA,NA
+"Anisoptera costata","Dipterocarpaceae","Anisoptera","costata","CP, 50ha","both",NA,"AR","",NA,NA,NA,685,0.6,NA
+"Anthoshorea agamae","Dipterocarpaceae","Anthoshorea","agamae","CP, 50ha","both",NA,"NR, AR","",NA,NA,NA,NA,NA,NA
+"Anthoshorea symingtonii","Dipterocarpaceae","Anthoshorea","symingtonii","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Antiaris toxicaria","Moraceae","Antiaris","toxicaria","50ha","unlogged",NA,NA,"green",NA,NA,7.3,1019.3,0.4,NA
+"Antidesma leucopodum","Phyllanthaceae","Antidesma","leucopodum","50ha","unlogged",NA,NA,"",NA,NA,3.949,18.0333333333333,NA,NA
+"Antidesma neurocarpum","Phyllanthaceae","Antidesma","neurocarpum","50ha","unlogged",NA,NA,"",NA,NA,3.949,18.0333333333333,NA,NA
+"Antidesma roxburghii","Phyllanthaceae","Antidesma","roxburghii","50ha","unlogged",NA,NA,"",NA,NA,3.949,18.0333333333333,NA,NA
+"Antidesma unknown mixed","Phyllanthaceae","Antidesma","unknown mixed","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Aphanamixis borneensis","Meliaceae","Aphanamixis","borneensis","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,704.921018041667,NA,NA
+"Aphanamixis unknown mixed","Meliaceae","Aphanamixis","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Aporosa elmeri","Phyllanthaceae","Aporosa","elmeri","CP","logged",NA,"AR, NR","",NA,NA,8.4,39.4013353648649,NA,NA
+"Aporosa falcifera","Phyllanthaceae","Aporosa","falcifera","CP","logged",NA,"AR, NR","",NA,NA,8.4,39.4013353648649,NA,NA
+"Aporosa frutescens","Phyllanthaceae","Aporosa","frutescens","CP","logged",NA,"AR, NR","",NA,NA,7.4,53,NA,NA
+"Aporosa grandistipula","Phyllanthaceae","Aporosa","grandistipula","CP","logged",NA,"AR, NR","",NA,NA,8.4,39.4013353648649,NA,NA
+"Aporosa illustris","Phyllanthaceae","Aporosa","illustris","CP","logged",NA,"NR, AR","",NA,NA,8.4,39.4013353648649,NA,NA
+"Aporusa unknown mixed","Phyllanthaceae","Aporusa","unknown mixed","CP","logged",NA,"NR, AR","",NA,NA,NA,NA,NA,NA
+"Aquilaria beccariana","Thymelaeaceae","Aquilaria","beccariana","50ha","unlogged",NA,NA,"",NA,NA,NA,112.981647058824,NA,NA
+"Archidendron microcarpum","Fabaceae","Archidendron","microcarpum","50ha","unlogged",NA,NA,"white_yellow_green",30,20,7.9,170,NA,"III"
+"Archidendron unknown mixed","Fabaceae","Archidendron","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Ardisia  colorata","Primulaceae","Ardisia ","colorata",NA,NA,NA,NA,"",NA,NA,NA,NA,NA,NA
+"Ardisia  macrophylla","Primulaceae","Ardisia ","macrophylla",NA,NA,NA,NA,"",NA,NA,NA,NA,NA,NA
+"Ardisia  unknown mixed","Primulaceae","Ardisia ","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Artocarpus anisophyllus","Moraceae","Artocarpus","anisophyllus","CP, 50ha","both",NA,"NR","",NA,NA,19.85,2682.45407407407,0.6,NA
+"Artocarpus elasticus","Moraceae","Artocarpus","elasticus","CP","logged",NA,"NR","",NA,NA,11.8,150,0.38,"III"
+"Artocarpus heterophyllus","Moraceae","Artocarpus","heterophyllus","CP","logged",NA,"AR","green",NA,NA,19.85,9338.93,0.5,NA
+"Artocarpus unknown mixed","Moraceae","Artocarpus","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Atuna excelsa","Chrysobalanaceae","Atuna","excelsa","CP","logged",NA,"NR","",NA,NA,22.1142857142857,2536.14322477778,NA,"III"
+"Azadirachta excelsa","Meliaceae","Azadirachta","excelsa","CP, 50ha","both",NA,"AR","",NA,NA,9.17797857142857,1920,0.52,NA
+"Baccaurea edulis","Phyllanthaceae","Baccaurea","edulis","50ha","unlogged",NA,NA,"",NA,NA,11.5,39.4013353648649,NA,NA
+"Baccaurea lanceolata","Phyllanthaceae","Baccaurea","lanceolata","CP, 50ha","both",NA,"AR, NR","",NA,NA,11.5,39.4013353648649,NA,NA
+"Baccaurea macrocarpa","Phyllanthaceae","Baccaurea","macrocarpa","CP, 50ha","both",NA,"no seedling data","",NA,NA,11.5,39.4013353648649,0.54,NA
+"Baccaurea parviflora","Phyllanthaceae","Baccaurea","parviflora","50ha","unlogged",NA,NA,"",NA,NA,11.5,38,0.72,NA
+"Baccaurea species 1","Phyllanthaceae","Baccaurea","species 1","50ha","unlogged",NA,NA,"",NA,NA,11.5,39.4013353648649,NA,NA
+"Baccaurea tetrandra","Phyllanthaceae","Baccaurea","tetrandra","CP, 50ha","both",NA,"AR, NR","",NA,NA,11.5,100,NA,NA
+"Baccaurea unknown mixed","Phyllanthaceae","Baccaurea","unknown mixed","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Barringtonia lanceolata","Lecythidaceae ","Barringtonia","lanceolata","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.446,1163,NA,NA
+"Barringtonia macrostachya","Lecythidaceae ","Barringtonia","macrostachya","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.446,1163,0.6,NA
+"Barringtonia unknown mixed","Lecythidaceae","Barringtonia","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Beilschmiedia ","Lauraceae","Beilschmiedia","","CP, 50ha","both",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Beilschmiedia Unknown species 1","Lauraceae","Beilschmiedia","Unknown species 1","50ha","unlogged",NA,NA,"",NA,NA,33.3,4248.53,NA,NA
+"Beilschmiedia assamica","Lauraceae","Beilschmiedia","assamica","50ha","unlogged",NA,NA,"",NA,NA,33.3,4248.53,0.54,NA
+"Beilschmiedia micrantha","Lauraceae","Beilschmiedia","micrantha","CP, 50ha","both",NA,"AR, NR","",NA,NA,33.3,4248.53,0.38,NA
+"Beilschmiedia tawaensis","Lauraceae","Beilschmiedia","tawaensis","CP, 50ha","both",NA,"AR, NR","",NA,NA,33.3,4248.53,NA,NA
+"Beilschmiedia unknown mixed","Lauraceae","Beilschmiedia","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Bhesa paniculata","Centroplacaceae","Bhesa","paniculata","50ha","unlogged",NA,NA,"",NA,NA,16.6,77,0.66,NA
+"Blumeodendron kurzii","Euphorbiaceae","Blumeodendron","kurzii","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,0.54,"IV"
+"Blumeodendron tokbrai","Euphorbiaceae","Blumeodendron","tokbrai","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,0.58,NA
+"Bridelia ","Phyllanthaceae","Bridelia","","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Bridelia cinnamomea","Phyllanthaceae","Bridelia","cinnamomea","50ha","unlogged",NA,NA,"",NA,NA,7.452778,39.4013353648649,NA,NA
+"Bridelia insulana","Phyllanthaceae","Bridelia","insulana","CP, 50ha","both",NA,"no seedling data, AR","",NA,NA,7.452778,39.4013353648649,0.54,NA
+"Brownlowia peltata","Malvaceae","Brownlowia","peltata","CP, 50ha","both",NA,"NR, AR","",NA,NA,16.6049538461538,881.714199688546,0.47,NA
+"Brownlowia stipulata","Malvaceae","Brownlowia","stipulata","CP, 50ha","both",NA,"NR","",NA,NA,16.6049538461538,881.714199688546,NA,NA
+"Buchanania arborescens","Anacardiaceae","Buchanania","arborescens","50ha","unlogged",NA,NA,"",NA,NA,17.5381934615385,238.03,0.46,NA
+"Buchanania sessilifolia","Anacardiaceae","Buchanania","sessilifolia","CP, 50ha","both",NA,"NR","",NA,NA,17.5381934615385,256.4,0.42,NA
+"Buchanania unknown mixed","Anacardiaceae","Buchanania","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Callicarpa longifolia","Lamiaceae","Callicarpa","longifolia","50ha","unlogged",NA,NA,"pale pink_lilac",NA,NA,7.21,0.39,NA,NA
+"Callicarpa pentandra","Lamiaceae","Callicarpa","pentandra","CP, 50ha","both",NA,"AR, NR","purple",5,2,7.21,25.4065073459038,0.34,NA
+"Callicarpa unknown mixed","Lamiaceae","Callicarpa","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Calophyllaceae venulosum","Calophyllaceae","Calophyllaceae","venulosum","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Calophyllum blancoi","Calophyllaceae","Calophyllum","blancoi","CP, 50ha","both",NA,"NR, AR","",NA,NA,24.597,3760.18529197872,0.58,NA
+"Calophyllum gracilipes","Calophyllaceae","Calophyllum","gracilipes","CP, 50ha","both",NA,"AR","",NA,NA,24.597,3760.18529197872,NA,NA
+"Calophyllum pulcherrimum","Calophyllaceae","Calophyllum","pulcherrimum","50ha","unlogged",NA,NA,"",NA,NA,12.7,3760.18529197872,0.62,NA
+"Calophyllum soulattri","Calophyllaceae","Calophyllum","soulattri","CP, 50ha","both",NA,"NR","",NA,NA,24.597,3760.18529197872,0.43,NA
+"Calophyllum species 1","Clusiaceae","Calophyllum","species 1","50ha","unlogged",NA,NA,"",NA,NA,24.597,3760.18529197872,NA,NA
+"Calophyllum species 2","Clusiaceae","Calophyllum","species 2","50ha","unlogged",NA,NA,"",NA,NA,24.597,3760.18529197872,NA,NA
+"Cananga odorata","Annonaceae","Cananga","odorata","50ha","unlogged",NA,NA,"green, yellow, verde",NA,NA,16.6527142857143,61.6,0.33,NA
+"Canarium decumanum","Burseraceae","Canarium","decumanum","CP","logged",NA,"AR, NR","",NA,NA,28.98154,5413.04,0.34,NA
+"Canarium denticulatum","Burseraceae","Canarium","denticulatum","CP, IF","logged","ActiveRestoration","AR, NR","",NA,NA,28.98154,10100,0.5,"II"
+"Canarium odontophyllum","Burseraceae","Canarium","odontophyllum","CP","logged",NA,"AR, NR, no seedling data","",NA,NA,28.98154,5413.04,0.5,NA
+"Canarium unknown mixed","Burseraceae","Canarium","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Carallia borneensis","Rhizophoraceae","Carallia","borneensis","50ha","unlogged",NA,NA,"",NA,NA,3.475,17460.309515,0.61,NA
+"Carallia species 1","Rhizophoraceae","Carallia","species 1","50ha","unlogged",NA,NA,"",NA,NA,3.475,17460.309515,NA,NA
+"Caryodaphnopsis tonkinensis","Lauraceae","Caryodaphnopsis","tonkinensis","CP, 50ha","both",NA,"NR, no seedling data, AR","",NA,NA,13.1101518518519,1244.48787274336,NA,NA
+"Casearia grewiifolia","Salicaceae","Casearia","grewiifolia","CP, 50ha","both",NA,"AR","",NA,NA,2.31871428571429,11.2636,0.49,NA
+"Castanopsis hypophoenicea","Fagaceae","Castanopsis","hypophoenicea","CP, 50ha","both",NA,"AR, NR","",NA,NA,20.3,1350.3275,NA,NA
+"Castanopsis motleyana","Fagaceae","Castanopsis","motleyana","CP","logged",NA,"NR","",NA,NA,20.3,1350.3275,NA,NA
+"Castanopsis unknown mixed","Fagaceae","Castanopsis","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Chionanthus curvicarpus","Oleaceae","Chionanthus","curvicarpus","50ha","unlogged",NA,NA,"yellow_yellow-green_greenish white",25,17,23,550,NA,NA
+"Chionanthus macrocarpus","Oleaceae","Chionanthus","macrocarpus","50ha","unlogged",NA,NA,"white",45,25,23,550,NA,NA
+"Chionanthus pluriflorus","Oleaceae","Chionanthus","pluriflorus","CP, 50ha","both",NA,"AR, NR","yellow_yellow-green",26,19,23,550,NA,NA
+"Chionanthus unknown mixed","Oleaceae","Chionanthus","unknown mixed","CP, 50ha","both",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Chisocheton ceramicus","Meliaceae","Chisocheton","ceramicus","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,704.921018041667,0.43,NA
+"Chisocheton macranthus","Meliaceae","Chisocheton","macranthus","CP, 50ha","both",NA,"AR, NR","",NA,NA,9.17797857142857,704.921018041667,NA,NA
+"Chisocheton patens","Meliaceae","Chisocheton","patens","CP, 50ha","both",NA,"NR","",NA,NA,9.17797857142857,704.921018041667,0.48,NA
+"Chisocheton pentandrus","Meliaceae","Chisocheton","pentandrus","CP, 50ha","both",NA,"AR","",NA,NA,9.17797857142857,704.921018041667,0.5,NA
+"Chisocheton polyandrus","Meliaceae","Chisocheton","polyandrus","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,704.921018041667,NA,NA
+"Chisocheton sarawakanus","Meliaceae","Chisocheton","sarawakanus","CP, 50ha","both",NA,"AR, NR","",NA,NA,9.17797857142857,704.921018041667,0.6,NA
+"Chisocheton unknown mixed","Meliaceae","Chisocheton","unknown mixed","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Cinnamomum iners","Lauraceae","Cinnamomum","iners","CP, 50ha","both",NA,"AR","",NA,NA,10.3,262,0.5,NA
+"Cinnamomum racemosum","Lauraceae","Cinnamomum","racemosum","50ha","unlogged",NA,NA,"",NA,NA,10.3,1520.18968181818,NA,NA
+"Cinnamomum unknown mixed","Lauraceae","Cinnamomum","unknown mixed","CP, 50ha","both",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Clausena excavata","Rutaceae","Clausena","excavata","CP, 50ha","both",NA,"NR","",NA,NA,4.323085,124.165051964912,NA,NA
+"Clausena unknown","Rutaceae","Clausena","unknown","50ha","unlogged",NA,NA,"",NA,NA,4.323085,124.165051964912,NA,NA
+"Cleistanthus hirsutulus","Phyllanthaceae","Cleistanthus","hirsutulus","CP, 50ha","both",NA,"AR, NR","",NA,NA,6.46203955555556,39.4013353648649,NA,NA
+"Cleistanthus oblongifolius","Phyllanthaceae","Cleistanthus","oblongifolius","CP","logged",NA,"NR, AR","",NA,NA,6.46203955555556,39.4013353648649,NA,NA
+"Cleistanthus podopyxis","Phyllanthaceae","Cleistanthus","podopyxis","CP, 50ha","both",NA,"no seedling data, AR","",9,6,6.46203955555556,39.4013353648649,NA,NA
+"Cleistanthus species 2","Phyllanthaceae","Cleistanthus","species 2","50ha","unlogged",NA,NA,"",NA,NA,6.46203955555556,39.4013353648649,NA,NA
+"Cleistanthus unknown mixed","Phyllanthaceae","Cleistanthus","unknown mixed","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Coelostegia borneensis","Malvaceae","Coelostegia","borneensis","CP, 50ha","both",NA,"AR","",NA,NA,16.6049538461538,881.714199688546,0.58,NA
+"Cowiea borneensis","Rubiaceae","Cowiea","borneensis","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Crateva magna","Capparaceae","Crateva","magna","50ha","unlogged",NA,NA,"",NA,NA,0.1209,26.39,NA,NA
+"Cratoxylum cochinchinense","Hypericaceae","Cratoxylum","cochinchinense","50ha","unlogged",NA,NA,"",NA,NA,2.3666665,0.67,0.69,NA
+"Cratoxylum unknown mixed","Hypericaceae","Cratoxylum","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Croton argyratus","Euphorbiaceae","Croton","argyratus","CP","logged",NA,"NR","",NA,NA,1.4215,40.5848428571429,0.66,NA
+"Croton oblongus","Euphorbiaceae","Croton","oblongus","50ha","unlogged",NA,NA,"",NA,NA,1.4215,40.5848428571429,NA,NA
+"Croton unknown mixed","Euphorbiaceae","Croton","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Crudia bantamensis","Fabacea","Crudia","bantamensis","50ha","unlogged",NA,NA,"yellow_green_white",NA,NA,25.9101628865979,273.929465733062,NA,NA
+"Crudia tenuipes","Fabaceae","Crudia","tenuipes","CP, 50ha","both",NA,"AR","green_white_yellow",NA,NA,25.9101628865979,273.929465733062,0.86,NA
+"Crudia unknown mixed","Fabaceae","Crudia","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Crypteronia rubiflora","Crypteroniaceae","Crypteronia","rubiflora","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Cryptocarya ferrea","Lauraceae","Cryptocarya","ferrea","CP, 50ha","both",NA,"AR, NR","pale green_pale yellow",35,7,16.6615716666667,5366.65,0.64,NA
+"Cryptocarya pulchrinervia","Lauraceae","Cryptocarya","pulchrinervia","CP, 50ha","both",NA,"no seedling data, NR","",40,25,16.6615716666667,5366.65,NA,NA
+"Cryptocarya strictifolia","Lauraceae","Cryptocarya","strictifolia","CP","logged",NA,"AR","",25,15,16.6615716666667,5366.65,NA,NA
+"Cryptocarya teysmanniana","Lauraceae","Cryptocarya","teysmanniana","50ha","unlogged",NA,NA,"yellow-white",22,15,16.6615716666667,5366.65,NA,NA
+"Cryptocarya unknown mixed","Lauraceae","Cryptocarya","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Cyathocalyx magnifructus","Annonaceae","Cyathocalyx","magnifructus","CP, 50ha","both",NA,"AR","",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Cynometra elmeri","Fabaceae","Cynometra","elmeri","50ha","unlogged",NA,NA,"",NA,NA,25.9101628865979,5902.49966425,NA,NA
+"Cynometra mirabilis","Fabaceae","Cynometra","mirabilis","CP, 50ha","both",NA,"NR","",NA,NA,25.9101628865979,5902.49966425,NA,NA
+"Dacryodes laxa","Burseraceae","Dacryodes","laxa","50ha","unlogged",NA,NA,"",NA,NA,21.3,2816.2775,0.68,NA
+"Dacryodes rostrata","Burseraceae","Dacryodes","rostrata","CP, 50ha","both",NA,"AR","",NA,NA,21.3,2816.2775,0.54,NA
+"Dacryodes rugosa","Burseraceae","Dacryodes","rugosa","CP, 50ha","both",NA,"AR, NR","",NA,NA,21.3,2816.2775,0.74,NA
+"Dacryodes species 1","Burseraceae","Dacryodes","species 1","50ha","unlogged",NA,NA,"",NA,NA,21.3,2816.2775,NA,NA
+"Dacryodes unknown mixed","Burseraceae","Dacryodes","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Dalrympelea sphaerocarpa","Staphyleaceae","Dalrympelea","sphaerocarpa","50ha","unlogged",NA,NA,"",NA,NA,NA,53.308125,NA,NA
+"Decaspermum parviflorum","Myrtaceae","Decaspermum","parviflorum","50ha","unlogged",NA,NA,"white_pink",5,3,11.4340448596491,5.99,NA,NA
+"Dehaasia caesia","Lauraceae","Dehaasia","caesia","CP, 50ha","both",NA,"AR, NR","",NA,NA,13.1101518518519,1244.48787274336,0.66,NA
+"Dehaasia gigantocarpa","Lauraceae","Dehaasia","gigantocarpa","50ha","unlogged",NA,NA,"",60,30,13.1101518518519,1244.48787274336,NA,NA
+"Dehaasia incrassata","Lauraceae","Dehaasia","incrassata","CP, 50ha","both",NA,"AR, NR","",45,25,13.1101518518519,1244.48787274336,0.46,NA
+"Dehaasia unknown mixed","Lauraceae","Dehaasia","unknown mixed","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Dendrocnide elliptica","Urticaceae","Dendrocnide","elliptica","CP, 50ha","both",NA,"AR, NR","",NA,NA,2.95503,0.648,NA,NA
+"Dendrocnide stimulans","Urticaceae","Dendrocnide","stimulans","50ha","unlogged",NA,NA,"",NA,NA,2.95503,0.648,NA,NA
+"Dendrocnide unknown mixed","Urticaceae","Dendrocnide","unknown mixed","CP, 50ha","both",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Dialium indum","Fabaceae","Dialium","indum","50ha","unlogged",NA,NA,"white",NA,NA,7.5,250,0.82,NA
+"Dialium unknown mixed","Fabaceae","Dialium","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Didymocheton gaudichaudianus","Meliaceae","Didymocheton","gaudichaudianus","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,704.921018041667,NA,NA
+"Dillenia borneensis","Dilleniaceae","Dillenia","borneensis","50ha","unlogged",NA,NA,"",NA,NA,NA,18.2625,0.61,NA
+"Dillenia excelsa","Dilleniaceae","Dillenia","excelsa","CP, 50ha","both",NA,"NR, AR","",NA,NA,NA,18.2625,0.63,NA
+"Dillenia species 1","Dilleniaceae","Dillenia","species 1","CP, 50ha","both",NA,"NR","",NA,NA,NA,18.2625,NA,NA
+"Dimocarpus dentatus","Sapindaceae","Dimocarpus","dentatus","CP, 50ha","both",NA,"NR, AR","",NA,NA,25.0609611923077,600,NA,NA
+"Dimocarpus fumatus","Sapindaceae","Dimocarpus","fumatus","50ha","unlogged",NA,NA,"",NA,NA,25.0609611923077,600,NA,NA
+"Dimocarpus longan","Sapindaceae","Dimocarpus","longan","CP, 50ha, IF","both","ActiveRestoration, NaturalRegeneration","AR, NR","",NA,NA,25.0609611923077,969,0.71,NA
+"Diospyros andamanica","Ebenaceae","Diospyros","andamanica","CP, 50ha","both",NA,"NR, AR","",NA,NA,4.55625,611.180001967213,0.6,NA
+"Diospyros borneensis","Ebenaceae","Diospyros","borneensis","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,0.55,NA
+"Diospyros cauliflora","Ebenaceae","Diospyros","cauliflora","CP, 50ha","both",NA,"NR, no seedling data, AR","",NA,NA,4.55625,611.180001967213,0.54,NA
+"Diospyros curranii","Ebenaceae","Diospyros","curranii","CP, 50ha","both",NA,"AR, NR","",NA,NA,4.55625,611.180001967213,0.62,NA
+"Diospyros daemona","Ebenaceae","Diospyros","daemona","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros dictyoneura","Ebenaceae","Diospyros","dictyoneura","CP, 50ha","both",NA,"NR","",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros diepenhorstii","Ebenaceae","Diospyros","diepenhorstii","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,0.57,NA
+"Diospyros elliptifolia","Ebenaceae","Diospyros","elliptifolia","CP, 50ha","both",NA,"AR, NR","",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros euphlehia","Ebenaceae","Diospyros","euphlehia","CP, 50ha","both",NA,"AR","",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros frutescens","Ebenaceae","Diospyros","frutescens","CP, 50ha","both",NA,"NR","",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros muricata","Ebenaceae","Diospyros","muricata","CP, 50ha","both",NA,"AR","",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros oblonga","Ebenaceae","Diospyros","oblonga","CP, 50ha","both",NA,"AR, NR","",NA,NA,4.55625,611.180001967213,0.75,NA
+"Diospyros peregrina","Ebenaceae","Diospyros","peregrina","CP, 50ha","both",NA,"AR, NR","",NA,NA,4.55625,611.180001967213,0.72,NA
+"Diospyros pyrrhocarpa","Ebenaceae","Diospyros","pyrrhocarpa","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,0.64,NA
+"Diospyros species 1","Ebenaceae","Diospyros","species 1","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros species 2","Ebenaceae","Diospyros","species 2","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros species 3","Ebenaceae","Diospyros","species 3","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros species 4","Ebenaceae","Diospyros","species 4","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros species 6","Ebenaceae","Diospyros","species 6","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros species 7","Ebenaceae","Diospyros","species 7","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,NA,NA
+"Diospyros squamifolia ","Ebenaceae","Diospyros","squamifolia ","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Diospyros toposia","Ebenaceae","Diospyros","toposia","CP, 50ha","both",NA,"NR, AR","",NA,NA,4.55625,611.180001967213,0.7,NA
+"Diospyros tuberculata","Ebenaceae","Diospyros","tuberculata","CP, 50ha","both",NA,"NR, AR","",NA,NA,4.55625,611.180001967213,0.45,NA
+"Diospyros unknown mixed","Ebenaceae","Diospyros","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Diospyros wallichii","Ebenaceae","Diospyros","wallichii","50ha","unlogged",NA,NA,"",NA,NA,4.55625,611.180001967213,0.6,NA
+"Diplospora unknown mixed","Rubiaceae","Diplospora","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Dipterocarpus applanatus","Dipterocarpaceae","Dipterocarpus","applanatus","CP","logged",NA,"AR, NR","",NA,NA,NA,6666.7,0.56,NA
+"Dipterocarpus caudifer","Dipterocarpaceae","Dipterocarpus","caudifer","CP, IF","logged","ActiveRestoration, NaturalRegeneration","AR, NR","",NA,NA,NA,6666.7,NA,NA
+"Dipterocarpus unknown mixed","Dipterocarpaceae","Dipterocarpus","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Discospermum malaccense","Rubiaceae","Discospermum","malaccense","CP, 50ha","both",NA,"AR, NR","",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Dracontomelon costatum","Anacardiaceae","Dracontomelon","costatum","50ha","unlogged",NA,NA,"",NA,NA,17.5381934615385,1133.94134912719,0.47,NA
+"Dracontomelon dao","Anacardiaceae","Dracontomelon","dao","CP, 50ha","both",NA,"NR","",NA,NA,17.5381934615385,1133.94134912719,0.52,NA
+"Dracontomelon unknown mixed","Anacardiaceae","Dracontomelon","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Drepananthus havilandii","Annonaceae","Drepananthus","havilandii","CP","logged",NA,"NR","",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Dryobalanops lanceolata","Dipterocarpaceae","Dryobalanops","lanceolata","CP, 50ha, IF","both","ActiveRestoration","AR, NR, no seedling data","",NA,NA,NA,8300,0.58,"III"
+"Drypetes castilloi","Putranjivaceae","Drypetes","castilloi","CP, 50ha","both",NA,"NR","",NA,NA,10.1,559,NA,NA
+"Drypetes eriocarpa","Putranjivaceae","Drypetes","eriocarpa","CP, 50ha","both",NA,"AR","",NA,NA,10.1,559,NA,NA
+"Drypetes longifolia","Putranjivaceae","Drypetes","longifolia","CP, 50ha","both",NA,"AR, NR, no seedling data","",NA,NA,10.1,559,0.66,NA
+"Drypetes subcrenata","Putranjivaceae","Drypetes","subcrenata","50ha","unlogged",NA,NA,"",NA,NA,10.1,559,NA,NA
+"Drypetes unknown mixed","Putranjivaceae","Drypetes","unknown mixed","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Duabanga moluccana","Lythraceae","Duabanga","moluccana","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,3,0.33,NA
+"Durio graveolens","Malvaceae","Durio","graveolens","CP, 50ha","both",NA,"NR","",NA,NA,39.2,18094.3333333333,0.56,NA
+"Durio unknown mixed","Malvaceae","Durio","unknown mixed","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Dysoxylum cyrtobotryum","Meliaceae","Dysoxylum","cyrtobotryum","CP, 50ha","both",NA,"NR, AR","",NA,NA,1.2,6300,NA,NA
+"Dysoxylum grande","Meliaceae","Dysoxylum","grande","50ha","unlogged",NA,NA,"",NA,NA,1.2,1385,0.65,NA
+"Dysoxylum oppositifolium","Meliaceae","Dysoxylum","oppositifolium","50ha","unlogged",NA,NA,"",NA,NA,1.2,1385,0.76,NA
+"Dysoxylum unknown mixed","Meliaceae","Dysoxylum","unknown mixed","CP, 50ha","both",NA,"NR, AR","",NA,NA,NA,NA,NA,NA
+"Elaeocarpus brunnescens","Elaeocarpaceae","Elaeocarpus","brunnescens","50ha","unlogged",NA,NA,"",22,16,13.2,2088.19083556757,NA,NA
+"Elaeocarpus stipularis","Elaeocarpaceae","Elaeocarpus","stipularis","CP, 50ha","both",NA,"NR, AR","",25,18,13.2,3240,0.44,NA
+"Elaeocarpus unknown mixed","Elaeocarpaceae","Elaeocarpus","unknown mixed","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Endospermum diadenum","Euphorbiaceae","Endospermum","diadenum","CP, 50ha","both",NA,"AR, NR","",NA,NA,0.5,9.9,0.36,NA
+"Engelhardia danumensis","Juglandaceae","Engelhardia","danumensis","50ha","unlogged",NA,NA,"",NA,NA,NA,7367.1478863,NA,NA
+"Epicharis cumingiana","Meliaceae","Epicharis","cumingiana","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,704.921018041667,NA,NA
+"Epicharis parasitica","Meliaceae","Epicharis","parasitica","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,704.921018041667,NA,NA
+"Erycibe borneensis","Convolvulaceae","Erycibe","borneensis","CP, 50ha","both",NA,"NR","",NA,NA,7.7338,34.9657962592593,NA,NA
+"Erythroxylum cuneatum","Erythroxylaceae","Erythroxylum","cuneatum","50ha","unlogged",NA,NA,"",NA,NA,2.9327,15.5853333333333,0.7,NA
+"Eurycoma longifolia","Simaroubaceae","Eurycoma","longifolia","50ha","unlogged",NA,NA,"",NA,NA,NA,2225.01172319355,0.5,NA
+"Eusideroxylon zwageri","Lauraceae","Eusideroxylon","zwageri","CP, 50ha","both",NA,"NR","",NA,NA,13.1101518518519,28571,0.79,NA
+"Fagraea unknown mixed","Gentianaceae","Fagraea","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Ficus beccarii","Moraceae","Ficus","beccarii","50ha","unlogged",NA,NA,"",20,10,1.09166666666667,33.4234181640625,NA,NA
+"Ficus lepicarpa","Moraceae","Ficus","lepicarpa","50ha","unlogged",NA,NA,"",25,10,1.09166666666667,33.4234181640625,NA,NA
+"Ficus mixed","Moraceae","Ficus","mixed","50ha","unlogged",NA,NA,"",NA,NA,1.09166666666667,33.4234181640625,NA,NA
+"Ficus obscura","Moraceae","Ficus","obscura","50ha","unlogged",NA,NA,"",22,6,1.09166666666667,33.4234181640625,NA,NA
+"Ficus sinuata","Moraceae","Ficus","sinuata","50ha","unlogged",NA,NA,"",8,3,1.09166666666667,33.4234181640625,NA,NA
+"Ficus species 1","Moraceae","Ficus","species 1","50ha","unlogged",NA,NA,"",NA,NA,1.09166666666667,33.4234181640625,NA,NA
+"Ficus species 2","Moraceae","Ficus","species 2","50ha","unlogged",NA,NA,"",NA,NA,1.09166666666667,33.4234181640625,NA,NA
+"Ficus species 3","Moraceae","Ficus","species 3","50ha","unlogged",NA,NA,"",NA,NA,1.09166666666667,33.4234181640625,NA,NA
+"Ficus species 4","Moraceae","Ficus","species 4","50ha","unlogged",NA,NA,"",NA,NA,1.09166666666667,33.4234181640625,NA,NA
+"Ficus species 5","Moraceae","Ficus","species 5","50ha","unlogged",NA,NA,"",NA,NA,1.09166666666667,33.4234181640625,NA,NA
+"Ficus species 6","Moraceae","Ficus","species 6","50ha","unlogged",NA,NA,"",NA,NA,1.09166666666667,33.4234181640625,NA,NA
+"Ficus species 7","Moraceae","Ficus","species 7","50ha","unlogged",NA,NA,"",NA,NA,1.09166666666667,33.4234181640625,NA,NA
+"Ficus species 8","Moraceae","Ficus","species 8","50ha","unlogged",NA,NA,"",NA,NA,1.09166666666667,33.4234181640625,NA,NA
+"Ficus stolonifera","Moraceae","Ficus","stolonifera","50ha","unlogged",NA,NA,"",12,8,1.09166666666667,33.4234181640625,NA,NA
+"Ficus unknown mixed","Moraceae","Ficus","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Ficus variegata","Moraceae","Ficus","variegata","CP, 50ha","both",NA,"NR","",NA,NA,1.09166666666667,0.34,0.34,NA
+"Flacourtia rukam","Salicaceae","Flacourtia","rukam","50ha","unlogged",NA,NA,"",NA,NA,3.69122307692308,66.9,0.75,NA
+"Fordia brachybotrys","Fabaceae","Fordia","brachybotrys","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.9101628865979,273.929465733062,NA,NA
+"Fordia species 1","Fabaceae","Fordia","species 1","50ha","unlogged",NA,NA,"",NA,NA,25.9101628865979,273.929465733062,NA,NA
+"Fordia species 3","Fabaceae","Fordia","species 3","50ha","unlogged",NA,NA,"",NA,NA,25.9101628865979,273.929465733062,NA,NA
+"Fordia splendidissima","Fabaceae","Fordia","splendidissima","50ha","unlogged",NA,NA,"",NA,NA,25.9101628865979,500,0.64,NA
+"Fordia splendidissima","Fabaceae","Fordia","splendidissima","50ha","unlogged",NA,"AR, NR","",NA,NA,25.9101628865979,500,0.64,NA
+"Fordia splendidissima","Fabaceae","Fordia","splendidissima","CP, 50ha","both",NA,NA,"",NA,NA,25.9101628865979,500,0.64,NA
+"Fordia splendidissima","Fabaceae","Fordia","splendidissima","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.9101628865979,500,0.64,NA
+"Fordia unknown mixed","Fabaceae","Fordia","unknown mixed","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Galearia fulva","Pandaceae","Galearia","fulva","CP, 50ha","both",NA,"AR","",NA,NA,25.542701980198,231.792239479883,NA,NA
+"Garcinia forbesii","Clusiaceae","Garcinia","forbesii","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.9555,2781.22546314583,NA,NA
+"Garcinia gaudichaudii","Clusiaceae","Garcinia","gaudichaudii","50ha","unlogged",NA,NA,"",NA,NA,25.9555,2781.22546314583,0.72,NA
+"Garcinia nervosa","Clusiaceae","Garcinia","nervosa","CP, 50ha","both",NA,"AR","",NA,NA,25.9555,2781.22546314583,0.78,NA
+"Garcinia parvifolia","Clusiaceae","Garcinia","parvifolia","50ha","unlogged",NA,NA,"",NA,NA,12.5,2781.22546314583,0.47,NA
+"Garcinia unknown mixed","Clusiaceae","Garcinia","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Gardenia carinata","Rubiaceae","Gardenia","carinata","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,9.69,NA,NA
+"Gironniera nervosa","Cannabaceae","Gironniera","nervosa","CP, 50ha","both",NA,"AR, NR","",NA,NA,0.7,47.9403180779221,0.45,NA
+"Gironniera species 1","Cannabaceae","Gironniera","species 1","50ha","unlogged",NA,NA,"",NA,NA,0.7,47.9403180779221,NA,NA
+"Glochidion elmeri","Phyllanthaceae","Glochidion","elmeri","CP, 50ha","both",NA,"AR, NR","",20,10,6.46203955555556,7.74545061538462,NA,NA
+"Glochidion pubicapsa","Phyllanthaceae","Glochidion","pubicapsa","CP, 50ha","both",NA,"AR","",NA,NA,6.46203955555556,7.74545061538462,NA,NA
+"Glochidion species 1","Phyllanthaceae","Glochidion","species 1","50ha","unlogged",NA,NA,"",NA,NA,6.46203955555556,7.74545061538462,NA,NA
+"Glochidion species 2","Phyllanthaceae","Glochidion","species 2","50ha","unlogged",NA,NA,"",NA,NA,6.46203955555556,7.74545061538462,NA,NA
+"Glochidion species 3","Phyllanthaceae","Glochidion","species 3","50ha","unlogged",NA,NA,"",NA,NA,6.46203955555556,7.74545061538462,NA,NA
+"Glochidion species 4","Phyllanthaceae","Glochidion","species 4","50ha","unlogged",NA,NA,"",NA,NA,6.46203955555556,7.74545061538462,NA,NA
+"Glochidion species 5","Phyllanthaceae","Glochidion","species 5","50ha","unlogged",NA,NA,"",NA,NA,6.46203955555556,7.74545061538462,NA,NA
+"Glochidion unknown mixed","Phyllanthaceae","Glochidion","unknown mixed","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Glycosmis chlorosperma","Rutaceae","Glycosmis","chlorosperma","50ha","unlogged",NA,NA,"",NA,NA,4.323085,92.7,NA,NA
+"Glycosmis macrantha","Rutaceae","Glycosmis","macrantha","CP, 50ha","both",NA,"AR","",NA,NA,4.323085,92.7,NA,NA
+"Glycosmis unknown mixed","Rutaceae","Glycosmis","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Gomphandra quadrifida","Stemonuraceae","Gomphandra","quadrifida","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Goniocheton arborescens","Meliaceae","Goniocheton","arborescens","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Goniothalamus gigantifolius","Annonaceae","Goniothalamus","gigantifolius","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Goniothalamus species 1","Annonaceae","Goniothalamus","species 1","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Goniothalamus species 2","Annonaceae","Goniothalamus","species 2","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Goniothalamus species 3","Annonaceae","Goniothalamus","species 3","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Goniothalamus uvarioides","Annonaceae","Goniothalamus","uvarioides","CP, 50ha","both",NA,"NR","",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Goniothalamus woodii","Annonaceae","Goniothalamus","woodii","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Gonocaryum calleryanum","Cardiopteridaceae","Gonocaryum","calleryanum","50ha","unlogged",NA,NA,"",NA,NA,13.51,NA,0.67,NA
+"Gonocaryum macrophyllum","Cardiopteridaceae","Gonocaryum","macrophyllum","50ha","unlogged",NA,NA,"",NA,NA,13.51,NA,NA,NA
+"Gonystylus keithii","Thymelaeaceae","Gonystylus","keithii","50ha","unlogged",NA,NA,"",NA,NA,NA,112.981647058824,0.52,NA
+"Guioa pleuropteris","Sapindaceae","Guioa","pleuropteris","CP, 50ha","both",NA,"NR, AR","red_white",25,10,25.0609611923077,3110.25326076077,NA,NA
+"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","50ha","unlogged",NA,NA,"",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","50ha","unlogged",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","CP","logged",NA,NA,"",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","CP","logged",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Hancea stipularis","Euphorbiaceae","Hancea","stipularis","CP","logged",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Harpullia arborea","Sapindaceae","Harpullia","arborea","50ha","unlogged",NA,NA,"",NA,NA,25.0609611923077,3110.25326076077,0.54,NA
+"Harpullia species 1","Sapindaceae","Harpullia","species 1","50ha","unlogged",NA,NA,"",NA,NA,25.0609611923077,3110.25326076077,NA,NA
+"Helicia excelsa","Proteaceae","Helicia","excelsa","CP, 50ha","both",NA,"AR, NR","",NA,NA,17.10491,177.918582039164,0.56,NA
+"Helicia robusta","Proteaceae","Helicia","robusta","CP, 50ha","both",NA,"AR","",NA,NA,17.10491,177.918582039164,NA,NA
+"Heliciopsis artocarpoides","Proteaceae","Heliciopsis","artocarpoides","50ha","unlogged",NA,NA,"",NA,NA,17.10491,177.918582039164,0.55,NA
+"Heritiera elata","Malvaceae","Heritiera","elata","50ha","unlogged",NA,NA,"",NA,NA,16.6049538461538,4347.36961307692,0.7,NA
+"Homalium foetidum","Salicaceae","Homalium","foetidum","50ha","unlogged",NA,NA,"",NA,NA,11.621,4.485,0.73,NA
+"Hopea ferruginea","Dipterocarpaceae","Hopea","ferruginea","CP, 50ha","both",NA,"AR","",NA,NA,NA,554.55,0.6,NA
+"Hopea nervosa","Dipterocarpaceae","Hopea","nervosa","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,560,0.61,NA
+"Hopea pentanervia","Dipterocarpaceae","Hopea","pentanervia","50ha","unlogged",NA,NA,"",NA,NA,NA,554.55,0.93,NA
+"Hopea plagata","Dipterocarpaceae","Hopea","plagata","50ha","unlogged",NA,NA,"",NA,NA,NA,554.55,0.71,NA
+"Hopea sangal","Dipterocarpaceae","Hopea","sangal","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,554.55,NA,NA
+"Hopea unknown mixed","Dipterocarpaceae","Hopea","unknown mixed","CP, 50ha","both",NA,"NR, AR","",NA,NA,NA,NA,NA,NA
+"Horsfieldia irya","Myristicaceae","Horsfieldia","irya","50ha","unlogged",NA,NA,"",NA,NA,19.2894347826087,3369.91158974359,0.41,NA
+"Horsfieldia polyspherula","Myristicaceae","Horsfieldia","polyspherula","CP, 50ha","both",NA,"NR","",NA,NA,19.2894347826087,3369.91158974359,NA,NA
+"Horsfieldia unknown mixed","Myristicaceae","Horsfieldia","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Huberantha rumphii","Annonaceae","Huberantha","rumphii","CP","logged",NA,"AR, NR","",NA,NA,16.6527142857143,147,NA,NA
+"Hydnocarpus anomalus","Achariaceae","Hydnocarpus","anomalus","CP","logged",NA,"AR, NR","",NA,NA,NA,933.083333333333,NA,NA
+"Hydnocarpus borneensis","Achariaceae","Hydnocarpus","borneensis","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,933.083333333333,NA,NA
+"Hydnocarpus polypetalus","Achariaceae","Hydnocarpus","polypetalus","50ha","unlogged",NA,NA,"",NA,NA,NA,933.083333333333,0.55,NA
+"Hydnocarpus unknown mixed","Achariaceae","Hydnocarpus","unknown mixed","CP, 50ha","both",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Intsia palembanica","Fabaceae","Intsia","palembanica","CP, 50ha","both",NA,"NR, AR","",NA,NA,25.9101628865979,7000,0.66,NA
+"Intsia unknown mixed","Fabaceae","Intsia","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Irvingia malayana","Irvingiaceae","Irvingia","malayana","50ha","unlogged",NA,NA,"",NA,NA,3.93333333333333,6.20221836842105,0.88,NA
+"Ixora blumei","Rubiaceae","Ixora","blumei","CP, 50ha","both",NA,"NR, AR","",NA,NA,7.3621533880597,60.0116976666667,0.72,NA
+"Ixora brevicaudata","Rubiaceae","Ixora","brevicaudata","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,60.0116976666667,NA,NA
+"Ixora grandifolia","Rubiaceae","Ixora","grandifolia","CP, 50ha","both",NA,"AR","",NA,NA,7.3621533880597,60.0116976666667,0.69,NA
+"Ixora unknown mixed","Rubiaceae","Ixora","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Kayea borneensis","Calophyllaceae","Kayea","borneensis","50ha","unlogged",NA,NA,"",NA,NA,23.3453058333333,4146.43173062264,NA,NA
+"Kayea macrantha","Calophyllaceae","Kayea","macrantha","50ha","unlogged",NA,NA,"",NA,NA,23.3453058333333,4146.43173062264,NA,NA
+"Kayea oblongifolia","Calophyllaceae","Kayea","oblongifolia","50ha","unlogged",NA,NA,"",NA,NA,23.3453058333333,4146.43173062264,NA,NA
+"Kayea unknown mixed","Calophyllaceae","Kayea","unknown mixed","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Kibara obtusa","Monimiaceae","Kibara","obtusa","CP, 50ha","both",NA,"AR","",NA,NA,13.5575,900,NA,NA
+"Knema cinerea","Myristicaceae","Knema","cinerea","50ha","unlogged",NA,NA,"",NA,NA,19.2894347826087,3369.91158974359,NA,NA
+"Knema elmeri","Myristicaceae","Knema","elmeri","CP, 50ha","both",NA,"AR, NR","",NA,NA,19.2894347826087,3369.91158974359,NA,NA
+"Knema furfuracea","Myristicaceae","Knema","furfuracea","50ha","unlogged",NA,NA,"",NA,NA,19.2894347826087,3369.91158974359,0.55,NA
+"Knema glomerata","Myristicaceae","Knema","glomerata","50ha","unlogged",NA,NA,"",NA,NA,19.2894347826087,3369.91158974359,0.52,NA
+"Knema kostermansiana","Myristicaceae","Knema","kostermansiana","50ha","unlogged",NA,NA,"",NA,NA,19.2894347826087,3369.91158974359,NA,NA
+"Knema latericia","Myristicaceae","Knema","latericia","CP, 50ha","both",NA,"AR, NR","",NA,NA,19.2894347826087,1670,NA,NA
+"Knema laurina","Myristicaceae","Knema","laurina","CP, 50ha","both",NA,"AR, NR","",NA,NA,19.2894347826087,1100,0.47,NA
+"Knema oblongata","Myristicaceae","Knema","oblongata","50ha","unlogged",NA,NA,"",NA,NA,19.2894347826087,3369.91158974359,0.57,NA
+"Knema pectinata","Myristicaceae","Knema","pectinata","CP","logged",NA,"NR","",NA,NA,19.2894347826087,3369.91158974359,NA,NA
+"Knema pulchra","Myristicaceae","Knema","pulchra","50ha","unlogged",NA,NA,"",NA,NA,19.2894347826087,3369.91158974359,NA,NA
+"Knema unknown mixed","Myristicaceae","Knema","unknown mixed","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Koilodepas laevigatum","Euphorbiaceae","Koilodepas","laevigatum","50ha","unlogged",NA,NA,"",NA,NA,3.32316437931034,119.998798464659,NA,"III"
+"Koilodepas longifolium","Euphorbiaceae","Koilodepas","longifolium","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Kokoona ochracea","Celastraceae","Kokoona","ochracea","50ha","unlogged",NA,NA,"",NA,NA,49.8554090909091,5608.50790305738,NA,NA
+"Koompassia excelsa","Fabaceae","Koompassia","excelsa","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.9101628865979,273.929465733062,0.69,NA
+"Kopsia pauciflora","Apocynaceae","Kopsia","pauciflora","50ha","unlogged",NA,NA,"",NA,NA,10.4306363636364,195.992451671593,NA,NA
+"Lansium domesticum","Meliaceae","Lansium","domesticum","CP, 50ha","both",NA,"NR, no seedling data, AR","",40,15,9.17797857142857,5100,0.77,NA
+"Lasianthus borneensis","Rubiaceae","Lasianthus","borneensis","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Lasianthus reticulatus","Rubiaceae","Lasianthus","reticulatus","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Lasianthus species 1","Rubiaceae","Lasianthus","species 1","50ha","unlogged",NA,NA,"",NA,NA,6.64295955555556,58.9784425105634,NA,NA
+"Lasianthus species 2","Rubiaceae","Lasianthus","species 2","50ha","unlogged",NA,NA,"",NA,NA,6.64295955555556,58.9784425105634,NA,NA
+"Lasianthus species 3","Rubiaceae","Lasianthus","species 3","50ha","unlogged",NA,NA,"",NA,NA,6.64295955555556,58.9784425105634,NA,NA
+"Lasianthus unknown mixed","Rubiaceae","Lasianthus","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Leea aculeata","Vitaceae","Leea","aculeata","CP, 50ha","both",NA,"NR, AR","",NA,NA,NA,37.518875,NA,NA
+"Leea indica","Vitaceae","Leea","indica","50ha","unlogged",NA,NA,"",NA,NA,NA,36.35,0.48,NA
+"Lepisanthes fruticosa","Sapindaceae","Lepisanthes","fruticosa","50ha","unlogged",NA,NA,"",NA,NA,14.6,3110.25326076077,NA,NA
+"Lepisanthes senegalensis","Sapindaceae","Lepisanthes","senegalensis","CP, 50ha","both",NA,"AR, NR","green, purple, red",NA,NA,14.6,633.44,0.63,NA
+"Lepisanthes tetraphylla","Sapindaceae","Lepisanthes","tetraphylla","50ha","unlogged",NA,NA,"",NA,NA,14.6,3110.25326076077,0.81,NA
+"Lepisanthes unknown mixed","Sapindaceae","Lepisanthes","unknown mixed","CP, 50ha","both",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Lithocarpus ewyckii","Fagaceae","Lithocarpus","ewyckii","CP, 50ha","both",NA,"AR, NR","",NA,NA,21.5,1100,NA,NA
+"Lithocarpus gracilis","Fagaceae","Lithocarpus","gracilis","CP, 50ha","both",NA,"AR, NR","",NA,NA,21.5,2140.61972972973,0.49,NA
+"Lithocarpus leptogyne","Fagaceae","Lithocarpus","leptogyne","CP, 50ha","both",NA,"AR, NR","",NA,NA,21.5,2140.61972972973,NA,"III"
+"Lithocarpus nieuwenhuisii","Fagaceae","Lithocarpus","nieuwenhuisii","CP, 50ha","both",NA,"AR, NR","",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus species 1","Fagaceae","Lithocarpus","species 1","50ha","unlogged",NA,NA,"",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus species 2","Fagaceae","Lithocarpus","species 2","50ha","unlogged",NA,NA,"",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus species 3","Fagaceae","Lithocarpus","species 3","50ha","unlogged",NA,NA,"",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus species 4","Fagaceae","Lithocarpus","species 4","50ha","unlogged",NA,NA,"",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus species 5","Fagaceae","Lithocarpus","species 5","50ha","unlogged",NA,NA,"",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus species 6","Fagaceae","Lithocarpus","species 6","50ha","unlogged",NA,NA,"",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus species 7","Fagaceae","Lithocarpus","species 7","50ha","unlogged",NA,NA,"",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus species 8","Fagaceae","Lithocarpus","species 8","50ha","unlogged",NA,NA,"",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus species 9","Fagaceae","Lithocarpus","species 9","50ha","unlogged",NA,NA,"",NA,NA,21.5,2140.61972972973,NA,NA
+"Lithocarpus unknown mixed","Fagaceae","Lithocarpus","unknown mixed","CP","logged",NA,"AR, NR, no seedling data","",NA,NA,NA,NA,NA,NA
+"Litsea accedens","Lauraceae","Litsea","accedens","CP, 50ha","both",NA,"AR, NR","",NA,NA,13.1101518518519,290,0.42,NA
+"Litsea angulata","Lauraceae","Litsea","angulata","CP, 50ha","both",NA,"AR, NR","",NA,NA,13.1101518518519,1244.48787274336,0.36,NA
+"Litsea caulocarpa","Lauraceae","Litsea","caulocarpa","CP, 50ha","both",NA,"AR, NR","",NA,NA,13.1101518518519,1244.48787274336,NA,NA
+"Litsea cordata","Lauraceae","Litsea","cordata","CP, 50ha","both",NA,"NR","",NA,NA,13.1101518518519,1244.48787274336,0.36,NA
+"Litsea cuprea","Lauraceae","Litsea","cuprea","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,NA,NA
+"Litsea curtisii","Lauraceae","Litsea","curtisii","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,0.32,NA
+"Litsea elliptica","Lauraceae","Litsea","elliptica","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,0.45,NA
+"Litsea ferruginea","Lauraceae","Litsea","ferruginea","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,0.45,NA
+"Litsea ficoidea","Lauraceae","Litsea","ficoidea","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,NA,NA
+"Litsea fulva","Lauraceae","Litsea","fulva","CP, 50ha","both",NA,"AR","",NA,NA,13.1101518518519,1244.48787274336,0.51,NA
+"Litsea garciae","Lauraceae","Litsea","garciae","CP, 50ha","both",NA,"NR, AR","",NA,NA,13.1101518518519,1244.48787274336,0.36,NA
+"Litsea grandis","Lauraceae","Litsea","grandis","CP, 50ha","both",NA,"NR, AR","",NA,NA,13.1101518518519,950,0.43,NA
+"Litsea ligustrina","Lauraceae","Litsea","ligustrina","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,NA,NA
+"Litsea machilifolia","Lauraceae","Litsea","machilifolia","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,0.33,NA
+"Litsea oppositifolia","Lauraceae","Litsea","oppositifolia","CP, 50ha","both",NA,"AR, no seedling data","",NA,NA,13.1101518518519,1244.48787274336,0.51,NA
+"Litsea robusta","Lauraceae","Litsea","robusta","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,1244.48787274336,0.37,NA
+"Litsea unknown mixed","Lauraceae","Litsea","unknown mixed","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Lophopetalum beccarianum","Celastraceae","Lophopetalum","beccarianum","CP, 50ha","both",NA,"NR","",NA,NA,49.8554090909091,5608.50790305738,0.51,NA
+"Lophopetalum javanicum","Celastraceae","Lophopetalum","javanicum","CP, 50ha","both",NA,"AR, NR","",NA,NA,49.8554090909091,5608.50790305738,NA,NA
+"Lophopetalum unknown mixed","Celastraceae","Lophopetalum","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Ludekia borneensis","Rubiaceae","Ludekia","borneensis","CP, 50ha","both",NA,"AR, NR","",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Ludekia unknown mixed","Rubiaceae","Ludekia","unknown mixed","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Maasia sumatrana","Annonaceae","Maasia","sumatrana","CP","logged",NA,"AR, NR","",NA,NA,16.6527142857143,820,NA,NA
+"Macaranga conifera","Euphorbiaceae","Macaranga","conifera","CP","logged",NA,"AR","",NA,NA,0.18,25.7087549583333,0.33,NA
+"Macaranga gigantea","Euphorbiaceae","Macaranga","gigantea","CP","logged",NA,"AR, NR","",NA,NA,3.16916675,13,0.3,NA
+"Macaranga hypoleuca","Euphorbiaceae","Macaranga","hypoleuca","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.16916675,28.8,0.27,NA
+"Macaranga pearsonii","Euphorbiaceae","Macaranga","pearsonii","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.16916675,25.7087549583333,NA,NA
+"Macaranga winkleri","Euphorbiaceae","Macaranga","winkleri","50ha","unlogged",NA,NA,"",NA,NA,3.16916675,25.7087549583333,NA,NA
+"Madhuca elmeri","Sapotaceae","Madhuca","elmeri","CP, 50ha","both",NA,"NR","",NA,NA,15.1297037037037,2293.73333333333,NA,NA
+"Madhuca kingiana","Sapotaceae","Madhuca","kingiana","CP, 50ha","both",NA,"AR, NR","",NA,NA,15.1297037037037,2293.73333333333,0.61,NA
+"Madhuca korthalsii","Sapotaceae","Madhuca","korthalsii","CP, 50ha","both",NA,"AR, NR","",NA,NA,15.1297037037037,2293.73333333333,0.54,NA
+"Madhuca kunstleri","Sapotaceae","Madhuca","kunstleri","50ha","unlogged",NA,NA,"",NA,NA,15.1297037037037,2293.73333333333,NA,NA
+"Madhuca mindanaensis","Sapotaceae","Madhuca","mindanaensis","50ha","unlogged",NA,NA,"",NA,NA,15.1297037037037,2293.73333333333,NA,NA
+"Madhuca unknown mixed","Sapotaceae","Madhuca","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Magnolia acuminata","Magnoliaceae","Magnolia","acuminata","CP, 50ha","both",NA,"AR, NR","Yellow",NA,NA,12,94.03,0.48,NA
+"Magnolia beccarii","Magnoliaceae","Magnolia","beccarii","50ha","unlogged",NA,NA,"",NA,NA,12,141.938721391304,NA,NA
+"Magnolia gigantifolia","Magnoliaceae","Magnolia","gigantifolia","CP, 50ha","both",NA,"NR, AR","",NA,NA,12,141.938721391304,0.56,NA
+"Mallotus korthalsii","Euphorbiaceae","Mallotus","korthalsii","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Mallotus lackeyi","Euphorbiaceae","Mallotus","lackeyi","CP, 50ha","both",NA,"AR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Mallotus miquelianus","Euphorbiaceae","Mallotus","miquelianus","50ha","unlogged",NA,NA,"",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Mallotus species 1","Euphorbiaceae","Mallotus","species 1","CP, 50ha","both",NA,"AR, NR, no seedling data","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Mallotus unknown mixed","Euphorbiaceae","Mallotus","unknown mixed","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Mallotus wrayi","Euphorbiaceae","Mallotus","wrayi","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Mangifera caesia","Anacardiaceae","Mangifera","caesia","CP, 50ha","both",NA,"AR, NR","",NA,NA,17.5381934615385,17201.2857142857,0.41,NA
+"Mangifera indica","Anacardiaceae","Mangifera","indica","50ha","unlogged",NA,NA,"Yellow, red, yellow, amarillo",NA,NA,17.5381934615385,12442.26,0.54,NA
+"Mangifera odorata","Anacardiaceae","Mangifera","odorata","50ha","unlogged",NA,NA,"",NA,NA,17.5381934615385,17201.2857142857,0.48,NA
+"Mangifera pajang","Anacardiaceae","Mangifera","pajang","CP, 50ha","both",NA,"AR","",NA,NA,17.5381934615385,17201.2857142857,0.49,NA
+"Mangifera rufocostata","Anacardiaceae","Mangifera","rufocostata","50ha","unlogged",NA,NA,"",NA,NA,17.5381934615385,17201.2857142857,NA,NA
+"Mangifera species 1","Anacardiaceae","Mangifera","species 1","50ha","unlogged",NA,NA,"",NA,NA,17.5381934615385,17201.2857142857,NA,NA
+"Mangifera swintonioides","Anacardiaceae","Mangifera","swintonioides","50ha","unlogged",NA,NA,"",NA,NA,17.5381934615385,17201.2857142857,NA,NA
+"Mangifera unknown mixed","Anacardiaceae","Mangifera","unknown mixed","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Maranthes corymbosa","Chrysobalanaceae","Maranthes","corymbosa","50ha","unlogged",NA,NA,"",NA,NA,22.1142857142857,2536.14322477778,0.8,NA
+"Marsypopetalum pallidum","Annonaceae","Marsypopetalum","pallidum","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Mastixia trichotoma","Nyssaceae","Mastixia","trichotoma","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,0.39,NA
+"Meiogyne virgata","Annonaceae","Meiogyne","virgata","CP, 50ha","both",NA,"NR, no seedling data, AR","",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Melanochyla auriculata","Anacardiaceae","Melanochyla","auriculata","50ha","unlogged",NA,NA,"",NA,NA,17.5381934615385,1133.94134912719,0.58,NA
+"Melanochyla beccariana","Anacardiaceae","Melanochyla","beccariana","CP, 50ha","both",NA,"NR","",NA,NA,17.5381934615385,1133.94134912719,NA,NA
+"Melanochyla unknown mixed","Anacardiaceae","Melanochyla","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Melastoma malabathricum","Melastomataceae","Melastoma","malabathricum","50ha","unlogged",NA,NA,"pink_violet_purple",NA,NA,0.6,0.06,0.45,NA
+"Melicope  lunu-ankenda","Rutaceae","Melicope ","lunu-ankenda",NA,NA,NA,NA,"",NA,NA,NA,NA,NA,NA
+"Melicope  unknown mixed","Rutaceae","Melicope ","unknown mixed",NA,NA,NA,NA,"",NA,NA,NA,NA,NA,NA
+"Meliosma pinnata","Sabiaceae","Meliosma","pinnata","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,0.32,NA
+"Meliosma sumatrana","Sabiaceae","Meliosma","sumatrana","CP, 50ha","both",NA,"NR","",NA,NA,NA,NA,0.4,NA
+"Memecylon  species 1","Melastomataceae","Memecylon"," species 1","50ha","unlogged",NA,NA,"",NA,NA,11.462962962963,116.824508333333,NA,NA
+"Memecylon lilacinum","Melastomataceae","Memecylon","lilacinum","50ha","unlogged",NA,NA,"",NA,NA,11.462962962963,116.824508333333,0.87,NA
+"Memecylon oleifolium","Melastomataceae","Memecylon","oleifolium","50ha","unlogged",NA,NA,"",NA,NA,11.462962962963,116.824508333333,NA,NA
+"Memecylon paniculatum","Melastomataceae","Memecylon","paniculatum","CP, 50ha","both",NA,"NR","",NA,NA,11.462962962963,116.824508333333,0.72,NA
+"Memecylon species 2","Melastomataceae","Memecylon","species 2","50ha","unlogged",NA,NA,"",NA,NA,11.462962962963,116.824508333333,NA,NA
+"Memecylon species 3","Melastomataceae","Memecylon","species 3","50ha","unlogged",NA,NA,"",NA,NA,11.462962962963,116.824508333333,NA,NA
+"Merope angulata","Rutaceae","Merope","angulata","50ha","unlogged",NA,NA,"",NA,NA,4.323085,124.165051964912,NA,NA
+"Mesua unknown mixed","Clusiaceae","Mesua","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Microcos antidesmifolia","Malvaceae","Microcos","antidesmifolia","50ha","unlogged",NA,NA,"",NA,NA,16.6049538461538,881.714199688546,0.47,NA
+"Microcos crassifolia","Malvaceae","Microcos","crassifolia","CP, 50ha","both",NA,"AR, NR","",NA,NA,16.6049538461538,280,NA,NA
+"Microcos fibrocarpa","Malvaceae","Microcos","fibrocarpa","CP, 50ha","both",NA,"AR, NR","",NA,NA,16.6049538461538,881.714199688546,NA,NA
+"Microcos latistipulata","Malvaceae","Microcos","latistipulata","CP, 50ha","both",NA,"NR, AR","",NA,NA,16.6049538461538,881.714199688546,NA,NA
+"Microcos ossea","Malvaceae","Microcos","ossea","CP, 50ha","both",NA,"AR, NR","",NA,NA,16.6049538461538,881.714199688546,NA,NA
+"Microcos unknown mixed","Malvaceae","Microcos","unknown mixed","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Mischocarpus pentapetalus","Sapindaceae","Mischocarpus","pentapetalus","50ha","unlogged",NA,NA,"",NA,NA,25.0609611923077,3110.25326076077,NA,NA
+"Monanthocitrus oblanceolata","Rutaceae","Monanthocitrus","oblanceolata","50ha","unlogged",NA,NA,"",NA,NA,4.323085,124.165051964912,NA,NA
+"Monocarpia borneensis","Annonaceae","Monocarpia","borneensis","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Monoon erianthoides","Annonaceae","Monoon","erianthoides","CP, 50ha","both",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Monoon grandiflorum","Annonaceae","Monoon","grandiflorum","CP, 50ha","both",NA,"NR, AR","",NA,NA,NA,NA,NA,NA
+"Monoon hookerianum","Annonaceae","Monoon","hookerianum","CP, 50ha","both",NA,"NR, AR","",NA,NA,NA,NA,NA,NA
+"Monoon species 1","Annonaceae","Monoon","species 1","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Monoon species 2","Annonaceae","Monoon","species 2","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Monoon xanthopetalum","Annonaceae","Monoon","xanthopetalum","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Myristica cinnamomea","Myristicaceae","Myristica","cinnamomea","50ha","unlogged",NA,NA,"",NA,NA,19.2894347826087,7900,0.57,NA
+"Myrmeconauclea strigosa","Rubiaceae","Myrmeconauclea","strigosa","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Nauclea sp1","Rubiaceae","Nauclea","sp1","CP","logged",NA,"AR, NR","",NA,NA,7.3621533880597,64.578,NA,NA
+"Nauclea subdita","Rubiaceae","Nauclea","subdita","CP","logged",NA,"NR","",NA,NA,7.3621533880597,64.578,0.48,NA
+"Nauclea unknown mixed","Rubiaceae","Nauclea","unknown mixed","CP, 50ha","both",NA,"AR, no seedling data","",NA,NA,NA,NA,NA,NA
+"Neesia synandra","Malvaceae","Neesia","synandra","CP, 50ha","both",NA,"AR, NR","",NA,NA,16.6049538461538,881.714199688546,NA,NA
+"Neesia unknown mixed","Malvaceae","Neesia","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","50ha","unlogged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","CP","logged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Neo-Uvaria unknown mixed","Annonaceae","Neo-Uvaria","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Neolamarckia cadamba","Rubiaceae","Neolamarckia","cadamba","CP, 50ha","both",NA,"AR","",NA,NA,7.3621533880597,40,NA,NA
+"Neonauclea  gigantea","Rubiaceae","Neonauclea ","gigantea","CP","logged",NA,"NR","",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Neonauclea sp","Rubiaceae","Neonauclea","sp","CP","logged",NA,"AR","",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Neonauclea sp1","Rubiaceae","Neonauclea","sp1","CP","logged",NA,"AR","",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Neoscortechinia kingii","Euphorbiaceae","Neoscortechinia","kingii","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,0.58,NA
+"Nephelium cuspidatum","Sapindaceae","Nephelium","cuspidatum","CP, 50ha","both",NA,"NR","",NA,NA,25.2,1774.225,0.77,NA
+"Nephelium maingayi","Sapindaceae","Nephelium","maingayi","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.2,1774.225,NA,NA
+"Nephelium ramboutan-ake","Sapindaceae","Nephelium","ramboutan-ake","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.2,1774.225,0.7,NA
+"Nothaphoebe canescens","Lauraceae","Nothaphoebe","canescens","CP, 50ha","both",NA,"AR","",NA,NA,13.1101518518519,2100,NA,NA
+"Nothaphoebe heterophylla","Lauraceae","Nothaphoebe","heterophylla","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,2100,NA,NA
+"Nothaphoebe umbelliflora","Lauraceae","Nothaphoebe","umbelliflora","CP, 50ha","both",NA,"NR, AR","",NA,NA,13.1101518518519,2100,NA,NA
+"Nothaphoebe unknown","Lauraceae","Nothaphoebe","unknown","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,2100,NA,NA
+"Nothaphoebe unknown mixed","Lauraceae","Nothaphoebe","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Nyssa javanica","Nyssaceae","Nyssa","javanica","50ha","unlogged",NA,NA,"",NA,NA,NA,64.52,0.48,NA
+"Ochanostachys amentacea","Olacaceae","Ochanostachys","amentacea","CP, 50ha","both",NA,"AR, NR","",NA,NA,1.7,3200,0.77,"III"
+"Octomeles sumatrana","Tetramelaceae","Octomeles","sumatrana","CP, 50ha","both",NA,"NR, AR","",NA,NA,NA,0.15,NA,NA
+"Oreocnide trinervis","Urticaceae","Oreocnide","trinervis","50ha","unlogged",NA,NA,"",NA,NA,2.95503,237.305657053435,NA,NA
+"Ormosia bancana","Fabaceae","Ormosia","bancana","CP, 50ha","both",NA,"NR","",NA,NA,10.8666666666667,1652.87871095238,0.56,NA
+"Orophea corymbosa","Annonaceae","Orophea","corymbosa","CP, 50ha","both",NA,"NR, no seedling data","",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Orophea creaghii","Annonaceae","Orophea","creaghii","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Orophea myriantha","Annonaceae","Orophea","myriantha","CP, 50ha","both",NA,"NR, no seedling data, AR","",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Palaquium beccarianum","Sapotaceae","Palaquium","beccarianum","CP, 50ha","both",NA,"NR, AR","",NA,NA,17.8,1642.70909090909,0.49,NA
+"Palaquium dasyphyllum","Sapotaceae","Palaquium","dasyphyllum","CP, 50ha","both",NA,"NR","",NA,NA,17.8,1642.70909090909,0.5,NA
+"Palaquium maingayi","Sapotaceae","Palaquium","maingayi","CP, 50ha","both",NA,"AR","",NA,NA,17.8,1642.70909090909,0.6,NA
+"Palaquium sericeum","Sapotaceae","Palaquium","sericeum","50ha","unlogged",NA,NA,"",NA,NA,17.8,1642.70909090909,NA,NA
+"Palaquium unknown mixed","Sapotaceae","Palaquium","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Pangium edule","Achariaceae","Pangium","edule","50ha","unlogged",NA,NA,"",NA,NA,NA,576.8788,0.5,NA
+"Paranephelium macrophyllum","Sapindaceae","Paranephelium","macrophyllum","CP, 50ha","both",NA,"NR, no seedling data","",NA,NA,25.0609611923077,3110.25326076077,NA,NA
+"Paranephelium xestophyllum","Sapindaceae","Paranephelium","xestophyllum","CP, 50ha","both",NA,"NR, AR","",NA,NA,25.0609611923077,3110.25326076077,0.81,NA
+"Parashorea malaanonan","Dipterocarpaceae","Parashorea","malaanonan","CP, 50ha, IF","both","ActiveRestoration, NaturalRegeneration","AR, NR","",NA,NA,NA,1784.06,0.56,NA
+"Parashorea tomentella","Dipterocarpaceae","Parashorea","tomentella","CP, 50ha, IF","both","NaturalRegeneration","AR, NR, no seedling data","",NA,NA,NA,5710,NA,NA
+"Parastemon urophyllus","Chrysobalanaceae","Parastemon","urophyllus","50ha","unlogged",NA,NA,"",NA,NA,22.1142857142857,2536.14322477778,0.87,NA
+"Paratrophis glabra","Moraceae","Paratrophis","glabra","50ha","unlogged",NA,NA,"",NA,NA,8.35052992307692,416.30593131746,NA,NA
+"Parinari excelsa","Chrysobalanaceae","Parinari","excelsa","CP, 50ha","both",NA,"AR","white",NA,NA,21.1,6701.83,0.7,NA
+"Parinari oblongifolia","Chrysobalanaceae","Parinari","oblongifolia","CP, 50ha","both",NA,"AR","",NA,NA,21.1,5600,0.62,NA
+"Parinari unknown mixed","Chrysobalanaceae","Parinari","unknown mixed","CP, 50ha","both",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Parkia speciosa","Fabaceae","Parkia","speciosa","50ha","unlogged",NA,NA,"",NA,NA,25.9101628865979,540,0.4,"II"
+"Parkia unknown mixed","Fabaceae","Parkia","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Pavetta wallichiana","Rubiaceae","Pavetta","wallichiana","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,219,NA,NA
+"Payena Unknown species1","Sapotaceae","Payena","Unknown species1","50ha","unlogged",NA,NA,"",NA,NA,15.1297037037037,6649.36413870779,NA,NA
+"Payena acuminata","Sapotaceae","Payena","acuminata","CP, 50ha","both",NA,"NR","",NA,NA,15.1297037037037,6649.36413870779,0.58,NA
+"Payena microphylla","Sapotaceae","Payena","microphylla","CP, 50ha","both",NA,"NR","",NA,NA,15.1297037037037,6649.36413870779,0.77,NA
+"Payena unknown mixed","Sapotaceae","Payena","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Peltophorum racemosum","Fabaceae","Peltophorum","racemosum","CP, 50ha","both",NA,"AR, NR","",NA,NA,10.126,105.227142857143,NA,NA
+"Pentace adenophora","Malvaceae","Pentace","adenophora","CP, 50ha","both",NA,"AR, NR","",NA,NA,16.6049538461538,881.714199688546,NA,NA
+"Pentace laxiflora","Malvaceae","Pentace","laxiflora","CP, 50ha, IF","both","NaturalRegeneration","AR, NR","",NA,NA,16.6049538461538,881.714199688546,NA,NA
+"Pentace unknown mixed","Malvaceae","Pentace","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Phaeanthus ophthalmicus","Annonaceae","Phaeanthus","ophthalmicus","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,300,NA,NA
+"Phaeanthus splendens","Annonaceae","Phaeanthus","splendens","CP, 50ha","both",NA,"AR, no seedling data, NR","",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Phaleria  capitata","Thymelaeaceae","Phaleria ","capitata",NA,NA,NA,NA,"",NA,NA,NA,NA,NA,NA
+"Phoebe grandis","Lauraceae","Phoebe","grandis","50ha","unlogged",NA,NA,"",NA,NA,13.1101518518519,330,0.49,NA
+"Phyllanthaceae species 1","Antidesma species 1","Phyllanthaceae","species 1","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Phyllanthus  borneensis","Phyllanthaceae","Phyllanthus ","borneensis","50ha","unlogged",NA,NA,"",NA,NA,0.0032,96.1842727272727,NA,NA
+"Phyllanthus  subscandens","Phyllanthaceae","Phyllanthus ","subscandens","CP, 50ha","both",NA,"AR, NR","",NA,NA,0.0032,96.1842727272727,NA,NA
+"Phyyanthus  lancisepalus","Phyllanthaceae","Phyyanthus ","lancisepalus","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Planchonia brevistipitata","Lecythidaceae","Planchonia","brevistipitata","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.446,3611.80207938462,NA,NA
+"Planchonia unknown","Lecythidaceae","Planchonia","unknown","50ha","unlogged",NA,NA,"",NA,NA,25.446,3611.80207938462,NA,NA
+"Planchonia unknown mixed","Lecythidaceae","Planchonia","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Planchonia valida","Lecythidaceae","Planchonia","valida","50ha","unlogged",NA,NA,"",NA,NA,25.446,3611.80207938462,0.64,NA
+"Polyalthia borneensis","Annonaceae","Polyalthia","borneensis","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1811.77777777778,NA,NA
+"Polyalthia cauliflora","Annonaceae","Polyalthia","cauliflora","CP, 50ha","both",NA,"NR","",NA,NA,16.6527142857143,1811.77777777778,NA,NA
+"Polyalthia insignis","Annonaceae","Polyalthia","insignis","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1811.77777777778,0.43,NA
+"Polyalthia microtus","Annonaceae","Polyalthia","microtus","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1811.77777777778,NA,NA
+"Polyalthia obliqua","Annonaceae","Polyalthia","obliqua","CP, 50ha","both",NA,"NR","",NA,NA,16.6527142857143,1811.77777777778,NA,NA
+"Polyalthia saprosma","Annonaceae","Polyalthia","saprosma","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1811.77777777778,NA,NA
+"Polyalthia species 3","Annonaceae","Polyalthia","species 3","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1811.77777777778,NA,NA
+"Polyosma integrifolia","Escalloniaceae","Polyosma","integrifolia","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,0.53,NA
+"Pometia pinnata","Sapindaceae","Pometia","pinnata","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.0609611923077,668.31,0.63,"III"
+"Popowia hirta","Annonaceae","Popowia","hirta","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,0.56,NA
+"Popowia odoardi","Annonaceae","Popowia","odoardi","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Popowia pisocarpa","Annonaceae","Popowia","pisocarpa","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Popowia unknown mixed","Annonaceae","Popowia","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Prainea limpato","Moraceae","Prainea","limpato","50ha","unlogged",NA,NA,"",NA,NA,8.35052992307692,416.30593131746,0.65,NA
+"Praravinia suberosa","Rubiaceae","Praravinia","suberosa","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Praravinia unknown mixed","Rubiaceae","Praravinia","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Praravinia verruculosa","Rubiaceae","Praravinia","verruculosa","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Prasoxylon alliaceum","Meliaceae","Prasoxylon","alliaceum","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Prasoxylon excelsum","Meliaceae","Prasoxylon","excelsum","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Prasoxylon rigidum","Meliaceae","Prasoxylon","rigidum","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Prismatomeris beccariana","Rubiaceae","Prismatomeris","beccariana","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Prismatomeris species 1","Rubiaceae","Prismatomeris","species 1","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Prunus polystachya","Rosaceae","Prunus","polystachya","CP","logged",NA,"AR","",NA,NA,21.5,1400,0.5,NA
+"Prunus unknown mixed","Rosaceae","Prunus","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Pseuduvaria pamattonis","Annonaceae","Pseuduvaria","pamattonis","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Pseuduvaria reticulata","Annonaceae","Pseuduvaria","reticulata","CP, 50ha","both",NA,"no seedling data, AR, NR","",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Psychotria species 1","Rubiaceae","Psychotria","species 1","50ha","unlogged",NA,NA,"",NA,NA,7.16891485714286,127.916400080645,NA,NA
+"Psychotria species 2","Rubiaceae","Psychotria","species 2","50ha","unlogged",NA,NA,"",NA,NA,7.16891485714286,127.916400080645,NA,NA
+"Psydrax dicoccos","Rubiaceae","Psydrax","dicoccos","CP, 50ha","both",NA,"AR, NR","",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Pternandra coerulescens","Melastomataceae","Pternandra","coerulescens","CP, 50ha","both",NA,"AR, NR","",NA,NA,0.8,1071.53345183784,0.53,NA
+"Pterospermum javanicum","Malvaceae","Pterospermum","javanicum","CP, 50ha, IF","both","ActiveRestoration","no seedling data, NR, AR","",NA,NA,16.6049538461538,881.714199688546,0.4,NA
+"Pterospermum subpeltatum","Malvaceae","Pterospermum","subpeltatum","50ha","unlogged",NA,NA,"",NA,NA,16.6049538461538,881.714199688546,NA,NA
+"Pterospermum unknown mixed","Malvaceae","Pterospermum","unknown mixed","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Pterygota alata","Malvaceae","Pterygota","alata","CP","logged",NA,"NR","",NA,NA,16.6049538461538,627.43,0.48,NA
+"Ptychopyxis arborea","Euphorbiaceae","Ptychopyxis","arborea","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Putranjiva roxburghii","Putranjivaceae","Putranjiva","roxburghii","50ha","unlogged",NA,NA,"",NA,NA,10.1,568.18,0.67,NA
+"Pyrenaria acuminata","Theaceae","Pyrenaria","acuminata","50ha","unlogged",NA,NA,"",NA,NA,NA,1118.061,0.48,NA
+"Quercus argentata","Fagaceae","Quercus","argentata","50ha","unlogged",NA,NA,"",NA,NA,20.9,2609.75332595616,0.74,NA
+"Quercus unknown mixed","Fagaceae","Quercus","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Reinwardtiodendron humile","Meliaceae","Reinwardtiodendron","humile","CP, 50ha","both",NA,"AR, NR","",NA,NA,9.17797857142857,704.921018041667,0.81,NA
+"Rennellia borneensis","Rubiaceae","Rennellia","borneensis","50ha","unlogged",NA,NA,"",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Richetia faguetiana","Dipterocarpaceae","Richetia","faguetiana","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Ridsdalea pseudoternifolia","Rubiaceae","Ridsdalea","pseudoternifolia","CP, 50ha","both",NA,"AR","",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Rinorea bengalensis","Violaceae","Rinorea","bengalensis","50ha","unlogged",NA,NA,"",NA,NA,4.6,1.87513677118644,NA,NA
+"Rinorea congesta","Violaceae","Rinorea","congesta","50ha","unlogged",NA,NA,"",NA,NA,4.6,1.87513677118644,NA,NA
+"Rinorea unknown","Violaceae","Rinorea","unknown","50ha","unlogged",NA,NA,"",NA,NA,4.6,1.87513677118644,NA,NA
+"Rubroshorea argentifolia","Dipterocarpaceae","Rubroshorea","argentifolia","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea beccariana","Dipterocarpaceae","Rubroshorea","beccariana","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea fallax","Dipterocarpaceae","Rubroshorea","fallax","CP, IF","logged","NaturalRegeneration","AR, NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea gibbosa","Dipterocarpaceae","Rubroshorea","gibbosa","CP, 50ha, IF","both","ActiveRestoration, NaturalRegeneration","AR, no seedling data, NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea johorensis","Dipterocarpaceae","Rubroshorea","johorensis","CP, 50ha, IF","both","ActiveRestoration, NaturalRegeneration","AR, NR, no seedling data","",NA,NA,NA,NA,NA,NA
+"Rubroshorea leprosula","Dipterocarpaceae","Rubroshorea","leprosula","CP, 50ha, IF","both","ActiveRestoration","AR, NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea macrophylla","Dipterocarpaceae","Rubroshorea","macrophylla","CP, IF","logged","ActiveRestoration","AR, NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea macroptera","Dipterocarpaceae","Rubroshorea","macroptera","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea mecistopteryx","Dipterocarpaceae","Rubroshorea","mecistopteryx","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea ovalis","Dipterocarpaceae","Rubroshorea","ovalis","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea ovata","Dipterocarpaceae","Rubroshorea","ovata","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea parvifolia","Dipterocarpaceae","Rubroshorea","parvifolia","CP, 50ha, IF","both","ActiveRestoration, NaturalRegeneration","AR, NR","",NA,NA,NA,NA,NA,NA
+"Rubroshorea pauciflora","Dipterocarpaceae","Rubroshorea","pauciflora","CP, 50ha, IF","both","ActiveRestoration, NaturalRegeneration","AR, NR, no seedling data","",NA,NA,NA,NA,NA,NA
+"Ryparosa acuminata","Achariaceae","Ryparosa","acuminata","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,576.8788,NA,NA
+"Ryparosa hullettii","Achariaceae","Ryparosa","hullettii","CP, 50ha","both",NA,"AR","",NA,NA,NA,576.8788,0.54,NA
+"Ryparosa unknown mixed","Achariaceae","Ryparosa","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Sageraea elliptica","Annonaceae","Sageraea","elliptica","CP","logged",NA,"AR, NR","",NA,NA,16.6527142857143,487.8,0.67,NA
+"Sageraea lanceolata","Annonaceae","Sageraea","lanceolata","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,0.63,NA
+"Sageraea sarawakensis","Annonaceae","Sageraea","sarawakensis","50ha","unlogged",NA,NA,"",NA,NA,16.6527142857143,1341.40229068627,NA,NA
+"Santiria laevigata","Burseraceae","Santiria","laevigata","CP, 50ha","both",NA,"NR, AR","",NA,NA,10.6,2816.2775,0.52,"IV"
+"Santiria species 1","Burseraceae","Santiria","species 1","50ha","unlogged",NA,NA,"",NA,NA,10.6,2816.2775,NA,NA
+"Santiria tomentosa","Burseraceae","Santiria","tomentosa","CP, 50ha","both",NA,"AR","",NA,NA,10.6,830,0.58,NA
+"Saraca declinata","Fabaceae","Saraca","declinata","50ha","unlogged",NA,NA,"yellow_orange_pink",NA,NA,25.9101628865979,273.929465733062,0.44,NA
+"Saurauia agamae","Actinidiaceae","Saurauia","agamae","50ha","unlogged",NA,NA,"white_pale pink",3,2,NA,1.66333333333333,NA,NA
+"Saurauia sp","Actinidiaceae","Saurauia","sp","50ha","unlogged",NA,NA,"",NA,NA,NA,1.66333333333333,NA,NA
+"Saurauia unknown mixed","Actinidiaceae","Saurauia","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Scaphium longiflorum","Malvaceae","Scaphium","longiflorum","CP","logged",NA,"AR, NR","",NA,NA,16.6049538461538,881.714199688546,0.44,NA
+"Scaphium macropodum","Malvaceae","Scaphium","macropodum","CP, 50ha","both",NA,"AR, NR","",NA,NA,16.6049538461538,2210,0.51,NA
+"Scaphium unknown mixed","Malvaceae","Scaphium","unknown mixed","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Scleropyrum pentandrum","Santalaceae","Scleropyrum","pentandrum","50ha","unlogged",NA,NA,"",NA,NA,NA,137.20475862069,NA,NA
+"Scorodocarpus borneensis","Olacaceae","Scorodocarpus","borneensis","CP, 50ha","both",NA,"AR, NR","",NA,NA,14.3,774.215142857143,0.72,"II"
+"Semecarpus bunburyanus","Anacardiaceae","Semecarpus","bunburyanus","CP, 50ha","both",NA,"NR","",NA,NA,17.5381934615385,1111,NA,NA
+"Shorea atrinervosa","Dipterocarpaceae","Shorea","atrinervosa","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,3763.05833333333,0.77,NA
+"Shorea leptoderma","Dipterocarpaceae","Shorea","leptoderma","50ha","unlogged",NA,NA,"",NA,NA,NA,540,NA,NA
+"Shorea seminis","Dipterocarpaceae","Shorea","seminis","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,3763.05833333333,0.72,NA
+"Shorea sp","Dipterocarpaceae","Shorea","sp","CP","logged",NA,"AR","",NA,NA,NA,3763.05833333333,NA,NA
+"Shorea superba","Dipterocarpaceae","Shorea","superba","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,3763.05833333333,0.69,"V"
+"Shorea unknown mixed","Dipterocarpaceae","Shorea","unknown mixed","CP, 50ha","both",NA,"AR, NR, no seedling data","",NA,NA,NA,NA,NA,NA
+"Sindora irpicina","Fabaceae","Sindora","irpicina","CP, 50ha","both",NA,"AR, NR","",NA,NA,25.9101628865979,273.929465733062,0.48,NA
+"Sloanea javanica","Elaeocarpaceae","Sloanea","javanica","50ha","unlogged",NA,NA,"",NA,NA,12,105.966666666667,0.54,"II"
+"Spathiostemon javensis","Euphorbiaceae","Spathiostemon","javensis","CP, 50ha","both",NA,"AR, NR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Stemonurus grandifolius","Stemonuraceae","Stemonurus","grandifolius","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Stemonurus malaccensis","Stemonuraceae","Stemonurus","malaccensis","50ha","unlogged",NA,NA,"",NA,NA,NA,5000,NA,NA
+"Stemonurus scorpioides","Stemonuraceae","Stemonurus","scorpioides","CP, 50ha","both",NA,"NR, AR","",NA,NA,NA,NA,0.51,NA
+"Stemonurus unknown mixed","Stemonuraceae","Stemonurus","unknown mixed","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Sterculia cordata","Malvaceae","Sterculia","cordata","CP, 50ha","both",NA,"AR","",NA,NA,14.5,819.743785114286,0.32,NA
+"Sterculia lanceolata","Malvaceae","Sterculia","lanceolata","50ha","unlogged",NA,NA,"",NA,NA,14.5,367.78,0.46,NA
+"Sterculia rubiginosa","Malvaceae","Sterculia","rubiginosa","50ha","unlogged",NA,NA,"",NA,NA,14.5,819.743785114286,NA,NA
+"Sterculia stipulata","Malvaceae","Sterculia","stipulata","50ha","unlogged",NA,NA,"",NA,NA,14.5,300,NA,NA
+"Sterculia unknown mixed","Malvaceae","Sterculia","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Strombosia ceylanica","Olacaceae","Strombosia","ceylanica","50ha","unlogged",NA,NA,"",NA,NA,20.5,774.215142857143,0.74,NA
+"Suregada multiflora","Euphorbiaceae","Suregada","multiflora","50ha","unlogged",NA,NA,"",NA,NA,3.32316437931034,124,0.65,NA
+"Sympetalandra unijuga","Fabaceae","Sympetalandra","unijuga","CP","logged",NA,"NR, AR","",NA,NA,25.9101628865979,273.929465733062,NA,NA
+"Symplocos fasciculata","Symplocaceae","Symplocos","fasciculata","CP, 50ha","both",NA,"AR, NR","",NA,NA,NA,200,0.3,NA
+"Symplocos odoratissima","Symplocaceae","Symplocos","odoratissima","50ha","unlogged",NA,NA,"",NA,NA,NA,200,NA,NA
+"Symplocos unknown mixed","Symplocaceae","Symplocos","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Syzygium barringtonioides","Myrtaceae","Syzygium","barringtonioides","50ha","unlogged",NA,NA,"",18,18,10.40958425,4119.74672716827,NA,NA
+"Syzygium christmannii","Myrtaceae","Syzygium","christmannii","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium creaghii","Myrtaceae","Syzygium","creaghii","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium elliptilimbum","Myrtaceae","Syzygium","elliptilimbum","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium elopurae","Myrtaceae","Syzygium","elopurae","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium fastigiatum","Myrtaceae","Syzygium","fastigiatum","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium hirtum","Myrtaceae","Syzygium","hirtum","CP, 50ha","both",NA,"AR","",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium imperiale","Myrtaceae","Syzygium","imperiale","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium kiauense","Myrtaceae","Syzygium","kiauense","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium kunstleri","Myrtaceae","Syzygium","kunstleri","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium leptostemon","Myrtaceae","Syzygium","leptostemon","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium panzeri","Myrtaceae","Syzygium","panzeri","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium penibukanense","Myrtaceae","Syzygium","penibukanense","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium pustulatum","Myrtaceae","Syzygium","pustulatum","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium scortechinii","Myrtaceae","Syzygium","scortechinii","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,NA,NA
+"Syzygium tawahense","Myrtaceae","Syzygium","tawahense","50ha","unlogged",NA,NA,"",NA,NA,10.40958425,4119.74672716827,0.69,NA
+"Syzygium unknown mixed","Myrtaceae","Syzygium","unknown mixed","CP, 50ha","both",NA,"AR, NR, no seedling data","",NA,NA,NA,NA,NA,NA
+"Tabernaemontana macrocarpa","Apocynaceae","Tabernaemontana","macrocarpa","50ha","unlogged",NA,NA,"",NA,NA,9.35,120.854673565217,0.44,NA
+"Tabernaemontana pauciflora","Apocynaceae","Tabernaemontana","pauciflora","50ha","unlogged",NA,NA,"",NA,NA,9.35,120.854673565217,NA,NA
+"Tabernaemontana unknown mixed","Apocynaceae","Tabernaemontana","unknown mixed","50ha","unlogged",NA,NA,"",NA,NA,NA,NA,NA,NA
+"Teijsmanniodendron bogoriense","Lamiaceae","Teijsmanniodendron","bogoriense","50ha","unlogged",NA,NA,"",80,20,7.21,25.4065073459038,0.41,NA
+"Teijsmanniodendron pteropodum","Lamiaceae","Teijsmanniodendron","pteropodum","CP","logged",NA,"AR","violet_pale blue",50,15,7.21,25.4065073459038,0.35,NA
+"Teijsmanniodendron unknown mixed","Lamiaceae","Teijsmanniodendron","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Terminalia citrina","Combretaceae","Terminalia","citrina","50ha","unlogged",NA,NA,"",NA,NA,2.7,123.46,NA,NA
+"Terminalia ivorensis","Combretaceae","Terminalia","ivorensis","50ha","unlogged",NA,NA,"",NA,NA,2.7,133.38,0.45,NA
+"Terminalia phellocarpa","Combretaceae","Terminalia","phellocarpa","50ha","unlogged",NA,NA,"",NA,NA,2.7,1076.30982319658,NA,NA
+"Terminalia species 1","Combretaceae","Terminalia","species 1","50ha","unlogged",NA,NA,"",NA,NA,2.7,1076.30982319658,NA,NA
+"Terminalia species 2","Combretaceae","Terminalia","species 2","50ha","unlogged",NA,NA,"",NA,NA,2.7,1076.30982319658,NA,NA
+"Timonius lasianthoides","Rubiaceae","Timonius","lasianthoides","50ha","unlogged",NA,NA,"",NA,NA,5.4,4.4,NA,NA
+"Timonius wallichianus","Rubiaceae","Timonius","wallichianus","50ha","unlogged",NA,NA,"",NA,NA,5.4,4.4,0.76,NA
+"Triomma malaccensis","Burseraceae","Triomma","malaccensis","CP, 50ha","both",NA,"NR","",NA,NA,11.1479552,2816.2775,0.58,"IV"
+"Tritaxis denticulata","Euphorbiaceae","Tritaxis","denticulata","CP, 50ha","both",NA,"NR","",NA,NA,3.32316437931034,119.998798464659,NA,NA
+"Unknown species 8","Annonaceae","Unknown","species 8","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Unknown unknown mixed","Annonaceae","Unknown","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Urophyllum  corymbosum","Rubiaceae","Urophyllum ","corymbosum","CP","logged",NA,"AR","",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Urophyllum sandahanicum","Rubiaceae","Urophyllum","sandahanicum","CP, 50ha","both",NA,"AR, NR","",NA,NA,7.3621533880597,59.1893790915751,NA,NA
+"Urophyllum  glabrum","Rubiaceae","Urophyllum ","glabrum","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
+"Urophyllum  unknown mixed","Rubiaceae","Urophyllum ","unknown mixed","CP","logged",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Utania cuspidata","Gentianaceae","Utania","cuspidata","CP, 50ha","both",NA,"AR","",NA,NA,NA,NA,NA,NA
+"Vatica albiramis","Dipterocarpaceae","Vatica","albiramis","CP, 50ha","both",NA,"AR","",NA,NA,NA,4086.875,NA,NA
+"Vatica chartacea","Dipterocarpaceae","Vatica","chartacea","50ha","unlogged",NA,NA,"",NA,NA,NA,4086.875,NA,NA
+"Vatica dulitensis","Dipterocarpaceae","Vatica","dulitensis","CP","logged",NA,"AR, NR","",NA,NA,NA,4086.875,NA,NA
+"Vatica oblongifolia","Dipterocarpaceae","Vatica","oblongifolia","50ha","unlogged",NA,NA,"",NA,NA,NA,4086.875,0.7,NA
+"Vatica sarawakensis","Dipterocarpaceae","Vatica","sarawakensis","CP, 50ha","both",NA,"AR","",NA,NA,NA,4086.875,NA,NA
+"Vatica umbonata","Dipterocarpaceae","Vatica","umbonata","50ha","unlogged",NA,NA,"",NA,NA,NA,4086.875,0.76,NA
+"Vitex pinnata","Lamiaceae","Vitex","pinnata","CP, 50ha","both",NA,"AR, NR","violet_lavender white_greenish yellow",7.5,4.5,7.21,95,NA,NA
+"Walsura pachycaulon","Meliaceae","Walsura","pachycaulon","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,704.921018041667,NA,NA
+"Walsura pinnata","Meliaceae","Walsura","pinnata","CP, 50ha","both",NA,"AR, NR","",NA,NA,9.17797857142857,704.921018041667,NA,NA
+"Walsura species 1","Meliaceae","Walsura","species 1","50ha","unlogged",NA,NA,"",NA,NA,9.17797857142857,704.921018041667,NA,NA
+"Xanthophyllum adenotus","Polygalaceae","Xanthophyllum","adenotus","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum flavescens","Polygalaceae","Xanthophyllum","flavescens","CP, 50ha","both",NA,"AR, NR","",NA,NA,8.4,25.6287764666667,0.66,NA
+"Xanthophyllum pachycarpon","Polygalaceae","Xanthophyllum","pachycarpon","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum reticulatum","Polygalaceae","Xanthophyllum","reticulatum","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum species 1","Polygalaceae","Xanthophyllum","species 1","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum species 2","Polygalaceae","Xanthophyllum","species 2","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum species 3","Polygalaceae","Xanthophyllum","species 3","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum species 4","Polygalaceae","Xanthophyllum","species 4","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum species 5","Polygalaceae","Xanthophyllum","species 5","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum species 6","Polygalaceae","Xanthophyllum","species 6","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum species 7","Polygalaceae","Xanthophyllum","species 7","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,NA,NA
+"Xanthophyllum unknown mixed","Polygalaceae","Xanthophyllum","unknown mixed","CP","logged",NA,"AR, NR","",NA,NA,NA,NA,NA,NA
+"Xanthophyllum vitellinum","Polygalaceae","Xanthophyllum","vitellinum","50ha","unlogged",NA,NA,"",NA,NA,8.4,25.6287764666667,0.73,NA
+"Xylopia ferruginea","Annonaceae","Xylopia","ferruginea","CP, 50ha","both",NA,"AR","",NA,NA,7.9,101.70275,0.35,NA
+"Ziziphus augustifolia","Rhamnaceae","Ziziphus","augustifolia","CP, 50ha","both",NA,"AR, NR","",NA,NA,2.33038,695.024418571429,NA,NA
+"unknown unknown","Magnoliaceae","unknown","unknown","CP","logged",NA,"NR, AR","",NA,NA,NA,NA,NA,NA
+"unknown unknown mixed","Magnoliaceae","unknown","unknown mixed","CP","logged",NA,"NR","",NA,NA,NA,NA,NA,NA
