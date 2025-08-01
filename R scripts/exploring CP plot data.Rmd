@@ -86,7 +86,7 @@ ggplot(summary_data_counts, aes(x = restoration, y = total_species_count, fill =
 ```
 ```{r}
 #read in the raw TRY data
-TRY_data_raw <- read.delim(here("TRY data.txt"))
+TRY_data_raw <- read.delim(here("raw trait data", "TRy", "TRY data.txt"))
 ```
 
 ```{r}
