@@ -130,12 +130,12 @@ trethowan_data <- read.csv(here("raw trait data", "Flower_Trait_Data.csv"))
 
 #merge the species list and the trethowan datasets together
 flower_colour_trethowan <- left_join(species_list, trethowan_data, by = c("binomial_name" = "species")) %>%
-  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, reference) %>% 
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, history_at_IF_site, history_at_CP_site, corolla_colour, reference) %>% 
   distinct()
 
 #Merge flower_traits from Trethowan with flower_colour from TRY
 flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by = c("binomial_name" = "AccSpeciesName")) %>%
-  select(binomial_name, family.x, genus, species, species_origin, logging_status, corolla_colour, reference, OrigValueStr, Reference)
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, history_at_IF_site, history_at_CP_site, corolla_colour, reference, OrigValueStr, Reference)
 
 #now I want to combine corolla_colour and OrigValueStr into one column called flower_colour, and combined reference and Reference into one column called reference
 flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by = c("binomial_name" = "AccSpeciesName")) %>%
@@ -143,16 +143,16 @@ flower_colour_merged <- left_join(flower_colour_trethowan, flower_colour_TRY, by
     flower_colour = coalesce(corolla_colour, OrigValueStr),
     reference = coalesce(reference, Reference)
   ) %>%
-  select(binomial_name, family.x, genus, species, species_origin, logging_status, flower_colour, reference) %>%
+  select(binomial_name, family.x, genus, species, species_origin, logging_status, history_at_IF_site, history_at_CP_site, flower_colour, reference) %>%
   rename(family = family.x)
 
 #If there is more than one flower colour listed for a single species, I want to list them
 flower_colour_final <- flower_colour_merged %>%
-  group_by(binomial_name, family, genus, species, species_origin, logging_status) %>%
+  group_by(binomial_name, family, genus, species, species_origin, logging_status, history_at_IF_site, history_at_CP_site) %>%
   summarise(
     flower_colour = str_c(unique(flower_colour[!is.na(flower_colour)]), collapse = ", "),
     reference = str_c(unique(reference[!is.na(reference)]), collapse = ", "),
-    .groups = "drop")%>%
+    .groups = "drop") %>%
   mutate(reference = if_else(flower_colour == "", NA_character_, reference)) %>%
   rename(flower_colour_reference = reference)
 
@@ -172,7 +172,7 @@ fruit_size_data <- read.csv(here("raw trait data", "figshare_fruit_data.csv"))
 
 #merge the species list and the fruit size datasets together
 fruit_size <- left_join(species_list, fruit_size_data, by = c("binomial_name" = "species")) %>%
-  select(binomial_name, family, genus, species, species_origin, logging_status, fruit_size_mm, fruit_size_min_mm, reference) %>%
+  select(binomial_name, family, genus, species, species_origin, logging_status, history_at_IF_site, history_at_CP_site, fruit_size_mm, fruit_size_min_mm, reference) %>%
   distinct() %>%
   rename(fruit_size_reference = reference)
 
