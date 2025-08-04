@@ -208,7 +208,7 @@ IF_history <- INDFORSUS_species_list %>%
 final_species_list <- left_join(final_species_list, IF_history, by = "binomial_name")
 
 #save the final_species_list as a .csv file
-write.csv(final_species_list, file = here("species list data", "final species list.csv"), row.names = FALSE)
+write.csv(final_species_list, file = here("species list data", "final species list uncorrected.csv"), row.names = FALSE)
  
 ```
 

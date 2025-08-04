@@ -327,13 +327,34 @@ merged_wood_densities <- merged_wood_densities %>%
   )
 ```
 
+6) DISPERSAL SYNDROME
+```{r}
+dispersal_syndrome <- seed_dispersal_syndrome_TRY %>%
+  select(AccSpeciesName, TraitName, OrigValueStr, Reference) %>%
+  rename(dispersal_syndrome = OrigValueStr,
+         binomial_name = AccSpeciesName) %>%
+  select(-TraitName)
+  
+write.csv(dispersal_syndrome, file = here("raw trait data", "dispersal syndrome raw.csv"), row.names = FALSE)
+
+dispersal_syndrome_processed <- read.csv(here("raw trait data", "dispersal syndrome processed.csv"))
+```
+
+```{r}
+#now join with the species list
+
+dispersal_syndrome_final <- left_join(species_list, dispersal_syndrome_processed, by = "binomial_name")
+
+write.csv(dispersal_syndrome_final, file = here("processed trait data", "dispersal syndrome.csv"), row.names = FALSE)
+```
 
 
 
-6) TALLO - TREE HEIGHT, CROWN RADIUS, STEM DIAMETER
+
+7) TALLO - TREE HEIGHT, CROWN RADIUS, STEM DIAMETER
 ```{r}
 #Tallo (tree height)
-tallo <- read.csv(here("trait data", "Tallo.csv"))
+tallo <- read.csv(here("raw trait data", "Tallo.csv"))
 
 
 tree_height <- left_join(species_list, tallo, by = c("binomial_name" = "species")) %>%
@@ -393,10 +414,7 @@ ggplot(tree_height, aes(x = logging_status, y = mean_crown_radius_m)) +
 
 ```
 
-6) DISPERSAL SYNDROME
-```{r}
-unique(seed_dispersal_syndrome_TRY$AccSpeciesName)
-```
+
 
 
 
