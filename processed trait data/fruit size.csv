@@ -72,14 +72,14 @@
 "Barringtonia unknown mixed","Lecythidaceae","Barringtonia","unknown mixed","50ha","unlogged",NA,NA,NA,NA,NA
 "Beilschmiedia Unknown species 1","Lauraceae","Beilschmiedia","Unknown species 1","50ha","unlogged",NA,NA,NA,NA,NA
 "Beilschmiedia assamica","Lauraceae","Beilschmiedia","assamica","50ha","unlogged",NA,NA,NA,NA,NA
-"Beilschmiedia ","Lauraceae","Beilschmiedia","","CP, 50ha","both",NA,"NR",NA,NA,NA
+"Beilschmiedia","Lauraceae","Beilschmiedia","","CP, 50ha","both",NA,"NR",NA,NA,NA
 "Beilschmiedia micrantha","Lauraceae","Beilschmiedia","micrantha","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
 "Beilschmiedia tawaensis","Lauraceae","Beilschmiedia","tawaensis","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
 "Beilschmiedia unknown mixed","Lauraceae","Beilschmiedia","unknown mixed","CP","logged",NA,"AR, NR",NA,NA,NA
 "Bhesa paniculata","Centroplacaceae","Bhesa","paniculata","50ha","unlogged",NA,NA,NA,NA,NA
 "Blumeodendron kurzii","Euphorbiaceae","Blumeodendron","kurzii","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
 "Blumeodendron tokbrai","Euphorbiaceae","Blumeodendron","tokbrai","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
-"Bridelia ","Phyllanthaceae","Bridelia","","50ha","unlogged",NA,NA,NA,NA,NA
+"Bridelia","Phyllanthaceae","Bridelia","","50ha","unlogged",NA,NA,NA,NA,NA
 "Bridelia cinnamomea","Phyllanthaceae","Bridelia","cinnamomea","50ha","unlogged",NA,NA,NA,NA,NA
 "Bridelia insulana","Phyllanthaceae","Bridelia","insulana","CP, 50ha","both",NA,"no seedling data, AR",NA,NA,NA
 "Brownlowia peltata","Malvaceae","Brownlowia","peltata","CP, 50ha","both",NA,"NR, AR",NA,NA,NA
@@ -192,7 +192,7 @@
 "Diospyros species 4","Ebenaceae","Diospyros","species 4","50ha","unlogged",NA,NA,NA,NA,NA
 "Diospyros species 6","Ebenaceae","Diospyros","species 6","50ha","unlogged",NA,NA,NA,NA,NA
 "Diospyros species 7","Ebenaceae","Diospyros","species 7","50ha","unlogged",NA,NA,NA,NA,NA
-"Diospyros squamifolia ","Ebenaceae","Diospyros","squamifolia ","50ha","unlogged",NA,NA,NA,NA,NA
+"Diospyros squamifolia","Ebenaceae","Diospyros","squamifolia ","50ha","unlogged",NA,NA,NA,NA,NA
 "Diospyros toposia","Ebenaceae","Diospyros","toposia","CP, 50ha","both",NA,"NR, AR",NA,NA,NA
 "Diospyros tuberculata","Ebenaceae","Diospyros","tuberculata","CP, 50ha","both",NA,"NR, AR",NA,NA,NA
 "Diospyros unknown mixed","Ebenaceae","Diospyros","unknown mixed","CP","logged",NA,"AR, NR",NA,NA,NA
@@ -255,10 +255,8 @@
 "Ficus variegata","Moraceae","Ficus","variegata","CP, 50ha","both",NA,"NR",NA,NA,NA
 "Flacourtia rukam","Salicaceae","Flacourtia","rukam","50ha","unlogged",NA,NA,NA,NA,NA
 "Fordia brachybotrys","Fabaceae","Fordia","brachybotrys","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
-"Fordia splendidissima","Fabaceae","Fordia","splendidissima","50ha","unlogged",NA,NA,NA,NA,NA
 "Fordia species 1","Fabaceae","Fordia","species 1","50ha","unlogged",NA,NA,NA,NA,NA
 "Fordia species 3","Fabaceae","Fordia","species 3","50ha","unlogged",NA,NA,NA,NA,NA
-"Fordia splendidissima","Fabaceae","Fordia","splendidissima","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
 "Fordia unknown mixed","Fabaceae","Fordia","unknown mixed","CP","logged",NA,"NR",NA,NA,NA
 "Galearia fulva","Pandaceae","Galearia","fulva","CP, 50ha","both",NA,"AR",NA,NA,NA
 "Garcinia nervosa","Clusiaceae","Garcinia","nervosa","CP, 50ha","both",NA,"AR",NA,NA,NA
@@ -294,7 +292,6 @@
 "Gonocaryum macrophyllum","Cardiopteridaceae","Gonocaryum","macrophyllum","50ha","unlogged",NA,NA,NA,NA,NA
 "Gonystylus keithii","Thymelaeaceae","Gonystylus","keithii","50ha","unlogged",NA,NA,NA,NA,NA
 "Guioa pleuropteris","Sapindaceae","Guioa","pleuropteris","CP, 50ha","both",NA,"NR, AR",25,10,"van Welzen 1994 FM"
-"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","50ha","unlogged",NA,NA,NA,NA,NA
 "Harpullia arborea","Sapindaceae","Harpullia","arborea","50ha","unlogged",NA,NA,NA,NA,NA
 "Harpullia species 1","Sapindaceae","Harpullia","species 1","50ha","unlogged",NA,NA,NA,NA,NA
 "Helicia excelsa","Proteaceae","Helicia","excelsa","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
@@ -410,7 +407,6 @@
 "Mallotus korthalsii","Euphorbiaceae","Mallotus","korthalsii","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
 "Mallotus lackeyi","Euphorbiaceae","Mallotus","lackeyi","CP, 50ha","both",NA,"AR",NA,NA,NA
 "Mallotus miquelianus","Euphorbiaceae","Mallotus","miquelianus","50ha","unlogged",NA,NA,NA,NA,NA
-"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","CP","logged",NA,"AR, NR",NA,NA,NA
 "Mallotus species 1","Euphorbiaceae","Mallotus","species 1","CP, 50ha","both",NA,"AR, NR, no seedling data",NA,NA,NA
 "Hancea stipularis","Euphorbiaceae","Hancea","stipularis","CP","logged",NA,"AR, NR",NA,NA,NA
 "Mallotus unknown mixed","Euphorbiaceae","Mallotus","unknown mixed","CP, 50ha","both",NA,"AR",NA,NA,NA
@@ -468,9 +464,7 @@
 "Nauclea unknown mixed","Rubiaceae","Nauclea","unknown mixed","CP, 50ha","both",NA,"AR, no seedling data",NA,NA,NA
 "Neesia synandra","Malvaceae","Neesia","synandra","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
 "Neesia unknown mixed","Malvaceae","Neesia","unknown mixed","CP","logged",NA,"AR, NR",NA,NA,NA
-"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","50ha","unlogged",NA,NA,NA,NA,NA
 "Neo-Uvaria unknown mixed","Annonaceae","Neo-Uvaria","unknown mixed","50ha","unlogged",NA,NA,NA,NA,NA
-"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","CP","logged",NA,"AR, NR",NA,NA,NA
 "Neolamarckia cadamba","Rubiaceae","Neolamarckia","cadamba","CP, 50ha","both",NA,"AR",NA,NA,NA
 "Neonauclea  gigantea","Rubiaceae","Neonauclea ","gigantea","CP","logged",NA,"NR",NA,NA,NA
 "Neonauclea sp","Rubiaceae","Neonauclea","sp","CP","logged",NA,"AR",NA,NA,NA
@@ -691,3 +685,6 @@
 "Xanthophyllum vitellinum","Polygalaceae","Xanthophyllum","vitellinum","50ha","unlogged",NA,NA,NA,NA,NA
 "Xylopia ferruginea","Annonaceae","Xylopia","ferruginea","CP, 50ha","both",NA,"AR",NA,NA,NA
 "Ziziphus augustifolia","Rhamnaceae","Ziziphus","augustifolia","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
+"Fordia splendidissima","Fabaceae","Fordia","splendidissima","CP, 50ha","both",NA,"AR, NR",NA,NA,NA
+"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","50ha, CP","both",NA,"AR, NR",NA,NA,NA
+"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","50ha, CP","both",NA,"AR, NR",NA,NA,NA

@@ -2,6 +2,12 @@
 title: "calculating relative abundance"
 output: html_document
 ---
+```{r}
+library(here)
+library(dplyr)
+```
+
+
 
 ```{r}
 #relative abundance for logged speices, from CP plot
@@ -25,8 +31,8 @@ total_count_AR <- sum(logged_AR$count)
 #calculate the relative abundance of each species
 logged_AR <-  logged_AR %>%
   mutate(relative_abundance_percent = (count / total_count_AR) * 100 )
-#check the relative abundances add up to 100
 
+#check the relative abundances add up to 100
 sum(logged_AR$relative_abundance_percent)
 #yes they do!
 
@@ -60,9 +66,73 @@ sum(logged_NR$relative_abundance_percent)
 #save as a .csv file so I can use it in other markdown documents
 write.csv(logged_NR, file = here("species list data", "CP plots naturally regenerated.csv"), row.names = FALSE)
 ```
+
 ```{r}
 #I want to stack the two datasets on top of eachother
 CP_plots <- rbind(logged_AR, logged_NR)
 
-write.csv(CP_plots, file = here("species list data", "CP plots.csv"), row.names = FALSE)
+sum(CP_plots$relative_abundance_percent)
 ```
+```{r}
+#now I need to correct the names of this dataset
+#read in the 'final species list corrected and cleaned'
+species_list <- read.csv(here("species list data", "final species list corrected and cleaned.csv"))
+
+#create a new column with corrected binomial name of each species
+species_list$binomial_name <- paste(species_list$genus, species_list$species)
+
+species_list <- species_list %>%
+  select(original_binomial_name, binomial_name, family, genus, species)
+
+#now to correct the error from creating the final species list, I need to merge species_list and final_species_list 
+CP_plots_clean <- full_join(species_list, CP_plots, by = c("original_binomial_name" = "binomial_name")) %>%
+  select(binomial_name, family, genus, species, restoration, count, relative_abundance_percent, mean_DBH, mean_Height) %>%
+  filter(!is.na(relative_abundance_percent))
+
+#check that all of the relative abundances add up to 200
+sum(CP_plots_clean$relative_abundance_percent, na.rm = TRUE)
+#yes they do - all good!
+```
+
+
+
+```{r}
+#I want to calculate the community weighted mean of all the traits
+#first I need to merge this dataset with the plant traits database
+all_traits_dataset <- read.csv(here("processed trait data", "all traits database.csv"))
+
+all_traits_dataset <- all_traits_dataset %>%
+  distinct()
+
+CP_plots_traits <- left_join(CP_plots_clean, all_traits_dataset, by = "binomial_name") %>%
+  select(binomial_name, family.x, genus.x, species.x, flower_colour, fruit_size_mm, fruit_size_min_mm, seed_length_mm, mean_dry_seed_mass_mg, mean_wood_density_g_cm_3, flowering_at_size_class, mean_DBH, mean_Height, restoration, count, relative_abundance_percent) %>%
+  filter(!is.na(relative_abundance_percent)) %>%
+  distinct()
+
+#now add up all of the values of relative_abundance_percent - it should equal 200
+sum(CP_plots_traits$relative_abundance_percent, na.rm = TRUE)
+
+```
+
+```{r}
+#now calculate the community weighted mean for each trait
+CP_plots_CWM <- CP_plots_traits %>%   # First step in the next string of statements
+  group_by(binomial_name, family.x, genus.x, species.x, restoration) %>%   # Groups the summary file by Plot number
+  summarize(          
+    fruit_size_cwm = weighted.mean(fruit_size_mm, relative_abundance_percent),   # Actual calculation of CWMs
+    fruit_size_min_cwm = weighted.mean(fruit_size_min_mm, relative_abundance_percent),
+    seed_length_cwm = weighted.mean(seed_length_mm, relative_abundance_percent),
+    seed_mass_cwm = weighted.mean(mean_dry_seed_mass_mg, relative_abundance_percent),
+    wood_density_cwm = weighted.mean(mean_wood_density_g_cm_3, relative_abundance_percent),
+    DBH_cwm = weighted.mean(mean_DBH, relative_abundance_percent),
+    height_cwm = weighted.mean(mean_Height, relative_abundance_percent)
+    )
+```
+```{r}
+#now lets try plotting these CWMs. I'm not very optimistic that I will see any differences..
+#yeah, there's no differences in these traits between actively restored and naturally regenerated forest.
+#its not really even worth writing the code out to make all the plots.
+
+```
+
+

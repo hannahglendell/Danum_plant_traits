@@ -72,7 +72,7 @@
 "Barringtonia lanceolata","Lecythidaceae ","Barringtonia","lanceolata","CP, 50ha","both",NA,"AR, NR","Genus","BIEN",1163
 "Barringtonia macrostachya","Lecythidaceae ","Barringtonia","macrostachya","CP, 50ha","both",NA,"AR, NR","Genus","BIEN",1163
 "Barringtonia unknown mixed","Lecythidaceae","Barringtonia","unknown mixed","50ha","unlogged",NA,NA,NA,NA,NA
-"Beilschmiedia ","Lauraceae","Beilschmiedia","","CP, 50ha","both",NA,"NR",NA,NA,NA
+"Beilschmiedia","Lauraceae","Beilschmiedia","","CP, 50ha","both",NA,"NR","Genus","BIEN",4248.53
 "Beilschmiedia Unknown species 1","Lauraceae","Beilschmiedia","Unknown species 1","50ha","unlogged",NA,NA,"Genus","BIEN",4248.53
 "Beilschmiedia assamica","Lauraceae","Beilschmiedia","assamica","50ha","unlogged",NA,NA,"Genus","Neuschulz, E. L., T. Mueller, M. Schleuning & K. Böhning-Gaese (2016) Pollination and seed dispersal are the most threatened processes of plant regeneration. Scientific Reports 6, Article number: 29839",4248.53
 "Beilschmiedia micrantha","Lauraceae","Beilschmiedia","micrantha","CP, 50ha","both",NA,"AR, NR","Genus","BIEN",4248.53
@@ -81,7 +81,7 @@
 "Bhesa paniculata","Centroplacaceae","Bhesa","paniculata","50ha","unlogged",NA,NA,"NA","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2008)., Royal Botanical Gardens KEW. Seed Information Database (SID), http://data.kew.org/sid/ accessed May 2014, Royal Botanic Gardens Kew. (2019) Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (06 2019)",77
 "Blumeodendron kurzii","Euphorbiaceae","Blumeodendron","kurzii","CP, 50ha","both",NA,"AR, NR","Family","BIEN",119.998798464659
 "Blumeodendron tokbrai","Euphorbiaceae","Blumeodendron","tokbrai","CP, 50ha","both",NA,"AR, NR","Family","BIEN",119.998798464659
-"Bridelia ","Phyllanthaceae","Bridelia","","50ha","unlogged",NA,NA,NA,NA,NA
+"Bridelia","Phyllanthaceae","Bridelia","","50ha","unlogged",NA,NA,"Family","BIEN",39.4013353648649
 "Bridelia cinnamomea","Phyllanthaceae","Bridelia","cinnamomea","50ha","unlogged",NA,NA,"Family","BIEN",39.4013353648649
 "Bridelia insulana","Phyllanthaceae","Bridelia","insulana","CP, 50ha","both",NA,"no seedling data, AR","Family","BIEN",39.4013353648649
 "Brownlowia peltata","Malvaceae","Brownlowia","peltata","CP, 50ha","both",NA,"NR, AR","Family","BIEN",881.714199688546
@@ -195,7 +195,7 @@
 "Diospyros species 4","Ebenaceae","Diospyros","species 4","50ha","unlogged",NA,NA,"Genus","BIEN",611.180001967213
 "Diospyros species 6","Ebenaceae","Diospyros","species 6","50ha","unlogged",NA,NA,"Genus","BIEN",611.180001967213
 "Diospyros species 7","Ebenaceae","Diospyros","species 7","50ha","unlogged",NA,NA,"Genus","BIEN",611.180001967213
-"Diospyros squamifolia ","Ebenaceae","Diospyros","squamifolia ","50ha","unlogged",NA,NA,NA,NA,NA
+"Diospyros squamifolia","Ebenaceae","Diospyros","squamifolia ","50ha","unlogged",NA,NA,"Genus","BIEN",611.180001967213
 "Diospyros toposia","Ebenaceae","Diospyros","toposia","CP, 50ha","both",NA,"NR, AR","Genus","BIEN",611.180001967213
 "Diospyros tuberculata","Ebenaceae","Diospyros","tuberculata","CP, 50ha","both",NA,"NR, AR","Genus","BIEN",611.180001967213
 "Diospyros unknown mixed","Ebenaceae","Diospyros","unknown mixed","CP","logged",NA,"AR, NR",NA,NA,NA
@@ -254,12 +254,9 @@
 "Fordia brachybotrys","Fabaceae","Fordia","brachybotrys","CP, 50ha","both",NA,"AR, NR","Family","BIEN",273.929465733062
 "Fordia species 1","Fabaceae","Fordia","species 1","50ha","unlogged",NA,NA,"Family","BIEN",273.929465733062
 "Fordia species 3","Fabaceae","Fordia","species 3","50ha","unlogged",NA,NA,"Family","BIEN",273.929465733062
-"Fordia splendidissima","Fabaceae","Fordia","splendidissima","50ha","unlogged",NA,NA,"Family","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2008)., Royal Botanical Gardens KEW. Seed Information Database (SID), http://data.kew.org/sid/ accessed May 2014, Moles, A. T., D. S. Falster, M. R. Leishman, and M. Westoby. 2004. Small-seeded species produce more seeds per square metre of canopy per year, but not per individual per lifetime. Journal of Ecology 92:384-396., Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)., Royal Botanic Gardens Kew. (2019) Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (06 2019)",500
-"Fordia splendidissima","Fabaceae","Fordia","splendidissima","50ha","unlogged",NA,NA,"Family","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2008)., Royal Botanical Gardens KEW. Seed Information Database (SID), http://data.kew.org/sid/ accessed May 2014, Moles, A. T., D. S. Falster, M. R. Leishman, and M. Westoby. 2004. Small-seeded species produce more seeds per square metre of canopy per year, but not per individual per lifetime. Journal of Ecology 92:384-396., Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)., Royal Botanic Gardens Kew. (2019) Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (06 2019)",500
-"Fordia splendidissima","Fabaceae","Fordia","splendidissima","CP, 50ha","both",NA,"AR, NR","Family","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2008)., Royal Botanical Gardens KEW. Seed Information Database (SID), http://data.kew.org/sid/ accessed May 2014, Moles, A. T., D. S. Falster, M. R. Leishman, and M. Westoby. 2004. Small-seeded species produce more seeds per square metre of canopy per year, but not per individual per lifetime. Journal of Ecology 92:384-396., Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)., Royal Botanic Gardens Kew. (2019) Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (06 2019)",500
 "Fordia splendidissima","Fabaceae","Fordia","splendidissima","CP, 50ha","both",NA,"AR, NR","Family","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2008)., Royal Botanical Gardens KEW. Seed Information Database (SID), http://data.kew.org/sid/ accessed May 2014, Moles, A. T., D. S. Falster, M. R. Leishman, and M. Westoby. 2004. Small-seeded species produce more seeds per square metre of canopy per year, but not per individual per lifetime. Journal of Ecology 92:384-396., Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)., Royal Botanic Gardens Kew. (2019) Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (06 2019)",500
 "Fordia unknown mixed","Fabaceae","Fordia","unknown mixed","CP","logged",NA,"NR",NA,NA,NA
-"Galearia fulva","Pandaceae","Galearia","fulva","CP, 50ha","both",NA,"AR","Family","BIEN",231.792239479883
+"Galearia fulva","Pandaceae","Galearia","fulva","CP, 50ha","both",NA,"AR","Family","BIEN",274.967297651842
 "Garcinia forbesii","Clusiaceae","Garcinia","forbesii","CP, 50ha","both",NA,"AR, NR","Genus","BIEN",2781.22546314583
 "Garcinia gaudichaudii","Clusiaceae","Garcinia","gaudichaudii","50ha","unlogged",NA,NA,"Genus","BIEN",2781.22546314583
 "Garcinia nervosa","Clusiaceae","Garcinia","nervosa","CP, 50ha","both",NA,"AR","Genus","BIEN",2781.22546314583
@@ -291,10 +288,7 @@
 "Gonocaryum macrophyllum","Cardiopteridaceae","Gonocaryum","macrophyllum","50ha","unlogged",NA,NA,"NA","BIEN",NA
 "Gonystylus keithii","Thymelaeaceae","Gonystylus","keithii","50ha","unlogged",NA,NA,"Family","BIEN",112.981647058824
 "Guioa pleuropteris","Sapindaceae","Guioa","pleuropteris","CP, 50ha","both",NA,"NR, AR","Family","BIEN",3110.25326076077
-"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","50ha","unlogged",NA,NA,"Family","BIEN",119.998798464659
-"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","50ha","unlogged",NA,NA,"Family","BIEN",119.998798464659
-"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","CP","logged",NA,"AR, NR","Family","BIEN",119.998798464659
-"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","CP","logged",NA,"AR, NR","Family","BIEN",119.998798464659
+"Hancea penangensis","Euphorbiaceae","Hancea","penangensis","50ha, CP","both",NA,"AR, NR","Family","BIEN",119.998798464659
 "Hancea stipularis","Euphorbiaceae","Hancea","stipularis","CP","logged",NA,"AR, NR","Family","BIEN",119.998798464659
 "Harpullia arborea","Sapindaceae","Harpullia","arborea","50ha","unlogged",NA,NA,"Family","BIEN",3110.25326076077
 "Harpullia species 1","Sapindaceae","Harpullia","species 1","50ha","unlogged",NA,NA,"Family","BIEN",3110.25326076077
@@ -319,7 +313,7 @@
 "Hydnocarpus unknown mixed","Achariaceae","Hydnocarpus","unknown mixed","CP, 50ha","both",NA,"NR",NA,NA,NA
 "Intsia palembanica","Fabaceae","Intsia","palembanica","CP, 50ha","both",NA,"NR, AR","Species","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2008)., Royal Botanical Gardens KEW. Seed Information Database (SID), http://data.kew.org/sid/ accessed May 2014, Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)., Royal Botanic Gardens Kew. (2019) Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (06 2019)",7000
 "Intsia unknown mixed","Fabaceae","Intsia","unknown mixed","50ha","unlogged",NA,NA,NA,NA,NA
-"Irvingia malayana","Irvingiaceae","Irvingia","malayana","50ha","unlogged",NA,NA,"Family","BIEN",6.20221836842105
+"Irvingia malayana","Irvingiaceae","Irvingia","malayana","50ha","unlogged",NA,NA,"Family","BIEN",8.20397862903226
 "Ixora blumei","Rubiaceae","Ixora","blumei","CP, 50ha","both",NA,"NR, AR","Genus","BIEN",60.0116976666667
 "Ixora brevicaudata","Rubiaceae","Ixora","brevicaudata","50ha","unlogged",NA,NA,"Genus","BIEN",60.0116976666667
 "Ixora grandifolia","Rubiaceae","Ixora","grandifolia","CP, 50ha","both",NA,"AR","Genus","BIEN",60.0116976666667
@@ -348,9 +342,9 @@
 "Lansium domesticum","Meliaceae","Lansium","domesticum","CP, 50ha","both",NA,"NR, no seedling data, AR","Genus","BIEN",5100
 "Lasianthus borneensis","Rubiaceae","Lasianthus","borneensis","50ha","unlogged",NA,NA,"Family","BIEN",59.1893790915751
 "Lasianthus reticulatus","Rubiaceae","Lasianthus","reticulatus","50ha","unlogged",NA,NA,"Family","BIEN",59.1893790915751
-"Lasianthus species 1","Rubiaceae","Lasianthus","species 1","50ha","unlogged",NA,NA,"Family","BIEN",58.9784425105634
-"Lasianthus species 2","Rubiaceae","Lasianthus","species 2","50ha","unlogged",NA,NA,"Family","BIEN",58.9784425105634
-"Lasianthus species 3","Rubiaceae","Lasianthus","species 3","50ha","unlogged",NA,NA,"Family","BIEN",58.9784425105634
+"Lasianthus species 1","Rubiaceae","Lasianthus","species 1","50ha","unlogged",NA,NA,"Family","BIEN",77.6817609409594
+"Lasianthus species 2","Rubiaceae","Lasianthus","species 2","50ha","unlogged",NA,NA,"Family","BIEN",77.6817609409594
+"Lasianthus species 3","Rubiaceae","Lasianthus","species 3","50ha","unlogged",NA,NA,"Family","BIEN",77.6817609409594
 "Lasianthus unknown mixed","Rubiaceae","Lasianthus","unknown mixed","50ha","unlogged",NA,NA,NA,NA,NA
 "Leea aculeata","Vitaceae","Leea","aculeata","CP, 50ha","both",NA,"NR, AR","Genus","BIEN",37.518875
 "Leea indica","Vitaceae","Leea","indica","50ha","unlogged",NA,NA,"Species","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2008)., Royal Botanical Gardens KEW. Seed Information Database (SID), http://data.kew.org/sid/ accessed May 2014, Moles, A. T., D. S. Falster, M. R. Leishman, and M. Westoby. 2004. Small-seeded species produce more seeds per square metre of canopy per year, but not per individual per lifetime. Journal of Ecology 92:384-396., Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)., Royal Botanic Gardens Kew. (2019) Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (06 2019)",36.35
@@ -439,7 +433,6 @@
 "Memecylon lilacinum","Melastomataceae","Memecylon","lilacinum","50ha","unlogged",NA,NA,"Genus","BIEN",116.824508333333
 "Memecylon oleifolium","Melastomataceae","Memecylon","oleifolium","50ha","unlogged",NA,NA,"Genus","BIEN",116.824508333333
 "Memecylon paniculatum","Melastomataceae","Memecylon","paniculatum","CP, 50ha","both",NA,"NR","Genus","BIEN",116.824508333333
-"Memecylon paniculatum","Melastomataceae","Memecylon","paniculatum","CP, 50ha","both",NA,"NR","Genus","BIEN",116.824508333333
 "Memecylon species 2","Melastomataceae","Memecylon","species 2","50ha","unlogged",NA,NA,"Genus","BIEN",116.824508333333
 "Memecylon species 3","Melastomataceae","Memecylon","species 3","50ha","unlogged",NA,NA,"Genus","BIEN",116.824508333333
 "Merope angulata","Rutaceae","Merope","angulata","50ha","unlogged",NA,NA,"Family","BIEN",124.165051964912
@@ -466,10 +459,7 @@
 "Nauclea unknown mixed","Rubiaceae","Nauclea","unknown mixed","CP, 50ha","both",NA,"AR, no seedling data",NA,NA,NA
 "Neesia synandra","Malvaceae","Neesia","synandra","CP, 50ha","both",NA,"AR, NR","Family","BIEN",881.714199688546
 "Neesia unknown mixed","Malvaceae","Neesia","unknown mixed","CP","logged",NA,"AR, NR",NA,NA,NA
-"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","50ha","unlogged",NA,NA,"NA","BIEN",NA
-"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","50ha","unlogged",NA,NA,"NA","BIEN",NA
-"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","CP","logged",NA,"AR, NR","NA","BIEN",NA
-"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","CP","logged",NA,"AR, NR","NA","BIEN",NA
+"Neo-Uvaria acuminatissima","Annonaceae","Neo-Uvaria","acuminatissima","50ha, CP","both",NA,"AR, NR","NA","BIEN",NA
 "Neo-Uvaria unknown mixed","Annonaceae","Neo-Uvaria","unknown mixed","50ha","unlogged",NA,NA,NA,NA,NA
 "Neolamarckia cadamba","Rubiaceae","Neolamarckia","cadamba","CP, 50ha","both",NA,"AR","Species","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2008)., Royal Botanical Gardens KEW. Seed Information Database (SID), http://data.kew.org/sid/ accessed May 2014, Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)., Royal Botanic Gardens Kew. (2019) Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (06 2019)",40
 "Neonauclea  gigantea","Rubiaceae","Neonauclea ","gigantea","CP","logged",NA,"NR","Family","BIEN",59.1893790915751

@@ -29,6 +29,12 @@ merged_traits <- flower_colour %>%
   full_join(wood_density,         by = c("binomial_name", "family", "genus", "species")) %>%
   select (binomial_name, family, genus, species, species_origin.x, logging_status.x, history_at_IF_site.x, history_at_CP_site.x, flower_colour, fruit_size_mm, fruit_size_min_mm, seed_length_mm, mean_dry_seed_mass_mg, mean_wood_density_g_cm_3, flowering_at_size_class ) %>%
   distinct()
+
+#check if any species occur more than once - yes, they do
+merged_traits %>%
+  count(binomial_name) %>%
+  filter(n > 1)
+#no species occurs more than once! success!
 ```
 
 ```{r}

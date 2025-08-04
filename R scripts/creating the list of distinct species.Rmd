@@ -213,4 +213,93 @@ write.csv(final_species_list, file = here("species list data", "final species li
 ```
 
 
+```{r}
+#now I want to clean up the names, so that I correct any synonyms. 
+#to do this, I need to read in the 'final species list corrected and cleaned' dataset.
+corrected_species_list <- read.csv(here("species list data", "final species list corrected and cleaned.csv"))
 
+#create a new column with corrected binomial name of each species
+corrected_species_list$binomial_name <- paste(species_list$genus, species_list$species)
+
+```
+
+
+```{r}
+#now to correct the error from creating the final species list, I need to merge species_list and final_species_list 
+final_corrected_species_list <- left_join(corrected_species_list, final_species_list, by = c("original_binomial_name" = "binomial_name")) %>%
+  select(binomial_name, family, genus, species, history_at_IF_site, history_at_CP_site, species_origin.y, logging_status.y) %>%
+  rename(species_origin = species_origin.y, logging_status = logging_status.y) %>%
+  distinct()
+
+
+final_corrected_species_list %>%
+  count(binomial_name) %>%
+  filter(n > 1)
+#this shows that there are three species which have two rows in the final_corrected_species_list. this needs to be fixed.
+```
+
+
+```{r}
+#keep Forida splendidissima which has species_origin as 50ha, CP
+#keep Hancea penangensis which has history_at_CP_site as AR,NR and make its species_origin 50ha, CP, and its logging status 'both'
+#keep Neo-Uvaria acuminatissima which has history_at_CP_site as AR,NR and make its species_origin 50ha, CP, and its logging status 'both'
+
+# Step 1: Remove all 3 species from the dataset
+final_corrected_species_list_partial <- final_corrected_species_list %>%
+  filter(!binomial_name %in% c(
+    "Fordia splendidissima", 
+    "Hancea penangensis", 
+    "Neo-Uvaria acuminatissima"
+  ))
+
+# Step 2: Fordia splendidissima (keep correct row)
+fordia_row <- final_corrected_species_list %>%
+  filter(binomial_name == "Fordia splendidissima",
+         species_origin == "CP, 50ha")
+
+
+# Step 3: Hancea penangensis (keep and modify correct row)
+hancea_row <- final_corrected_species_list %>%
+  filter(binomial_name == "Hancea penangensis",
+         history_at_CP_site == "AR, NR") %>%
+  mutate(
+    species_origin = "50ha, CP",
+    logging_status = "both"
+  )
+
+# Step 4: Neo-Uvaria acuminatissima (keep and modify correct row)
+neo_uvaria_row <- final_corrected_species_list %>%
+  filter(binomial_name == "Neo-Uvaria acuminatissima",
+         history_at_CP_site == "AR, NR") %>%
+  mutate(
+    species_origin = "50ha, CP",
+    logging_status = "both"
+  )
+
+# Step 5: Bind everything back into one cleaned dataset
+final_corrected_species_list_fixed <- bind_rows(
+  final_corrected_species_list_partial,
+  fordia_row,
+  hancea_row,
+  neo_uvaria_row
+)
+
+final_corrected_species_list_fixed %>%
+  filter(binomial_name %in% c(
+    "Fordia splendidissima", 
+    "Hancea penangensis", 
+    "Neo-Uvaria acuminatissima"
+  ))
+
+
+final_corrected_species_list <- final_corrected_species_list_fixed
+
+final_corrected_species_list %>%
+  count(binomial_name) %>%
+  filter(n > 1)
+```
+
+```{r}
+#now save this as a .csv file
+write.csv(final_corrected_species_list, file = here("species list data", "final corrected species list.csv"), row.names = FALSE)
+```
