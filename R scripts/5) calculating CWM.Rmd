@@ -1,0 +1,52 @@
+---
+title: "5) calculating CWM"
+output: html_document
+---
+
+```{r}
+library(here)
+library(dplyr)
+```
+
+```{r}
+CP_plots_clean <- read.csv(here("species list data", "CP plots clean.csv"))
+```
+
+```{r}
+#I want to calculate the community weighted mean of all the traits
+#first I need to merge this dataset with the plant traits database
+all_traits_dataset <- read.csv(here("processed trait data", "all traits database.csv"))
+
+all_traits_dataset <- all_traits_dataset %>%
+  distinct()
+
+CP_plots_traits <- left_join(CP_plots_clean, all_traits_dataset, by = "binomial_name") %>%
+  select(binomial_name, family.x, genus.x, species.x, flower_colour, fruit_size_mm, fruit_size_min_mm, seed_length_mm, mean_dry_seed_mass_mg, mean_wood_density_g_cm_3, flowering_at_size_class, mean_DBH, mean_Height, restoration, count, relative_abundance_percent) %>%
+  filter(!is.na(relative_abundance_percent)) %>%
+  distinct()
+
+#now add up all of the values of relative_abundance_percent - it should equal 200
+sum(CP_plots_traits$relative_abundance_percent, na.rm = TRUE)
+
+```
+
+```{r}
+#now calculate the community weighted mean for each trait
+CP_plots_CWM <- CP_plots_traits %>%   # First step in the next string of statements
+  group_by(binomial_name, family.x, genus.x, species.x, restoration) %>%   # Groups the summary file by Plot number
+  summarize(          
+    fruit_size_cwm = weighted.mean(fruit_size_mm, relative_abundance_percent),   # Actual calculation of CWMs
+    fruit_size_min_cwm = weighted.mean(fruit_size_min_mm, relative_abundance_percent),
+    seed_length_cwm = weighted.mean(seed_length_mm, relative_abundance_percent),
+    seed_mass_cwm = weighted.mean(mean_dry_seed_mass_mg, relative_abundance_percent),
+    wood_density_cwm = weighted.mean(mean_wood_density_g_cm_3, relative_abundance_percent),
+    DBH_cwm = weighted.mean(mean_DBH, relative_abundance_percent),
+    height_cwm = weighted.mean(mean_Height, relative_abundance_percent)
+    )
+```
+```{r}
+#now lets try plotting these CWMs. I'm not very optimistic that I will see any differences..
+#yeah, there's no differences in these traits between actively restored and naturally regenerated forest.
+#its not really even worth writing the code out to make all the plots.
+
+```
