@@ -2,6 +2,12 @@
 title: "joining all the traits together"
 output: html_document
 ---
+```{r}
+library(here)
+library(dplyr)
+```
+
+
 
 ```{r}
 #read in all the trait data
@@ -37,11 +43,36 @@ merged_traits <- flower_colour %>%
 merged_traits %>%
   count(binomial_name) %>%
   filter(n > 1)
-#NEED TO FIX THIS!!
 ```
 
 ```{r}
 write.csv(merged_traits, file = here("processed trait data", "all traits database.csv"), row.names = FALSE)
 ```
 
+```{r}
+#count the number of species that have at least one trait value
+merged_traits %>%
+  filter(if_any(
+    c(flower_colour, dispersal_syndrome, fruit_size_mm, fruit_size_min_mm,
+      seed_length_mm, mean_dry_seed_mass_mg, mean_wood_density_g_cm_3,
+      flowering_at_size_class),
+    ~ !is.na(.)
+  )) %>%
+  distinct(binomial_name) %>%
+  count()
+
+#to see the number of species that have two or more trait values
+
+merged_traits %>%
+  rowwise() %>%
+  mutate(non_na_count = sum(!is.na(across(c(
+    flower_colour, dispersal_syndrome, fruit_size_mm, fruit_size_min_mm,
+    seed_length_mm, mean_dry_seed_mass_mg, mean_wood_density_g_cm_3,
+    flowering_at_size_class
+  ))))) %>%
+  ungroup() %>%
+  filter(non_na_count >= 2) %>%
+  distinct(binomial_name) %>%
+  count()
+```
 

@@ -25,8 +25,7 @@
 "Aglaia tomentosa","Meliaceae","Aglaia","tomentosa",NA,"AR, NR","CP, 50ha","both",NA,NA
 "Aglaia unknown mixed","Meliaceae","Aglaia","unknown mixed",NA,"AR, NR, no seedling data","CP, 50ha","both",NA,NA
 "Alangium javanicum","Cornaceae","Alangium","javanicum",NA,"AR, NR","CP, 50ha","both",NA,NA
-"Allophylus cobbe","Sapindaceae","Allophylus","cobbe",NA,NA,"50ha","unlogged","unassisted","Giroldo, Aelton (2016) Pequenas plantas, grandes estrategias: adaptacoes e sobrevivencia no Cerrado. PhD Thesis University of Brasilia. DOI: 10.13140/RG.2.2.34455.16800"
-"Allophylus cobbe","Sapindaceae","Allophylus","cobbe",NA,NA,"50ha","unlogged","animal","Giroldo, Aelton (2016) Pequenas plantas, grandes estrategias: adaptacoes e sobrevivencia no Cerrado. PhD Thesis University of Brasilia. DOI: 10.13140/RG.2.2.34455.16800"
+"Allophylus cobbe","Sapindaceae","Allophylus","cobbe",NA,NA,"50ha","unlogged","unassisted, animal","Giroldo, Aelton (2016) Pequenas plantas, grandes estrategias: adaptacoes e sobrevivencia no Cerrado. PhD Thesis University of Brasilia. DOI: 10.13140/RG.2.2.34455.16800"
 "Alseodaphne bancana","Lauraceae","Alseodaphne","bancana",NA,NA,"50ha","unlogged",NA,NA
 "Alseodaphne unknown mixed","Lauraceae","Alseodaphne","unknown mixed",NA,"AR","CP, 50ha","both",NA,NA
 "Alstonia angustifolia","Apocynaceae","Alstonia","angustifolia",NA,"NR, AR","CP, 50ha","both",NA,NA
@@ -298,8 +297,7 @@
 "Helicia excelsa","Proteaceae","Helicia","excelsa",NA,"AR, NR","CP, 50ha","both",NA,NA
 "Helicia robusta","Proteaceae","Helicia","robusta",NA,"AR","CP, 50ha","both",NA,NA
 "Heliciopsis artocarpoides","Proteaceae","Heliciopsis","artocarpoides",NA,NA,"50ha","unlogged",NA,NA
-"Heritiera elata","Malvaceae","Heritiera","elata",NA,NA,"50ha","unlogged","wind","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)."
-"Heritiera elata","Malvaceae","Heritiera","elata",NA,NA,"50ha","unlogged","unassisted","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)."
+"Heritiera elata","Malvaceae","Heritiera","elata",NA,NA,"50ha","unlogged","wind, unassisted","Royal Botanical Gardens KEW. 2008. Seed Information Database (SID). Version 7.1. Available from: http://data.kew.org/sid/ (May 2011)."
 "Homalium foetidum","Salicaceae","Homalium","foetidum",NA,NA,"50ha","unlogged",NA,NA
 "Hopea ferruginea","Dipterocarpaceae","Hopea","ferruginea",NA,"AR","CP, 50ha","both",NA,NA
 "Hopea nervosa","Dipterocarpaceae","Hopea","nervosa",NA,"AR, NR","CP, 50ha","both",NA,NA

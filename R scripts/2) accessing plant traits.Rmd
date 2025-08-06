@@ -348,6 +348,14 @@ dispersal_syndrome_final <- left_join(species_list, dispersal_syndrome_processed
 write.csv(dispersal_syndrome_final, file = here("processed trait data", "dispersal syndrome.csv"), row.names = FALSE)
 ```
 
+```{r}
+dispersal_syndrome_final %>%
+  count(binomial_name) %>%
+  filter(n > 1)
+```
+
+
+
 
 
 

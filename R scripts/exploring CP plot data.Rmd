@@ -36,8 +36,9 @@ summary_data <- CP_plots_top_families %>%
 ggplot(summary_data, aes(x = restoration, y = total_abundance, fill = family_grouped)) +
   geom_bar(stat = "identity", position = "stack") +
   scale_fill_viridis_d(option = "turbo") +
+  scale_x_discrete(labels = c("AR" = "Actively restored", "NR" = "Naturally regenerated")) +
   labs(
-    x = "Restoration Type",
+    x = "",
     y = "Relative Abundance (%)",
     fill = "Family",
     title = ""
@@ -59,9 +60,10 @@ summary_data_counts <- CP_plots_top_families %>%
 ggplot(summary_data_counts, aes(x = restoration, y = total_species_count, fill = family_grouped)) +
   geom_bar(stat = "identity", position = "stack") +
   scale_fill_viridis_d(option = "turbo") +
+  scale_x_discrete(labels = c("AR" = "Actively restored", "NR" = "Naturally regenerated")) +
   labs(
-    x = "Restoration Type",
-    y = "Number of species",
+    x = "",
+    y = "Number of individuals",
     fill = "Family",
     title = ""
   ) +

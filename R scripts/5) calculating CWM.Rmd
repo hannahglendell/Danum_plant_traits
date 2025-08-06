@@ -21,7 +21,7 @@ all_traits_dataset <- all_traits_dataset %>%
   distinct()
 
 CP_plots_traits <- left_join(CP_plots_clean, all_traits_dataset, by = "binomial_name") %>%
-  select(binomial_name, family.x, genus.x, species.x, flower_colour, fruit_size_mm, fruit_size_min_mm, seed_length_mm, mean_dry_seed_mass_mg, mean_wood_density_g_cm_3, flowering_at_size_class, mean_DBH, mean_Height, restoration, count, relative_abundance_percent) %>%
+  select(binomial_name, family.x, genus.x, species.x, flower_colour, dispersal_syndrome, fruit_size_mm, fruit_size_min_mm, seed_length_mm, mean_dry_seed_mass_mg, mean_wood_density_g_cm_3, flowering_at_size_class, mean_DBH, mean_Height, restoration, count, relative_abundance_percent) %>%
   filter(!is.na(relative_abundance_percent)) %>%
   distinct()
 
