@@ -46,6 +46,9 @@ merged_traits %>%
 ```
 
 ```{r}
+#put NA values where there are blank spaces in flower_colour column
+merged_traits$flower_colour[trimws(merged_traits$flower_colour) == ""] <- NA
+
 write.csv(merged_traits, file = here("processed trait data", "all traits database.csv"), row.names = FALSE)
 ```
 
@@ -75,4 +78,12 @@ merged_traits %>%
   distinct(binomial_name) %>%
   count()
 ```
+
+```{r}
+#count the number of species that have data for each trait
+#e.g shown here for flower colour
+length(unique(merged_traits$binomial_name[!is.na(merged_traits$flower_colour)]))
+
+```
+
 

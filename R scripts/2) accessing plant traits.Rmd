@@ -365,6 +365,9 @@ dispersal_syndrome_final %>%
 tallo <- read.csv(here("raw trait data", "Tallo.csv"))
 
 
+tree_height_table <- tree_height %>%
+  count(binomial_name)
+
 tree_height <- left_join(species_list, tallo, by = c("binomial_name" = "species")) %>%
   select(binomial_name, family.x, genus.x, species, stem_diameter_cm, height_m, crown_radius_m, species_origin, logging_status) %>%
   group_by(binomial_name) %>%

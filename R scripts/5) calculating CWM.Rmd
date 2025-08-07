@@ -6,6 +6,7 @@ output: html_document
 ```{r}
 library(here)
 library(dplyr)
+library(ggplot2)
 ```
 
 ```{r}
@@ -49,4 +50,39 @@ CP_plots_CWM <- CP_plots_traits %>%   # First step in the next string of stateme
 #yeah, there's no differences in these traits between actively restored and naturally regenerated forest.
 #its not really even worth writing the code out to make all the plots.
 
+#plotting seed length
+ggplot(CP_plots_CWM, aes(x = restoration, y = seed_length_cwm)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "",
+    x = "restoration history",
+    y = "seed length cwm"
+  ) +
+  theme_minimal()
+
+
 ```
+
+```{r}
+ggplot(CP_plots_CWM, aes(x = restoration, y = seed_mass_cwm)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "",
+    x = "restoration history",
+    y = "seed mass cwm"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+ggplot(CP_plots_CWM, aes(x = restoration, y = wood_density_cwm)) +
+  geom_jitter(width = 0.2, height = 0, alpha = 0.6, color = "blue") +
+  labs(
+    title = "",
+    x = "restoration history",
+    y = "wood density cwm"
+  ) +
+  theme_minimal()
+
+```
+

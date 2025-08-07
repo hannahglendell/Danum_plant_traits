@@ -219,7 +219,7 @@ write.csv(final_species_list, file = here("species list data", "final species li
 corrected_species_list <- read.csv(here("species list data", "final species list corrected and cleaned.csv"))
 
 #create a new column with corrected binomial name of each species
-corrected_species_list$binomial_name <- paste(species_list$genus, species_list$species)
+corrected_species_list$binomial_name <- paste(corrected_species_list$genus, corrected_species_list$species)
 
 ```
 
