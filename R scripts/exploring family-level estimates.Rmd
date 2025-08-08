@@ -1,0 +1,207 @@
+---
+title: "exploring family-level estimates"
+output: html_document
+---
+
+```{r}
+library(here)
+library(dplyr)
+library(ggplot2)
+library(viridis)
+```
+
+```{r}
+seed_mass <- read.csv(here("processed trait data", "seed mass.csv"))
+
+seed_length <- read.csv(here("processed trait data", "seed length.csv"))
+```
+
+```{r}
+
+seed_mass %>%
+  group_by(level_used) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+
+seed_length %>%
+  group_by(level_used) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+
+```
+
+```{r}
+all_traits_database %>%
+  mutate(
+    data_category = case_when(
+      !is.na(seed_length_mm) & !is.na(mean_dry_seed_mass_mg) ~ "Both",
+      !is.na(seed_length_mm) &  is.na(mean_dry_seed_mass_mg) ~ "Seed length only",
+       is.na(seed_length_mm) & !is.na(mean_dry_seed_mass_mg) ~ "Seed mass only",
+       is.na(seed_length_mm) &  is.na(mean_dry_seed_mass_mg) ~ "Neither"
+    )
+  ) %>%
+  count(data_category)
+```
+
+
+```{r}
+
+#now I want to filter out so I am only looking at genus and species level estimates
+seed_mass_genus <- seed_mass %>%
+  filter(level_used %in% c("Genus", "Species"))
+
+#i want to calculate the 10 most common families, with genus or species level estimates
+top_families <- seed_mass %>%
+  count(family, sort = TRUE) %>%
+  slice_head(n = 15) %>%
+  pull(family)
+
+
+# Filter dataset to only include these top families
+seed_mass_top <- seed_mass_genus %>%
+  filter(family %in% top_families)
+
+```
+
+```{r}
+# make a plot
+ggplot(seed_mass_top, aes(x = mean_dry_seed_mass_mg,  # all points share same x-position
+                          y = family,
+                          color = family)) +
+  geom_point() +
+  scale_color_viridis(discrete = TRUE) +
+  scale_x_log10() +
+  labs(
+    title = "species and genus-level estimates of seed mass",
+    x = "log mean dry seed mass (mg)",
+       y = "",
+       color = "Family") +
+  theme_minimal() +
+  theme(legend.position = "none")
+  
+```
+
+
+```{r}
+#now i wan to add in the family-level estimate of seed mass on top
+#filter out the seed mass dataset so that I have just family level estimates, and one row per family
+seed_mass_family <- seed_mass %>%
+  filter(level_used %in% c("Family")) %>%
+  select(family, level_used, mean_dry_seed_mass_mg, reference_seed_mass) %>%
+  distinct()
+
+#now filter to only include the 15 top families counted above
+seed_mass_top_family <- seed_mass_family %>%
+  filter(family %in% top_families)
+
+```
+
+```{r}
+# make a plot
+ggplot(seed_mass_top, aes(x = mean_dry_seed_mass_mg,  
+                          y = family,
+                          color = family)) +
+  geom_point() + 
+  geom_point(data = seed_mass_top_family, 
+             aes(x = mean_dry_seed_mass_mg, y = family),
+             color = "red", size = 2) +
+  scale_color_viridis(discrete = TRUE) +
+  labs(
+    title = "species and genus-level estimates of seed mass",
+    x = "mean dry seed mass (mg)",
+       y = "",
+       color = "Family") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+```{r}
+seed_mass_top
+
+seed_mass_top_family_proc = seed_mass_top_family %>% 
+  select(family, mean_dry_seed_mass_mg) %>% 
+  rename(mean_dry_seed_mass_mg_family = mean_dry_seed_mass_mg) %>% 
+  group_by(family) %>% 
+  summarise(mean_dry_seed_mass_mg_family = mean(mean_dry_seed_mass_mg_family, na.rm = T))
+
+(seed_mass_comparison = seed_mass_top %>% 
+  left_join(seed_mass_top_family_proc, by = 'family') %>% 
+    mutate(distance_abs = abs(mean_dry_seed_mass_mg_family - mean_dry_seed_mass_mg)) %>% 
+  group_by(family) %>% 
+    summarise(mean_distance_abs = mean(distance_abs, na.rm = TRUE)))
+
+(seed_mass_comparison_rel = seed_mass_comparison %>% 
+    left_join(seed_mass_top_family_proc, by = 'family') %>% 
+    mutate(rel_distance = mean_distance_abs/mean_dry_seed_mass_mg_family)
+)
+
+```
+
+
+
+
+
+
+```{r}
+all_traits_database <- read.csv(here("processed trait data", "all traits database.csv"))
+
+all_traits_database <- all_traits_database %>%
+  mutate(log_seed_mass = log(mean_dry_seed_mass_mg))
+```
+
+```{r}
+ggplot(all_traits_database, aes(x = mean_dry_seed_mass_mg, y = seed_length_mm)) +
+  geom_point() 
+```
+
+```{r}
+ggplot(all_traits_database, aes(x = log_seed_mass, y = seed_length_mm)) +
+  geom_point() +
+  labs(
+    title = "",
+    x = "log dry seed mass (mg)",
+       y = "seed length (mm)",
+       color = "Family") +
+  annotate("text", 
+           x = 6.5, y = 35,          # adjust position to fit your data
+           label = expression(R^2 == 0.34),
+           size = 5) +
+  theme_minimal()
+```
+
+
+```{r}
+#do a simple correlation
+
+cor(all_traits_database$log_seed_mass,
+    all_traits_database$seed_length_mm,
+    use = "complete.obs")^2
+
+#R-squared is 0.34
+```
+
+```{r}
+#now try a linear model
+
+seed_model <- lm(seed_length_mm ~ log_seed_mass, data = all_traits_database)
+
+summary(seed_model)
+```
+```{r}
+ggplot(all_traits_database, aes(x = log_seed_mass, y = seed_length_mm)) +
+  geom_point() +
+  geom_smooth(method = lm) +
+  labs(
+    title = "",
+    x = "log dry seed mass (mg)",
+       y = "seed length (mm)",
+       color = "Family") +
+  annotate("text", 
+           x = 6.5, y = 35,          # adjust position to fit your data
+           label = expression(R^2 == 0.34),
+           size = 5) +
+  theme_minimal()
+```
+
+
+

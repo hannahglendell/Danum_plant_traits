@@ -170,7 +170,7 @@ write.csv(fruit_size, file = here("processed trait data", "fruit size.csv"), row
 #remember this is 1000 seed mass
 seed_dry_mass_TRY_clean <- seed_dry_mass_TRY %>%
   select(AccSpeciesName, TraitName, StdValue, UnitName, Reference) %>%
-  rename(dry_seed_mass_mg = StdValue, binomial_name = AccSpeciesName, reference = Reference) %>%
+  rename(dry_seed_mass_mg = StdValue, binomial_name = AccSpeciesName) %>%
   group_by(binomial_name) %>%
   summarise(mean_dry_seed_mass_mg_TRY = round(mean(dry_seed_mass_mg, na.rm = TRUE), 2))
   
@@ -182,12 +182,12 @@ seed_dry_mass_TRY_clean <-  seed_dry_mass_TRY_clean %>%
   select(binomial_name, mean_dry_seed_mass_mg_TRY, Reference) %>%
   distinct() %>%
   group_by(binomial_name, mean_dry_seed_mass_mg_TRY) %>%
-  summarise(Reference = str_c(unique(Reference[!is.na(Reference)]), collapse = ", "),
+  summarise(reference_TRY = str_c(unique(Reference[!is.na(Reference)]), collapse = ", "),
     .groups = "drop")
     
 #merge species_list and seed_dry_mass_TRY_clean
 merged_seed_mass <- left_join(species_list, seed_dry_mass_TRY_clean, by = c("binomial_name" = "binomial_name")) %>%
-  select(binomial_name, family, genus, species, history_at_IF_site, history_at_CP_site, species_origin, logging_status, mean_dry_seed_mass_mg_TRY, Reference) %>%
+  select(binomial_name, family, genus, species, history_at_IF_site, history_at_CP_site, species_origin, logging_status, mean_dry_seed_mass_mg_TRY, reference_TRY) %>%
   distinct()
 
 ```
@@ -199,8 +199,8 @@ average_seed_mass_BIEN = BIEN_trait_mean(species = list_sp_cleaned, trait = "see
 
 average_seed_mass_BIEN <- average_seed_mass_BIEN %>%
   rename(mean_dry_seed_mass_BIEN = mean_value, binomial_name = species) %>%
-  mutate(reference = "BIEN") %>%
-  select(binomial_name, mean_dry_seed_mass_BIEN, level_used, reference)
+  mutate(reference_BIEN = "BIEN") %>%
+  select(binomial_name, mean_dry_seed_mass_BIEN, level_used, reference_BIEN)
 
 #this assigns seed mass to all 753 species. It produces a dataframe which tells you the mean seed mass, the level used (family, genus or species) and the sample size used to produce that mean.
 
@@ -219,19 +219,40 @@ average_seed_mass_BIEN <- average_seed_mass_BIEN %>%
 #
 #I want to add in the BIEN data, but in a way that if there is already existing data in merged_seed_mass_TRY, i keep that data and I do not replace it.
 
+# # final_seed_mass <- merged_seed_mass %>%
+#   left_join(average_seed_mass_BIEN, by = c("binomial_name")) %>%
+#   group_by(binomial_name, family, genus, species, species_origin, logging_status, history_at_IF_site, history_at_CP_site, level_used, reference_TRY, reference_BIEN) %>%
+#   summarise(
+#     mean_dry_seed_mass_mg = coalesce(mean_dry_seed_mass_mg_TRY, as.numeric(mean_dry_seed_mass_BIEN)),
+#     .groups = "drop"
+#   ) %>%
+#   mutate(
+#     reference = coalesce(reference_TRY, reference_BIEN)
+#   ) %>%
+#   rename(reference_seed_mass = reference) #%>%
+#   #select(-Reference)
+
+
+
+
+
 final_seed_mass <- merged_seed_mass %>%
   left_join(average_seed_mass_BIEN, by = c("binomial_name")) %>%
-  group_by(binomial_name, family, genus, species, species_origin, logging_status, history_at_IF_site, history_at_CP_site, level_used, reference, Reference) %>%
+  group_by(binomial_name, family, genus, species, species_origin, logging_status, 
+           history_at_IF_site, history_at_CP_site, level_used, reference_TRY, reference_BIEN) %>%
   summarise(
     mean_dry_seed_mass_mg = coalesce(mean_dry_seed_mass_mg_TRY, as.numeric(mean_dry_seed_mass_BIEN)),
     .groups = "drop"
   ) %>%
   mutate(
-    reference = coalesce(Reference, reference)
+    reference_seed_mass = coalesce(reference_TRY, reference_BIEN),
+    level_used = case_when(
+      is.na(reference_seed_mass) ~ NA_character_,           # If reference is NA → level_used = NA
+      reference_seed_mass != "BIEN" ~ "Species",             # If reference is not BIEN → Species
+      TRUE ~ level_used                                       # Otherwise keep existing value
+    ) 
   ) %>%
-  rename(reference_seed_mass = reference) %>%
-  select(-Reference)
-
+      select(-reference_TRY, -reference_BIEN)
 
 #save as a csv file
 write.csv(final_seed_mass, file = here("processed trait data", "seed mass.csv"), row.names = FALSE)
@@ -250,7 +271,7 @@ average_seed_length = BIEN_trait_mean(species = list_sp_cleaned, trait = "seed l
 
 #merge BIEN data with species list
 merged_seed_length <- left_join(species_list, average_seed_length, by = c("binomial_name" = "species")) %>%
-  select(binomial_name, family, genus, species, history_at_IF_site, history_at_CP_site, species_origin, logging_status, mean_value) %>%
+  select(binomial_name, family, genus, species, history_at_IF_site, history_at_CP_site, species_origin, logging_status, mean_value, level_used) %>%
   rename(seed_length_mm = mean_value) %>%
   mutate(seed_length_mm = as.numeric(seed_length_mm),
          reference = "BIEN")
