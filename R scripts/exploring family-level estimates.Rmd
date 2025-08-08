@@ -177,7 +177,6 @@ cor(all_traits_database$log_seed_mass,
     all_traits_database$seed_length_mm,
     use = "complete.obs")^2
 
-#R-squared is 0.34
 ```
 
 ```{r}
