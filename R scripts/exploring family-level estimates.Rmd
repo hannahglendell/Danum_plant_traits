@@ -14,10 +14,12 @@ library(viridis)
 seed_mass <- read.csv(here("processed trait data", "seed mass.csv"))
 
 seed_length <- read.csv(here("processed trait data", "seed length.csv"))
+
+all_traits_database <- read.csv(here("processed trait data", "all traits database.csv"))
 ```
 
 ```{r}
-
+#see how many species have species, genus and family level estimates
 seed_mass %>%
   group_by(level_used) %>%
   summarise(count = n()) %>%
@@ -31,6 +33,7 @@ seed_length %>%
 ```
 
 ```{r}
+#see how many species have seed mass only, seed length only, both, or neither
 all_traits_database %>%
   mutate(
     data_category = case_when(
@@ -203,4 +206,114 @@ ggplot(all_traits_database, aes(x = log_seed_mass, y = seed_length_mm)) +
 ```
 
 
+PLOTTING THE 71 SPECIES LEVEL ESTIMATES
+
+```{r}
+#now for each species I want its species-level estimate, genus level estimate, and family level estimate
+
+#filter out the seed mass dataset so that I have just family level estimates, and one row per family
+seed_mass_family <- seed_mass %>%
+  filter(level_used %in% c("Family")) %>%
+  select(family, mean_dry_seed_mass_mg) %>%
+  rename(family_level_seed_mass = mean_dry_seed_mass_mg) %>%
+  distinct()
+
+
+#filter out to just get the species level estimates
+seed_mass_species <- seed_mass %>%
+  filter(level_used %in% c("Species")) %>%
+  select(binomial_name, family,genus, mean_dry_seed_mass_mg) %>%
+  rename(species_level_seed_mass = mean_dry_seed_mass_mg) %>%
+  distinct()
+
+#filter out to just get the species level estimates
+seed_mass_genus <- seed_mass %>%
+  filter(level_used %in% c("Genus")) %>%
+  select(binomial_name, family, genus, level_used, mean_dry_seed_mass_mg) %>%
+  rename(genus_level_seed_mass = mean_dry_seed_mass_mg) %>%
+  distinct()
+
+#join species and genus datasets together
+species_and_genus <- seed_mass_species %>%
+  left_join(seed_mass_genus, by = "genus") %>%
+  select(binomial_name.x, family.x, genus, species_level_seed_mass, genus_level_seed_mass) %>%
+  rename(family = family.x) %>%
+  distinct()
+
+#now add in the family level estimates
+all_levels <- species_and_genus %>%
+  left_join(seed_mass_family, by = "family") %>%
+  distinct()
+
+```
+
+```{r}
+#now plot the 71 species level estimates against their genus level estimates
+ggplot(all_levels, aes(x = log(species_level_seed_mass), y = log(genus_level_seed_mass))) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  labs(
+    title = "",
+    x = "log species level seed mass",
+       y = "log genus level seed mass") +
+  annotate("text", 
+           x = 6.5, y = 10,      
+           label = expression(RMSE == 2259.9),
+           size = 5) +
+  theme_minimal()
+
+
+#now calculate the root mean square error
+all_levels %>%
+  summarise(rmse = sqrt(mean((species_level_seed_mass - genus_level_seed_mass)^2, na.rm = TRUE))) 
+
+```
+
+```{r}
+#now plot the 71 species level estimates against their genus level estimates
+ggplot(all_levels, aes(x = log(species_level_seed_mass), y = log(family_level_seed_mass))) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed")  +
+  labs(
+    title = "",
+    x = "log species level seed mass",
+       y = "log family level seed mass") +
+  annotate("text", 
+           x = 6.5, y = 10,      
+           label = expression(RMSE == 4643.4),
+           size = 5) +
+  theme_minimal()
+
+#now calculate the root mean square error
+all_levels %>%
+  summarise(rmse = sqrt(mean((species_level_seed_mass - family_level_seed_mass)^2, na.rm = TRUE)))
+```
+
+PLOTTING THE 236 GENUS VALUES
+```{r}
+#join the genus_level estimates with the family-level estimates
+genus_and_family <- seed_mass_genus %>%
+  left_join(seed_mass_family, by = "family") %>%
+  distinct()
+
+#now plot the genus level estimates against the family level estimates
+ggplot(genus_and_family, aes(x = log(genus_level_seed_mass), y = log(family_level_seed_mass))) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed")  +
+  labs(
+    title = "",
+    x = "log genus level seed mass",
+       y = "log family level seed mass") +
+  annotate("text", 
+           x = 6.5, y = 10,      
+           label = expression(RMSE == 3878.8),
+           size = 5) +
+  theme_minimal()
+
+
+#calculate the root mean square error
+genus_and_family %>%
+  summarise(rmse = sqrt(mean((genus_level_seed_mass - family_level_seed_mass)^2, na.rm = TRUE)))
+
+```
 
