@@ -1,0 +1,98 @@
+---
+title: "calculating pagel's lambda"
+output: html_document
+---
+
+```{r}
+library(usethis)
+library(devtools)
+library(ape)
+library(dplyr)
+library(here)
+library(RColorBrewer)
+library(phytools)
+```
+
+```{r}
+#install the package for making the phylogenetic tree
+install_github("jinyizju/V.PhyloMaker")
+
+library(V.PhyloMaker)
+```
+
+```{r}
+#now I need to get my cleaned list of species, with a species, genus and family column
+
+#make a vector of species
+species_list <- read.csv(here("species list data", "final corrected species list.csv"))
+```
+
+```{r}
+list_sp_cleaned <- species_list %>%
+  select(binomial_name, genus, family) %>%
+  # Ensure characters are valid UTF-8, replace non-breaking spaces
+  mutate(
+    binomial_name = iconv(binomial_name, from = "", to = "UTF-8"),       # fix encoding
+    binomial_name = gsub("\u00A0", " ", binomial_name, useBytes = TRUE)  # replace NBSP
+  ) %>%
+  # Remove unwanted placeholders
+  filter(!grepl(
+    "(?i)\\bunknown\\b|\\bmixed\\b|\\b(species|sp)\\.?\\s*\\d*$",
+    binomial_name
+  )) %>%
+  # Drop rows with NA binomial_name
+  filter(!is.na(binomial_name)) %>%
+  rename(species = "binomial_name")
+```
+
+```{r}
+result <- phylo.maker(list_sp_cleaned, scenarios=c("S1","S2","S3"))
+
+
+# Extract each scenario as a separate phylo object
+Scenario1_tree <- result$scenario.1
+Scenario2_tree <- result$scenario.2$tree
+Scenario3_tree <- result$scenario.3$tree
+
+# Check classes
+class(Scenario1_tree)  # should be "phylo"
+class(Scenario2_tree)
+class(Scenario3_tree)
+```
+
+```{r}
+par(mfrow = c(1, 3))
+plot.phylo(result$scenario.1, cex = 1.5, main = "scenario.1", show.tip.label= FALSE)
+#nodelabels(round(branching.times(result$scenario.1), 1), cex = 1)
+#
+# plot a circular tree
+plot.phylo(result$scenario.1, type = "fan", cex = 0.5, show.tip.label = FALSE)
+```
+
+
+```{r}
+plot.phylo(result$scenario.2[[1]], cex = 1.5, main = "scenario.2", show.tip.label= FALSE)
+#nodelabels(round(branching.times(result$scenario.2[[1]]), 1), cex = 1)
+```
+
+
+```{r}
+plot.phylo(result$scenario.3, cex = 1.5, main = "scenario.3", show.tip.label= FALSE)
+#nodelabels(round(branching.times(result$scenario.3), 1), cex = 1)
+```
+
+
+```{r}
+#now actually calculate pagel's lambda
+#
+all_traits_dataset <- read.csv(here("processed trait data", "all traits database.csv"))
+
+log_seed_mass <- log(setNames(all_traits_dataset$mean_dry_seed_mass_mg, rownames(all_traits_dataset)))
+
+
+K.seed_mass<-phylosig(Scenario1_tree, log_seed_mass,
+    test=TRUE)
+print(K.seed_mass)
+```
+
+
