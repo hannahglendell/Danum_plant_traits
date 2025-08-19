@@ -269,7 +269,7 @@ ggplot(all_levels, aes(x = log(genus_level_seed_mass), y = log(species_level_see
        y = "Species") +
   annotate("text", 
            x = 4, y = 8,      
-           label = expression(RMSE == 2259.9),
+           label = expression(R^2 == 0.616),
            size = 7) +
   theme_minimal() +
   theme(
@@ -283,6 +283,12 @@ ggplot(all_levels, aes(x = log(genus_level_seed_mass), y = log(species_level_see
 all_levels %>%
   summarise(rmse = sqrt(mean((species_level_seed_mass - genus_level_seed_mass)^2, na.rm = TRUE))) 
 
+#calculate the R-squared
+
+cor(all_levels$genus_level_seed_mass,
+    all_levels$species_level_seed_mass,
+    use = "complete.obs")^2
+#R-squared is 0.616
 ```
 
 
@@ -301,7 +307,7 @@ ggplot(all_levels, aes(x = log(family_level_seed_mass), y = log(species_level_se
        y = "Species") +
   annotate("text", 
            x = 4.0, y = 8,      
-           label = expression(RMSE == 4643.4),
+           label = expression(R^2 == 0.023),
            size = 7) +
   theme_minimal() +
   scale_colour_viridis_d(option = "viridis") + 
@@ -316,6 +322,11 @@ ggplot(all_levels, aes(x = log(family_level_seed_mass), y = log(species_level_se
 #now calculate the root mean square error
 all_levels %>%
   summarise(rmse = sqrt(mean((species_level_seed_mass - family_level_seed_mass)^2, na.rm = TRUE)))
+
+cor(all_levels$species_level_seed_mass,
+    all_levels$family_level_seed_mass,
+    use = "complete.obs")^2
+#R-squared is 0.0228 = 
 ```
 
 PLOTTING THE 236 GENUS VALUES
